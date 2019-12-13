@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\jew\admin;
+namespace App\Http\Controllers\jew\login;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -49,14 +49,14 @@ class LoginContorller extends Controller
             // 用户验证
             $info = UserModel::where('uname',$data['uname'])->first();
             if (empty($info)) {
-                echo json_encode(['code'=>0,"msg"=>"账号不存在"]);die;
+                return "<script>alert('账号不正确');parent.location.href='/admin/login';</script>";die;
             }else{
                 //判断密码是否正确
                 if ($info['pwd']==md5($data['pwd'])) {//用库里加密密码 == 接收的加密密码
-                    $request->session()->put('user_info',$info);
-                    echo json_encode(['code'=>1,"msg"=>"登陆成功"]);die;
+                    $request->session()->put('user_info',$info,86400);
+                    return "<script>alert('登陆成功');parent.location.href='/admin/index';</script>";die;
                 }else{
-                    echo json_encode(['code'=>0,"msg"=>"密码不正确"]);die;
+                    return "<script>alert('密码不正确');parent.location.href='/admin/login';</script>";die;
                 }
             }
         }
