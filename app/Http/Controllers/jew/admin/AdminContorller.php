@@ -10,6 +10,7 @@ class AdminContorller extends Controller
     // 后台 首页
     public function index(Request $request)
     {
-        return view('jew.admin.index');
+        $info=$request->session()->get('user_info');
+        return view('jew.admin.index',['info'=>$info]);
     }
 }

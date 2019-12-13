@@ -21,8 +21,8 @@
         <h2>登 录</h2>
         <form action="{{ url("admin/login") }}" method="post">
             @csrf
-                <input type="text" Name="uname" placeholder="用户名" required="required"> @php echo $errors->first('phone')@endphp
-            <input type="password" Name="pwd" placeholder="密码" required="required"> @php echo $errors->first('phone')@endphp
+                <input type="text" Name="uname" class="uname" placeholder="用户名" required="required"> @php echo $errors->first('phone')@endphp
+            <input type="password" Name="pwd" class="pwd" placeholder="密码" required="required"> @php echo $errors->first('phone')@endphp
             <ul class="tick w3layouts agileits">
                 <li>
                     <input type="checkbox" id="brand1" name="remember" value="1">
@@ -30,7 +30,7 @@
                 </li>
             </ul>
             <div class="send-button w3layouts agileits">
-                    <input type="submit" value="登 录">
+                    <input type="button" value="登 录" id="btn">
             </div>
         </form>
             <a href="#">忘记密码?</a>
@@ -57,12 +57,12 @@
         <h2>注 册</h2>
         <form action="{{ url("/admin/regist") }}" method="post">
             @csrf
-                <input type="text" Name="uname" placeholder="用户名" required="required">
-                <input type="text" Name="email" placeholder="邮箱" required="required">
-                <input type="password" Name="pwd" placeholder="密码" required="required">
-                <input type="text" Name="tel" placeholder="手机号码" required="required">
+                <input type="text" Name="uname" id="uname" placeholder="用户名" required="required">
+                <input type="text" Name="email" id="email" placeholder="邮箱" required="required">
+                <input type="password" Name="pwd" id="pwd" placeholder="密码" required="required">
+                <input type="text" Name="tel" id="tel" placeholder="手机号码" required="required">
             <div class="send-button w3layouts agileits">
-                    <input type="submit" value="免费注册">
+                    <input type="button" value="免费注册" name="btn">
             </div>
         </form>
 
@@ -81,3 +81,56 @@
 
 </body>
 </html>
+<script>
+    // 注册
+    $(document).ready(function(){
+        $("input[name='btn']").click(function(){
+            var data = {};
+            data.uname = $('#uname').val();
+            data.pwd = $('#pwd').val();
+            data.email = $('#email').val();
+            data.tel = $('#tel').val();
+            $.ajax({
+                url:"/admin/regist",
+                data:data,
+                type:"POST",
+                dataType:'json',
+                //processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
+                //contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性
+                success:function(res){
+                    if (res.code == 1) {
+                        alert(res.msg);
+                        location.href="/admin/index";
+                    }else{
+                       alert(res.msg);
+                    }
+                }
+            })
+        });
+    });
+    // 登陆
+    $(document).ready(function(){
+        $("#btn").click(function(){
+            var data = {};
+            data.uname = $('.uname').val();
+            data.pwd = $('.pwd').val();
+            // alert(data);return;
+            $.ajax({
+                url:"/admin/login",
+                data:data,
+                type:"POST",
+                dataType:'json',
+                //processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
+                //contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性
+                success:function(res){
+                    if (res.code == 1) {
+                        alert(res.msg);
+                        location.href="/admin/index";
+                    }else{
+                        alert(res.msg);
+                    }
+                }
+            })
+        });
+    });
+</script>

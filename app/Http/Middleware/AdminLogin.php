@@ -15,7 +15,7 @@ class AdminLogin
      */
     public function handle($request, Closure $next)
     {
-        if(empty($request->session()->get('userinfo'))) {
+        if(empty($request->session()->get('user_info'))) {
             return redirect("/admin/login");
         }
         return $next($request);

@@ -246,7 +246,7 @@ input[type="text"], input[type="password"] {
 
 /*--w3layouts--*/
 /*--agileits--*/
-.send-button input[type="submit"]:hover {
+.send-button input[type="button"]:hover {
     background-color: #000;
     border: 1px solid #FFF;
     color: #FFF;

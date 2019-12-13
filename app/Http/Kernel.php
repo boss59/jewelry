@@ -46,7 +46,7 @@ class Kernel extends HttpKernel
 
         // 后台 中间件
         'admin' => [
-            "CheckLogin",
+            "AdminLogin",
         ],
 
     ];

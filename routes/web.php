@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::any('/admin/login','jew\admin\LoginContorller@login');// 后台登陆
+Route::any('/admin/regist','jew\admin\LoginContorller@regist');// 后台注册
 
-Route::any('/admin/index','jew\admin\AdminContorller@index');// 后台首页
+
+Route::group(['middleware'=>['AdminLogin']],function(){
+    Route::any('/admin/index','jew\admin\AdminContorller@index');// 后台首页
+});
 
 
-Route::any('/index/index','jew\index\IndexContorller@index');// 后台首页
+
