@@ -62,6 +62,13 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/admin/del_all','jew\admin\GoodsController@del_all');//商品批删
     Route::any('/admin/judge','jew\admin\GoodsController@judge');//商品即点即改
 
+
+    //友情链接管理
+    Route::any('/friend/add','jew\admin\FriendController@add');// 友情链接添加
+    Route::any('/friend/doadd','jew\admin\FriendController@doadd');// 友情链接添加处理
+    Route::any('/friend/index','jew\admin\FriendController@index');// 友情链接列表
+    Route::any('/friend/del','jew\admin\FriendController@del');// 友情链接删除
+
 });
 
 

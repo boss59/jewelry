@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/admin/GoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/admin/GoodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jew/admin/friend/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jew/admin/friend/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +20,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
+            <state relative-caret-position="744">
               <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+            <state relative-caret-position="423">
+              <caret line="68" column="29" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="29" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
@@ -38,32 +38,52 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/admin/FriendController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="90" column="44" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+            <state relative-caret-position="-504" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/friend/add.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
               <folding>
-                <element signature="e#1757#1783#0#HTML" expanded="true" />
-                <element signature="e#1835#1841#0#HTML" expanded="true" />
-                <element signature="e#1841#1847#0#HTML" expanded="true" />
-                <element signature="e#1847#1853#0#HTML" expanded="true" />
-                <element signature="e#1853#1859#0#HTML" expanded="true" />
-                <element signature="e#1859#1865#0#HTML" expanded="true" />
-                <element signature="e#2522#2543#0#HTML" expanded="true" />
+                <element signature="e#259#285#0#HTML" expanded="true" />
+                <element signature="e#542#568#0#HTML" expanded="true" />
+                <element signature="e#813#839#0#HTML" expanded="true" />
+                <element signature="e#1323#1349#0#HTML" expanded="true" />
+                <element signature="e#1665#1691#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/admin/GoodsController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="135" column="19" lean-forward="true" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
-              <folding>
-                <element signature="e#50#78#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="264">
+              <caret line="215" column="54" selection-start-line="215" selection-start-column="54" selection-end-line="215" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-101">
+              <caret line="90" column="44" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/goods/save.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="68" column="14" selection-start-line="63" selection-start-column="8" selection-end-line="68" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -104,16 +124,17 @@
         <option value="$PROJECT_DIR$/app/Models/Admin_RoleModel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/rbac/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/CateController.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout/layout.blade.php" />
         <option value="$PROJECT_DIR$/functions/comm.php" />
         <option value="$PROJECT_DIR$/app/Models/GoodsModel.php" />
         <option value="$PROJECT_DIR$/resources/views/jew/admin/cate/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/jew/admin/cate/add.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/BrandController.php" />
         <option value="$PROJECT_DIR$/resources/views/jew/admin/brand/brandlist.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/GoodsController.php" />
         <option value="$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/jew/admin/friend/add.blade.php" />
       </list>
     </option>
   </component>
@@ -266,6 +287,11 @@
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -306,6 +332,15 @@
               <item name="jew" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="cate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="jew" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="friend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
@@ -375,12 +410,12 @@
       <workItem from="1576205117532" duration="17501000" />
       <workItem from="1576236947461" duration="118000" />
       <workItem from="1576237189812" duration="2924000" />
-      <workItem from="1576283412477" duration="15502000" />
+      <workItem from="1576283412477" duration="17909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43744000" />
+    <option name="totallyTimeSpent" value="46151000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="173" column="52" selection-start-line="173" selection-start-column="52" selection-end-line="173" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/comm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
@@ -747,33 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/goods/save.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="83" column="63" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="63" />
-          <folding>
-            <element signature="e#4249#4275#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/admin/GoodsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
@@ -784,18 +785,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="215" column="54" selection-start-line="215" selection-start-column="54" selection-end-line="215" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
-          <caret line="90" column="44" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+          <caret line="68" column="29" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="29" />
           <folding>
-            <element signature="e#1757#1783#0#HTML" expanded="true" />
-            <element signature="e#1835#1841#0#HTML" expanded="true" />
-            <element signature="e#1841#1847#0#HTML" expanded="true" />
-            <element signature="e#1847#1853#0#HTML" expanded="true" />
-            <element signature="e#1853#1859#0#HTML" expanded="true" />
-            <element signature="e#1859#1865#0#HTML" expanded="true" />
-            <element signature="e#2522#2543#0#HTML" expanded="true" />
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-101">
+          <caret line="90" column="44" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/goods/save.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="68" column="14" selection-start-line="63" selection-start-column="8" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/admin/FriendController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/friend/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
+          <folding>
+            <element signature="e#259#285#0#HTML" expanded="true" />
+            <element signature="e#542#568#0#HTML" expanded="true" />
+            <element signature="e#813#839#0#HTML" expanded="true" />
+            <element signature="e#1323#1349#0#HTML" expanded="true" />
+            <element signature="e#1665#1691#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

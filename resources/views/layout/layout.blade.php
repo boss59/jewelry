@@ -210,10 +210,10 @@
                             <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;&nbsp;
                             友链 管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="/admin/link_add">
+                            <dd><a href="/friend/add">
                                     <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span>&nbsp;&nbsp;
                                     友链 添加</a></dd>
-                            <dd><a href="/admin/link_index">
+                            <dd><a href="/friend/index">
                                     <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
                                     友链 列表</a></dd>
                         </dl>
