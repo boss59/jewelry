@@ -126,4 +126,21 @@ class GoodsController extends Controller
     		echo json_encode(['code'=>2,"msg"=>"删除失败"]);
     	}
     }
+
+
+    //  ajax
+    public function judge(Request $request)
+    {
+        $all = $request->input();
+//        dd($all);
+        $res=GoodsModel::where('goods_id',$all['goods_id'])->update($all);
+        echo 1;
+    }
+    // 批删
+    public function del_all(Request $request)
+    {
+        $all = $request->input();
+        $res=GoodsModel::destroy($all);
+        echo 1;
+    }
 }

@@ -59,6 +59,8 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/goods/save_do','jew\admin\GoodsController@save_do');//商品执行
     Route::any('/goods/show','jew\admin\GoodsController@show');//商品展示
     Route::any('/goods/del','jew\admin\GoodsController@del');//商品删除
+    Route::any('/admin/del_all','jew\admin\GoodsController@del_all');//商品批删
+    Route::any('/admin/judge','jew\admin\GoodsController@judge');//商品即点即改
 
 });
 
