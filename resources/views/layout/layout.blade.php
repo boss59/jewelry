@@ -132,34 +132,6 @@
                                     角色权限 列表</a></dd>
                         </dl>
                     </li>
-                    {{-- 导航管理 --}}
-                    <li class="layui-nav-item layui-nav-itemed">
-                        <a class="label label-warning" href="javascript:;">
-                            <span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>&nbsp;&nbsp;
-                            导航 管理</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="{{ url('/admin/nav_add') }}">
-                                    <span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    导航 添加</a></dd>
-                            <dd><a href="{{ url('/admin/nav_index') }}">
-                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    导航 展示</a></dd>
-                        </dl>
-                    </li>
-                    {{-- 轮播图 --}}
-                    <li class="layui-nav-item layui-nav-itemed">
-                        <a class="label label-danger" href="javascript:;">
-                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>&nbsp;&nbsp;
-                            轮播图 管理</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="/admin/img_add">
-                                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    轮播图 添加</a></dd>
-                            <dd><a href="/admin/img_index">
-                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    轮播图 展示</a></dd>
-                        </dl>
-                    </li>
 
                     {{-- 分类 --}}
                     <li class="layui-nav-item layui-nav-itemed">
@@ -167,14 +139,45 @@
                             <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>&nbsp;&nbsp;
                             分类 管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="{{ url('/admin/cate_add') }}">
+                            <dd><a href="{{ url('/cate/add') }}">
                                     <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;&nbsp;
                                     分类 添加</a></dd>
-                            <dd><a href="{{ url('/admin/cate_index') }}">
+                            <dd><a href="{{ url('/cate/index') }}">
                                     <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
                                     分类 列表</a></dd>
                         </dl>
                     </li>
+
+                    {{-- 导航管理 --}}
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="label label-warning" href="javascript:;">
+                            <span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>&nbsp;&nbsp;
+                            品牌 管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="{{ url('/admin/brand') }}">
+                                    <span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>&nbsp;&nbsp;
+                                    品牌 添加</a></dd>
+                            <dd><a href="{{ url('/admin/brandlist') }}">
+                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
+                                    品牌 展示</a></dd>
+                        </dl>
+                    </li>
+                    {{-- 轮播图 --}}
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="label label-danger" href="javascript:;">
+                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>&nbsp;&nbsp;
+                            商品 管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="/goods/save">
+                                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;&nbsp;
+                                    商品 添加</a></dd>
+                            <dd><a href="/goods/show">
+                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
+                                    商品 展示</a></dd>
+                        </dl>
+                    </li>
+
+
 
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="label label-default" href="javascript:;">

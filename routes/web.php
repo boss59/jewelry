@@ -41,12 +41,24 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/admin/role_right_add','rbac\AdminController@role_right_add');// 角色权限 添加
     Route::any('/admin/role_right_index','rbac\AdminController@role_right_index');// 角色权限 展示
 
-    // 分类管理
+
+    //分类管理
+    Route::any('/cate/add','jew\admin\CateController@add');// 分类添加
+    Route::any('/cate/doadd','jew\admin\CateController@doadd');//处理分类添加
+    Route::any('/cate/index','jew\admin\CateController@index');//分类列表
+    Route::any('/cate/del','jew\admin\CateController@del');//分类删除
 
     // 品牌管理
+    Route::any('/admin/brand','jew\admin\BrandController@brand');//品牌
+    Route::any('/admin/brandadd','jew\admin\BrandController@brandadd');//品牌添加
+    Route::any('/admin/branddel','jew\admin\BrandController@branddel');//品牌删除
+    Route::any('/admin/brandlist','jew\admin\BrandController@brandlist');//品牌展示
 
     // 商品管理
-
+    Route::any('/goods/save','jew\admin\GoodsController@save');//商品添加
+    Route::any('/goods/save_do','jew\admin\GoodsController@save_do');//商品执行
+    Route::any('/goods/show','jew\admin\GoodsController@show');//商品展示
+    Route::any('/goods/del','jew\admin\GoodsController@del');//商品删除
 
 });
 

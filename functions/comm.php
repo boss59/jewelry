@@ -107,7 +107,7 @@ function createTree($data,$parent_id=0,$level=1)
             //4 找到 之后放到新的数组里
             $new_arr[] = $value;
             //调用 程序自身递归找子集
-            createTree($data,$value['cid'],$level+1);
+            createTree($data,$value['cate_id'],$level+1);
         }
     }
     return $new_arr;

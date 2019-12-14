@@ -47,7 +47,7 @@
                     data:{id:id},
                     type:"post",
                     success:function(res){
-                        if(sssssres == 1){
+                        if(res == 1){
                             alert("成功");
                             location.href="/admin/brandlist";
                         }else{

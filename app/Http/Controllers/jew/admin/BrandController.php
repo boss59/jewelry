@@ -4,7 +4,7 @@ namespace App\Http\Controllers\jew\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\admin\BrandModel;
+use App\Models\BrandModel;
 class BrandController extends Controller
 {
     /**

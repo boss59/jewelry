@@ -10,6 +10,7 @@ use App\Models\CateModel;
 
 class GoodsController extends Controller
 {
+    // 添加
     public function save()
     {
     	//获取分类数据
@@ -23,6 +24,7 @@ class GoodsController extends Controller
 
     }
 
+    // 商品 添加
     public function save_do(Request $request)
     {
     	//获取所有数据
@@ -60,9 +62,8 @@ class GoodsController extends Controller
         }
         //处理图片
         $data['goods_img'] = create_img($data['goods_img'],'/goods/');
-        // dd($data);
         //入库
-        $req = GoodsModel::insert($data);
+        $req = GoodsModel::create($data);
         if($req){
         	echo json_encode(['code'=>1,"msg"=>"添加成功"]);
         }else{

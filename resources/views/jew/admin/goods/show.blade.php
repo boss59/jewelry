@@ -10,9 +10,8 @@
 	<form action="/goods/show" method="get" class="layui-table" style="padding-left:100px">
 		<table class="layui-table" style="padding-left:300px">
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 				商品名称：<input type="text" name="goods_name">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				分类名：
 						<select name="cate_id" lay-verify="required" lay-search >
@@ -22,7 +21,7 @@
 	                    	@endforeach
 						</select>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 				品牌名：
 						<select name="brand_id" lay-verify="required" lay-search>
@@ -32,7 +31,7 @@
                     		@endforeach
 						</select>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 				是否上架：
 						<select name="is_up" lay-verify="required" lay-search>
 							<option value="">请选择---</option>
@@ -41,7 +40,7 @@
 						</select>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 						<input type="submit" value="搜索" class="btn btn-success">
 
@@ -81,7 +80,7 @@
     		<td>@if($v['is_sell'] == '0')否@else是@endif</td>
     		<td>@if($v['is_up'] == '0')否@else是@endif</td>
     		<td>
-    			<button type="button" class="layui-btn update">编辑</button>
+    			<button type="button" class="layui-btn update">编辑</button><br /><br />
     			<button type="button" class="layui-btn del">删除</button>
     		</td>
     	</tr>
