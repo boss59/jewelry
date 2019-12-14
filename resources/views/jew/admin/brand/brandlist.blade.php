@@ -4,14 +4,24 @@
     品牌 展示
 @endsection
 @section('content')
-        <div class="form-group">
-            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-            <div class="input-group">
-                <input type="text" name="brand_name" class="form-control" id="exampleInputAmount" placeholder="Amount">
+    <marquee><h2><font color='blue'>品牌 展示</font></h2></marquee>
+
+    <form action="">
+        <div class="layui-form-item" style="padding-left:380px">
+            <label class="layui-form-label">商品名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="brand_name" required  lay-verify="required" placeholder="请输入商品名称" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary" id="sou">搜素</button>
-    <table class="table table-striped table-bordered table-hover" >
+        <div class="layui-form-item" style="padding-left:350px">
+            <div class="layui-input-block">
+                <input type="button" value="立即搜索" class="btn btn-success" id="stn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-warning" ><a href="">返回添加</a></button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table table-striped table-bordered table-hover" style="padding-left:300px">
         <tr>
             <td>品牌id</td>
             <td>品牌名称</td>
@@ -19,21 +29,21 @@
             <td>品牌图片</td>
             <td>操作</td>
         </tr>
-        <bobay id="list">
-        @foreach($data as $k=>$v)
-            <tr brand_id="{{$v['brand_id']}}">
-                    <td >{{$v['brand_id']}}</td>
-                    <td>{{$v['brand_name']}}</td>
-                    <td>{{$v['brand_url']}}</td>
-                    <td><img src="{{$v['brand_brand']}}" alt="" class="img-thumbnail" width="100" height="100"></td>
-                    <td><button type="button" class="btn btn-danger del">删除</button>|<button type="button" class="btn btn-warning" id="updata">修改</button></td>
-            </tr>
-        @endforeach
-            <tr align="center">
-                <td colspan="7"><div id>{{ $data->links() }}</div></td>
-            </tr>
-        </bobay>
+        <tbody id="list">
+            @foreach($list as $k=>$v)
+                <tr brand_id="{{$v['brand_id']}}">
+                        <td align="center">{{$v['brand_id']}}</td>
+                        <td align="center">{{$v['brand_name']}}</td>
+                        <td align="center"><a href="{{$v['brand_url']}}">链接地址</a></td>
+                        <td align="center"><img src="{{$v['brand_brand']}}" alt="" class="img-thumbnail" width="70" height="50"></td>
+                        <td align="center"><button type="button" class="btn btn-danger del">删除</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-warning" id="updata">修改</button></td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
+        <div align="center" id="page">
+            {{ $list->appends($query)->links() }}
+        </div>
     <script>
         $(document).ready(function(){
             // 单删
@@ -56,44 +66,51 @@
                         }
                     }
                 })
-            })
+            });
+    //=============================================================================
             // 分页
             $(document).on('click','#page a',function(){
                 event.preventDefault();
                 var url = $(this).attr('href');
-                alet(url);return;
                 page(url);
-            })
+            });
             // 条件搜索
-            $(document).on('click','#sou',function() {
+            $(document).on('click','#stn',function() {
                 var url = "/admin/brandlist";
                 page(url);
             })
             //方法
             function page(url)
             {
-                var sou = $("input[name = 'brand_name']").val();
+                var brand_name = $('input[name="brand_name"]').val();
                 $.ajax({
-                    url:url,
-                    dataType:"json",
-                    data:{brand_name:sou},
-                    type:"post",
-                    success:function(res){
-                        $("#list").empty();
-                        $.each(res.data,function(k,v){
-                            var tr = $(" <tr brand_id="+v.brand_id+"></tr>");// 创建 tr
-                            tr.append("<td >"+v.brand_id+"</td>");
-                            tr.append("<td >"+v.brand_name+"</td>");
-                            tr.append("<td >"+v.brand_url+"</td>");
-                            tr.append("<td >"+v.brand_img+"</td>");
-                            tr.append("<td>"+"<button type='button' class='btn btn-danger del'>"+删除+"</button>"+"|<button type='button' class='btn btn-warning' id='updata'>"+修改+"</button>"+"</td>");
-                        })
-                        $('#list').html(res.page).css("color","blue");
-                    }
+                    url:url,//请求地址
+                    type:'get',//请求的类型
+                    dataType:'json',//返回的类型
+                    data:{brand_name:brand_name},//要传输的数据
+                    success:function(res){ //成功之后回调的方法
+                        $('#list').empty();// 清空 list 区域
 
+                        $.each(res.data, function(k,v) {
+                            var tr = $("<tr brand_id='"+v.brand_id+"'></tr>");// 创建 tr
+                            //数据
+                            tr.append('<td align="center">'+v.brand_id+'</td>');
+                            tr.append('<td align="center">'+v.brand_name+'</td>');
+                            tr.append('<td align="center">'+v.brand_url+'</td>');
+                            tr.append('<td align="center"><img src="'+v.brand_brand+'" width="70" height="50"/></td>');
+
+                            // 操作
+                            tr.append('<td align="center"><button type="button" class="btn btn-danger del">删除</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-warning" id="updata">修改</button></td>');
+                            $('#list').append(tr).css("color","blue");
+                        })
+                        $('#page').html(res.page);
+                    }
                 })
-                $('#page').html(res.page);
             }
+
+
+
+
         })
     </script>
 @endsection

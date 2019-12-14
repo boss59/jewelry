@@ -51,20 +51,21 @@ class BrandController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function brandlist(Request $request){
-        $inf = $request->input('brand_name');
+        $query = $request->input();
 
         $where=[];
         if(!empty($request->input('brand_name'))){
             $where[] = ['shop_brand.brand_name','like','%'.$request->input('brand_name').'%'];
         }
+
         $list = BrandModel::where($where)->paginate(3);
         $page = $list->render();// 获取分页显示
-        if (request()->ajax()) {
+        if (request()->Ajax()) {
             $list = $list->toArray();//转化数组
-            $list['page']=$page;//页码也返回到前台
+            $list['per_page']=$page;//页码也返回到前台
             echo json_encode($list);die; //转化json数据
         }
-        return view('jew.admin.brand.brandlist',['data'=>$list]);
+        return view('jew.admin.brand.brandlist',compact('list','query','page'));
     }
 
     /***
