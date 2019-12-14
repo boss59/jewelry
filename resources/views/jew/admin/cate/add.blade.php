@@ -23,7 +23,7 @@
      
         <option value="0">顶级分类</option>
          @foreach ($data as $v)
-           <option value="{{$v->cate_id}}">{!! str_repeat("&nbsp;",$v->level*4)!!}{{$v->cate_name}}</option>
+           <option value="{{$v->cate_id}}">{!! str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",$v->level-1).$v->cate_name !!}</option>
             @endforeach
       </select>
     </div>

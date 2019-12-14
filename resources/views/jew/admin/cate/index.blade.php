@@ -5,8 +5,8 @@
 @endsection
 
 
-@section('content') 
- 
+@section('content')
+    <marquee><h2><font color='blue'>分类 展示</font></h2></marquee>
 <table class="layui-table">
   <colgroup>
     <col width="150">
@@ -27,7 +27,7 @@
       <td><a href="javascript:void(0)" class="btn">+</a></td>
     
       <td>{!! str_repeat("&nbsp;",$v->level*4)!!}{{$v->cate_name}}</td>
-      <td>@if($v->cate_show=='0')否@else是@endif</td>
+
       <td>
            <div class="layui-btn-group">
       <button class="layui-btn layui-btn-sm del">
