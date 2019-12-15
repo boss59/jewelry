@@ -73,6 +73,8 @@ return [
             // 文件将上传到public/img 如果需要浏览器直接访问 请设置成这个
             'root' => public_path('imgs'),
         ],
+        //多文件上传
+
 
     ],
 

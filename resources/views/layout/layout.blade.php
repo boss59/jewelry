@@ -4,26 +4,29 @@
     <meta charset="utf-8">
     <meta http-equiv="refresh" content="64300">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>全职后台</title>
-    <base href="/">
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
-    <script src="{{ asset('/bootstrap/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('/bootstrap/js/bootstrap.min.js') }}"></script>
+    <title>商城后台</title>
+    <script src="{{ asset('bootstrap/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('layui/layui.all.js') }}"></script>
     <script src="{{ asset('layui/layui.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('layui/css/layui.mobile.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('layui/css/layui.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/bootstrap/css/app.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/bootstrap/css/bootstrap.css') }}">
-    <script src="{{ asset('/bootstrap/js/img.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/canvas.css') }}">
+    {{-- 应用部分 --}}
+    <script src="{{ asset('bootstrap/js/img.js') }}"></script>
+    <script src="{{ asset('snow.js') }}"></script>
+    <script src="{{ asset('js/canvas.js') }}"></script>
 </head>
-<body class="layui-layout-body">
-<script type="text/javascript">(function($){$.fn.snow = function(options){var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('&#10052;'),documentHeight = $(document).height(),documentWidth= $(document).width(),defaults = {minSize: 10,maxSize: 20,newOn: 1000,flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */},options= $.extend({}, defaults, options);var interval= setInterval( function(){var startPositionLeft = Math.random() * documentWidth - 100,startOpacity = 0.5 + Math.random(),sizeFlake = options.minSize + Math.random() * options.maxSize,endPositionTop = documentHeight - 200,endPositionLeft = startPositionLeft - 500 + Math.random() * 500,durationFall = documentHeight * 10 + Math.random() * 5000;$flake.clone().appendTo('body').css({left: startPositionLeft,opacity: startOpacity,'font-size': sizeFlake,color: options.flakeColor}).animate({top: endPositionTop,left: endPositionLeft,opacity: 0.2},durationFall,'linear',function(){$(this).remove()});}, options.newOn); };})(jQuery);$(function(){ $.fn.snow({ minSize: 5, /* 定义雪花最小尺寸 */ maxSize: 50,/* 定义雪花最大尺寸 */ newOn: 300 /* 定义密集程度，数字越小越密集 */ });});</script>
+<body class="layui-layout-body" >
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo">
             <img src="/bootstrap/img/222.jpg" width="70" height='40'>全职&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;高手
         </div>
+
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="">
@@ -76,7 +79,7 @@
 
         </ul>
     </div>
-
+    <canvas id="canvas"></canvas>
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
@@ -133,7 +136,7 @@
                         </dl>
                     </li>
 
-                    {{-- 分类 --}}
+                    {{-- 分类 管理 --}}
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="label label-primary" href="javascript:;">
                             <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>&nbsp;&nbsp;
@@ -148,7 +151,7 @@
                         </dl>
                     </li>
 
-                    {{-- 导航管理 --}}
+                    {{-- 品牌 管理 --}}
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="label label-warning" href="javascript:;">
                             <span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>&nbsp;&nbsp;
@@ -162,7 +165,7 @@
                                     品牌 展示</a></dd>
                         </dl>
                     </li>
-                    {{-- 轮播图 --}}
+                    {{-- 商品 管理 --}}
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="label label-danger" href="javascript:;">
                             <span class="glyphicon glyphicon-film" aria-hidden="true"></span>&nbsp;&nbsp;
@@ -182,14 +185,14 @@
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="label label-default" href="javascript:;">
                             <span class="glyphicon glyphicon-header" aria-hidden="true"></span>&nbsp;&nbsp;
-                            新闻 管理</a>
+                            多文件 管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="/admin/new_add">
+                            <dd><a href="/img/create">
                                     <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    新闻 添加</a></dd>
-                            <dd><a href="/admin/new_index">
+                                    多文件 添加</a></dd>
+                            <dd><a href="/img/index">
                                     <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    新闻 列表</a></dd>
+                                    多文件 列表</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item layui-nav-itemed">
@@ -255,7 +258,6 @@
         </p>
     </div>
 </div>
-<script src="/layui/layui.js"></script>
 <script>
     //JavaScript代码区域
     layui.use('element', function(){

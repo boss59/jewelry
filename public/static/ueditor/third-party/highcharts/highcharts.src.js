@@ -1508,7 +1508,7 @@ defaultOptions = {
 	},
 	global: {
 		useUTC: true,
-		canvasToolsURL: 'http://code.highcharts.com/3.0.6/modules/canvas-tools.js',
+		canvasToolsURL: 'http://code.highcharts.com/3.0.6/modules/canvas.js-tools.js',
 		VMLRadialGradientURL: 'http://code.highcharts.com/3.0.6/gfx/vml-radial-gradient.png'
 	},
 	chart: {
@@ -2402,7 +2402,7 @@ SVGElement.prototype = {
 		elemWrapper.styles = styles;
 
 
-		// Don't handle line wrap on canvas
+		// Don't handle line wrap on canvas.js
 		if (useCanVG && textWidth) {
 			delete styles.width;
 		}
@@ -3224,7 +3224,7 @@ SVGRenderer.prototype = {
 	},
 
 	/**
-	 * Dummy function for use in canvas renderer
+	 * Dummy function for use in canvas.js renderer
 	 */
 	draw: function () {},
 
@@ -6994,10 +6994,10 @@ Axis.prototype = {
 			localA = axis.transA;
 		}
 
-		// In vertical axes, the canvas coordinates start from 0 at the top like in 
+		// In vertical axes, the canvas.js coordinates start from 0 at the top like in
 		// SVG. 
 		if (cvsCoord) {
-			sign *= -1; // canvas coordinates inverts the value
+			sign *= -1; // canvas.js coordinates inverts the value
 			cvsOffset = axisLength;
 		}
 
@@ -10859,7 +10859,7 @@ Chart.prototype = {
 			pointer.reset(true);
 		}
 
-		// redraw if canvas
+		// redraw if canvas.js
 		renderer.draw();
 
 		// fire the event
@@ -12120,7 +12120,7 @@ Chart.prototype = {
 
 		chart.render();
 
-		// add canvas
+		// add canvas.js
 		chart.renderer.draw();
 		// run callbacks
 		if (callback) {

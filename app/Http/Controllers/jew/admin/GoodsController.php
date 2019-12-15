@@ -103,12 +103,19 @@ class GoodsController extends Controller
     	$cate = createTree($cate);
        	//获取品牌数据 
         $brand = BrandModel::get()->toArray();
+        if (empty($where)){
+            // 商品展示   三表联查
+            $goods = GoodsModel::join('shop_category','shop_goods.cate_id','=',"shop_category.cate_id")
+                ->join('shop_brand','shop_goods.brand_id','=',"shop_brand.brand_id")
+                ->paginate(3);
+        }else{
+            // 商品展示   三表联查
+            $goods = GoodsModel::join('shop_category','shop_goods.cate_id','=',"shop_category.cate_id")
+                ->join('shop_brand','shop_goods.brand_id','=',"shop_brand.brand_id")
+                ->where($where)
+                ->paginate(3);
+        }
 
-        // 商品展示   三表联查
-        $goods = GoodsModel::join('shop_category','shop_goods.cate_id','=',"shop_category.cate_id")
-        		->join('shop_brand','shop_goods.brand_id','=',"shop_brand.brand_id")
-        		->where($where)
-        		->paginate(2);
         // dd($goods);
     	return view('jew.admin.goods.show',compact("info","query","goods","cate","brand"));
     }

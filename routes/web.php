@@ -69,6 +69,10 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/friend/index','jew\admin\FriendController@index');// 友情链接列表
     Route::any('/friend/del','jew\admin\FriendController@del');// 友情链接删除
 
+    // 多文件上传
+    Route::any('/img/create','jew\admin\ImgController@create');// 多文件添加
+    Route::any('/img/index','jew\admin\ImgController@index');// 友情链接列表
+
 });
 
 

@@ -7,13 +7,13 @@
     <marquee><h2><font color='blue'>品牌 展示</font></h2></marquee>
 
     <form action="">
-        <div class="layui-form-item" style="padding-left:380px">
+        <div class="layui-form-item" style="padding-left:450px">
             <label class="layui-form-label">商品名</label>
             <div class="layui-input-inline">
                 <input type="text" name="brand_name" required  lay-verify="required" placeholder="请输入商品名称" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item" style="padding-left:350px">
+        <div class="layui-form-item" style="padding-left:420px">
             <div class="layui-input-block">
                 <input type="button" value="立即搜索" class="btn btn-success" id="stn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-warning" ><a href="">返回添加</a></button>
@@ -96,7 +96,7 @@
                             //数据
                             tr.append('<td align="center">'+v.brand_id+'</td>');
                             tr.append('<td align="center">'+v.brand_name+'</td>');
-                            tr.append('<td align="center">'+v.brand_url+'</td>');
+                            tr.append('<td align="center"><a href="'+v.brand_url+'">'+v.brand_url+'</a></td>');
                             tr.append('<td align="center"><img src="'+v.brand_brand+'" width="70" height="50"/></td>');
 
                             // 操作

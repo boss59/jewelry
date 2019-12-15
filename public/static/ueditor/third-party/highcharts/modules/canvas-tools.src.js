@@ -315,14 +315,14 @@ if(!Array.prototype.indexOf){
 
 (function(){
 	// canvg(target, s)
-	// empty parameters: replace all 'svg' elements on page with 'canvas' elements
-	// target: canvas element or the id of a canvas element
+	// empty parameters: replace all 'svg' elements on page with 'canvas.js' elements
+	// target: canvas.js element or the id of a canvas.js element
 	// s: svg string, url to svg file, or xml document
 	// opts: optional hash of options
 	//		 ignoreMouse: true => ignore mouse events
 	//		 ignoreAnimation: true => ignore animations
-	//		 ignoreDimensions: true => does not try to resize canvas
-	//		 ignoreClear: true => does not clear canvas
+	//		 ignoreDimensions: true => does not try to resize canvas.js
+	//		 ignoreClear: true => does not clear canvas.js
 	//		 offsetX: int => draws at a x offset
 	//		 offsetY: int => draws at a y offset
 	//		 scaleWidth: int => scales horizontally to width
@@ -352,7 +352,7 @@ if(!Array.prototype.indexOf){
 			target = document.getElementById(target);
 		}
 		
-		// reuse class per canvas
+		// reuse class per canvas.js
 		var svg;
 		if (target.svg == null) {
 			svg = build();
@@ -1794,7 +1794,7 @@ if(!Array.prototype.indexOf){
 				}
 				
 				if (this.attribute('gradientTransform').hasValue()) {
-					// render as transformed pattern on temporary canvas
+					// render as transformed pattern on temporary canvas.js
 					var rootView = svg.ViewPort.viewPorts[0];
 					
 					var rect = new svg.Element.rect();
@@ -2758,7 +2758,7 @@ if(!Array.prototype.indexOf){
 				if (ctx.canvas.parentNode) svg.ViewPort.SetCurrent(ctx.canvas.parentNode.clientWidth, ctx.canvas.parentNode.clientHeight);
 			
 				if (svg.opts['ignoreDimensions'] != true) {
-					// set canvas size
+					// set canvas.js size
 					if (e.style('width').hasValue()) {
 						ctx.canvas.width = e.style('width').Length.toPixels('x');
 						ctx.canvas.style.width = ctx.canvas.width + 'px';
@@ -2957,7 +2957,7 @@ if (CanvasRenderingContext2D) {
 
 			this.init.apply(this, [container, chartWidth, chartHeight]);
 
-			// add the canvas above it
+			// add the canvas.js above it
 			canvas = createElement('canvas', {
 				width: containerOffsetWidth,
 				height: containerOffsetHeight
@@ -3070,7 +3070,7 @@ if (CanvasRenderingContext2D) {
 		destroy: function () {
 			var renderer = this;
 
-			// Remove the canvas
+			// Remove the canvas.js
 			discardElement(renderer.canvas);
 
 			// Kill the timer
@@ -3103,7 +3103,7 @@ if (CanvasRenderingContext2D) {
 		},
 
 		/**
-		 * Draws the SVG on the canvas or adds a draw invokation to the deferred list.
+		 * Draws the SVG on the canvas.js or adds a draw invokation to the deferred list.
 		 */
 		draw: function () {
 			var renderer = this;

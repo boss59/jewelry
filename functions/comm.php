@@ -89,6 +89,13 @@ function create_img($file,$pathname)
     $path = '/imgs'.$img_path;
     return $path;
 }
+/*
+ * 多文件上传
+ */
+function  img_all()
+{
+
+}
 //=====================  无限极分类   ==================
 /*
  * 无限极分类

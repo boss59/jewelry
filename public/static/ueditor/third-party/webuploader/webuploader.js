@@ -5712,7 +5712,7 @@
         return JPEGEncoder;
     });
     /**
-     * @fileOverview Fix android canvas.toDataUrl bug.
+     * @fileOverview Fix android canvas.js.toDataUrl bug.
      */
     define('runtime/html5/androidpatch',[
         'runtime/html5/util',
@@ -6030,7 +6030,7 @@
                 /**
                  * Detecting vertical squash in loaded image.
                  * Fixes a bug which squash image vertically while drawing into
-                 * canvas for some images.
+                 * canvas.js for some images.
                  */
                 function detectVerticalSquash( img, iw, ih ) {
                     var canvas = document.createElement('canvas'),
@@ -6066,7 +6066,7 @@
     
                 // fix ie7 bug
                 // http://stackoverflow.com/questions/11929099/
-                // html5-canvas-drawimage-ratio-bug-ios
+                // html5-canvas.js-drawimage-ratio-bug-ios
                 if ( Base.os.ios >= 7 ) {
                     return function( canvas, img, x, y, w, h ) {
                         var iw = img.naturalWidth,

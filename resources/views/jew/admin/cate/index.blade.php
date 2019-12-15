@@ -6,34 +6,29 @@
 
 
 @section('content')
-    <marquee><h2><font color='blue'>分类 展示</font></h2></marquee>
-<table class="layui-table">
-  <colgroup>
-    <col width="150">
-    <col width="200">
-    <col>
-  </colgroup>
+<marquee><h2><font color='blue'>分类 展示</font></h2></marquee>
+
+<table class="layui-table" style="width: 600px; margin-left:300px; margin-top: 50px;" >
   <thead>
     <tr>
       <th>编号</th>
       <th>昵称</th>
-      <th>是否显示</th>
       <th>操作</th>
     </tr> 
   </thead>
   <tbody>
     @foreach ($data as $v)
     <tr cate_id="{{$v->cate_id}}" parent_id="{{$v->parent_id}}">
-      <td><a href="javascript:void(0)" class="btn">+</a></td>
+      <td><button class="btn">+</button></td>
     
       <td>{!! str_repeat("&nbsp;",$v->level*4)!!}{{$v->cate_name}}</td>
 
       <td>
-           <div class="layui-btn-group">
-      <button class="layui-btn layui-btn-sm del">
-        <i class="layui-icon">&#xe640;</i>
-      </button>
-    </div>  
+       <div class="layui-btn-group">
+          <button class="layui-btn layui-btn-sm del">
+            <i class="layui-icon">&#xe640;</i>
+          </button>
+        </div>
       </td>
     </tr>
     @endforeach

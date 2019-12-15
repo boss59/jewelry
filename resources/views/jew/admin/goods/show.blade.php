@@ -92,41 +92,41 @@
 			{{--是否展示--}}
 			@if($v['is_show'] == 1)
 				<td align="center">
-					<img src="imgs/yes/yes.gif" class="is_show" is_show="0">
+					<img src="{{ asset('static/yes/yes.gif') }}" class="is_show" is_show="0" width="30" height="30">
 				</td>
 			@else
 				<td align="center">
-					<img src="imgs/yes/no.gif"  class="is_show" is_show="1">
+					<img src="{{ asset('static/yes/no.gif') }}"  class="is_show" is_show="1" width="30" height="30">
 				</td>
 			@endif
 			{{--是否新品--}}
 			@if($v['is_new'] == 1)
 				<td align="center">
-					<img src="imgs/yes/yes.gif" class="is_new" is_new="0">
+					<img src="{{ asset('static/yes/yes.gif') }}" class="is_new" is_new="0" width="30" height="30">
 				</td>
 			@else
 				<td align="center">
-					<img src="imgs/yes/no.gif"  class="is_new" is_new="1">
+					<img src="{{ asset('static/yes/no.gif') }}"  class="is_new" is_new="1" width="30" height="30">
 				</td>
 			@endif
 			{{--是否精品--}}
 			@if($v['is_sell'] == 1)
 				<td align="center">
-					<img src="imgs/yes/yes.gif" class="is_sell" is_sell="0">
+					<img src="{{ asset('static/yes/yes.gif') }}" class="is_sell" is_sell="0" width="30" height="30">
 				</td>
 			@else
 				<td align="center">
-					<img src="imgs/yes/no.gif"  class="is_sell" is_sell="1">
+					<img src="{{ asset('static/yes/no.gif') }}"  class="is_sell" is_sell="1" width="30" height="30">
 				</td>
 			@endif
 			{{--是否上架--}}
 			@if($v['is_up'] == 1)
 				<td align="center">
-					<img src="imgs/yes/yes.gif" class="is_up" is_up="0">
+					<img src="{{ asset('static/yes/yes.gif') }}" class="is_up" is_up="0" width="30" height="30">
 				</td>
 			@else
 				<td align="center">
-					<img src="imgs/yes/no.gif"  class="is_up" is_up="1">
+					<img src="{{ asset('static/yes/no.gif') }}"  class="is_up" is_up="1" width="30" height="30">
 				</td>
 			@endif
     		<td>
@@ -197,7 +197,7 @@
 			var data = {};
 			data.is_sell = $(this).attr('is_sell');
 			data.goods_id = $(this).parent().parent().attr('goods_id');
-
+			console.log(data);
 			var url = "/admin/judge";
 			gai(data,url);
 		});
@@ -206,6 +206,7 @@
 			var data = {};
 			data.is_up = $(this).attr('is_up');
 			data.goods_id = $(this).parent().parent().attr('goods_id');
+			console.log(data);
 			var url = "/admin/judge";
 			gai(data,url);
 		});
