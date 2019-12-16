@@ -33,7 +33,7 @@ class IndexController extends Controller
         //根据 大分类获取 商品
         // 先 获取 当前 大分类 下的 子分类
         $cate_data = CateModel::get();
-        $cate_data = CateModel::createTree($cate_data,$cate_id);
+        $cate_data = createTree($cate_data,$cate_id);
         $cateids = array_column($cate_data,'cate_id');
         // dump($cateids);die;
         array_unshift($cateids,$cate_id);
