@@ -54,7 +54,7 @@ class LoginController extends Controller
                 echo json_encode(['code'=>0,"msg"=>"账号不存在"]);die;
             }else{
                 //判断密码是否正确
-                if ($info['pwd']==md5($data['pwd'])) {//用库里加密密码 == 接收的加密密码
+                if ($info['upwd']==md5($data['upwd'])) {//用库里加密密码 == 接收的加密密码
                     $request->session()->put('user_info',$info,86400);
                     echo json_encode(['code'=>0,"msg"=>'登陆成功']);die;
                 }else{
