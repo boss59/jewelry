@@ -31,7 +31,7 @@ class LoginController extends Controller
                 echo json_encode(['code'=>0,"msg"=>"email不和法"]);die;
             }
 //            endMail($data['email']);
-            $data['pwd']=md5($data['pwd']);
+            $data['upwd']=md5($data['upwd']);
             $data['add_time']=time();
             dd($data);
             $res = InfoModel::create($data);

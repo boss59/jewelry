@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/index/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/index/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,12 +62,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+            <state relative-caret-position="124">
+              <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
               <folding>
                 <element signature="e#50#78#0#PHP" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/app/Http/Controllers/jew/index/LoginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-648" />
           </provider>
         </entry>
       </file>
@@ -375,12 +381,12 @@
       <workItem from="1576236947461" duration="118000" />
       <workItem from="1576237189812" duration="2924000" />
       <workItem from="1576283412477" duration="24011000" />
-      <workItem from="1576414610861" duration="17447000" />
+      <workItem from="1576414610861" duration="17612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69700000" />
+    <option name="totallyTimeSpent" value="69865000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,7 +409,7 @@
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.398017" />
+      <window_info anchor="bottom" id="Terminal" order="4" visible="true" weight="0.398017" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3286119" />
@@ -411,7 +417,7 @@
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info active="true" anchor="right" id="Remote Host" visible="true" weight="0.29021448" />
+      <window_info active="true" anchor="right" id="Remote Host" visible="true" weight="0.23324397" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -785,13 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/InfoModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -806,10 +805,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/InfoModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+        <state relative-caret-position="124">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
           <folding>
             <element signature="e#50#78#0#PHP" expanded="true" />
           </folding>
