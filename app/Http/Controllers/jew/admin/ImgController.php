@@ -52,7 +52,7 @@ class ImgController extends Controller
     {
         $info=$request->session()->get('user_info');
         //echo 111;die;
-        $data = ImgModel::paginate(3)->toArray();
+        $data = ImgModel::paginate(3);
         return view('jew.admin.img.index',['data'=>$data,'info'=>$info]);
     }
     //多文件删除
