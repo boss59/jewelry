@@ -1,7 +1,7 @@
 
 @extends('layout.layout')
 @section('title')
-    首页
+    分类展示
 @endsection
 
 

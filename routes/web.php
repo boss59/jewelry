@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 Route::any('/admin/login','jew\login\LoginContorller@login');// 后台登陆
 Route::any('/admin/regist','jew\login\LoginContorller@regist');// 后台注册
-
+Route::any('/login/quit','jew\login\LoginContorller@quit');// 后台注册
 //=================   后台 中间件  =================================
 Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/admin/index','rbac\AdminController@index');// 后台首页
@@ -71,7 +71,9 @@ Route::group(['middleware'=>['AdminLogin']],function(){
 
     // 多文件上传
     Route::any('/img/create','jew\admin\ImgController@create');// 多文件添加
-    Route::any('/img/index','jew\admin\ImgController@index');// 友情链接列表
+    Route::any('/img/save','jew\admin\ImgController@save');// 多文件执行
+    Route::any('/img/index','jew\admin\ImgController@index');// 多文件列表
+    Route::any('/img/del','jew\admin\ImgController@del');// 多文件删除
 
 });
 

@@ -62,4 +62,10 @@ class LoginContorller extends Controller
         }
         return view('jew.admin.login.login');
     }
+    // 退出登陆
+    public function quit(Request $request)
+    {
+        $request->session()->forget('userinfo');
+        return redirect("admin/login");
+    }
 }
