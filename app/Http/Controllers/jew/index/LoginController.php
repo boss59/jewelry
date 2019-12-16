@@ -33,7 +33,7 @@ class LoginController extends Controller
 //            endMail($data['email']);
             $data['upwd']=md5($data['upwd']);
             $data['add_time']=time();
-            dd($data);
+//            dd($data);
             $res = InfoModel::create($data);
             if ($res){
 //                $request->session()->put('info',$data,86400);
