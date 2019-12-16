@@ -8,14 +8,16 @@ use App\Http\Controllers\Controller;
 class CateController extends Controller
 {
     // 分类添加
-    public function add(){
+    public function add(Request $request)
+    {
+        $info=$request->session()->get('user_info');
         $data=DB::table('shop_category')->get();
         // dd($data);
         $data=json_decode($data);
         // 递归
         $data=$this->createTrees($data);
         // dd($data);
-        return view('jew.admin.cate.add',['data'=>$data]);
+        return view('jew.admin.cate.add',['data'=>$data,'info'=>$info]);
     }
 
     // 执行分类
@@ -48,14 +50,17 @@ class CateController extends Controller
     }
 
     // 分类展示
-    public function index(){
-      $data=DB::table('shop_category')->orderBy('cate_id','desc')->get()->toArray();
-      $data=$this->createTrees($data);
-      return view('jew.admin.cate.index',['data'=>$data]);
+    public function index(Request $request)
+    {
+        $info=$request->session()->get('user_info');
+        $data=DB::table('shop_category')->orderBy('cate_id','desc')->get()->toArray();
+        $data=$this->createTrees($data);
+        return view('jew.admin.cate.index',['data'=>$data,'info'=>$info]);
     }
 
     // 分类删除
-    public function del(Request $request){
+    public function del(Request $request)
+    {
           $data=$request->post();
           // dd($data);
           $res=DB::table('shop_category')->where(['parent_id'=>$data['cate_id']])->count();

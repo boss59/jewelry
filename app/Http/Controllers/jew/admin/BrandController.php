@@ -11,9 +11,10 @@ class BrandController extends Controller
      * 品牌添加页
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function brand()
+    public function brand(Request $request)
     {
-        return view('jew.admin.brand.brand');
+        $info=$request->session()->get('user_info');
+        return view('jew.admin.brand.brand',["info"=>$info]);
     }
 
     /**
@@ -50,9 +51,10 @@ class BrandController extends Controller
      * 页面展示
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function brandlist(Request $request){
+    public function brandlist(Request $request)
+    {
         $query = $request->input();
-
+        $info=$request->session()->get('user_info');
         $where=[];
         if(!empty($request->input('brand_name'))){
             $where[] = ['shop_brand.brand_name','like','%'.$request->input('brand_name').'%'];
@@ -65,7 +67,7 @@ class BrandController extends Controller
             $list['per_page']=$page;//页码也返回到前台
             echo json_encode($list);die; //转化json数据
         }
-        return view('jew.admin.brand.brandlist',compact('list','query','page'));
+        return view('jew.admin.brand.brandlist',compact('list','query','page','info'));
     }
 
     /***

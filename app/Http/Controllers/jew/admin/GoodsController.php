@@ -11,8 +11,9 @@ use App\Models\CateModel;
 class GoodsController extends Controller
 {
     // 添加
-    public function save()
+    public function save(Request $request)
     {
+        $info=$request->session()->get('user_info');
     	//获取分类数据
     	$data = CateModel::get()->toArray();
     	//递归循环
@@ -20,7 +21,7 @@ class GoodsController extends Controller
        	//获取品牌数据 
         $brand = BrandModel::get()->toArray();
         // dd($brand);
-        return view('jew.admin.goods.save',['cate'=>$cate,'brand'=>$brand]);
+        return view('jew.admin.goods.save',['cate'=>$cate,'brand'=>$brand,"info"=>$info]);
 
     }
 

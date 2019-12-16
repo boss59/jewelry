@@ -11,15 +11,16 @@ class ImgController extends Controller
     // 多文件上传
     public  function  create(Request $request)
     {
+        $info=$request->session()->get('user_info');
         // 查询上架商品
         $goods=GoodsModel::where(['is_up'=>1])->get()->toArray();
 
         if ($request->isMethod('POST')) {
 
         }
-        return view('jew.admin.img.create',['goods'=>$goods]);
+        return view('jew.admin.img.create',['goods'=>$goods,'info'=>$info]);
     }
-
+    //多文件添加
     public function save(Request $request)
     {
         //接收所有数据
@@ -46,14 +47,15 @@ class ImgController extends Controller
         }
 
     }
-
-    public function index()
+    //多文件展示
+    public function index(Request $request)
     {
+        $info=$request->session()->get('user_info');
         //echo 111;die;
         $data = ImgModel::paginate(3)->toArray();
-        return view('jew.admin.img.index',['data'=>$data]);
+        return view('jew.admin.img.index',['data'=>$data,'info'=>$info]);
     }
-
+    //多文件删除
     public function del(Request $request)
     {
         $arr = $request->post();
