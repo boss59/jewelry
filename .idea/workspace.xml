@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" afterDir="false" />
-    </list>
+    <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="124">
@@ -71,10 +69,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="true" current-in-tab="false">
+      <file pinned="true" current-in-tab="true">
         <entry file="remoteDeploymentFS://&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/app/Http/Controllers/jew/index/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-648" />
+            <state relative-caret-position="120">
+              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -142,10 +142,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Models/InfoModel.php" />
-        <option value="&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/app/Http/Controllers/jew/index/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/IndexController.php" />
         <option value="&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" />
+        <option value="&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/app/Http/Controllers/jew/index/LoginController.php" />
       </list>
     </option>
   </component>
@@ -381,12 +381,12 @@
       <workItem from="1576236947461" duration="118000" />
       <workItem from="1576237189812" duration="2924000" />
       <workItem from="1576283412477" duration="24011000" />
-      <workItem from="1576414610861" duration="17612000" />
+      <workItem from="1576414610861" duration="17694000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69865000" />
+    <option name="totallyTimeSpent" value="69947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
