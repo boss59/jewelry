@@ -2,106 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/canvas.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/jew/admin/img/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/jew/admin/img/index.blabe.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/admin/GoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/admin/GoodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/comm.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/comm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bootstrap/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/bootstrap/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/imgs/yes/no.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/imgs/yes/yes.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/imgs/yes/zxc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/layui/lay/modules/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/layui/lay/modules/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/layui/layui.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/snow.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/snow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/css/response.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/css/response2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/bank1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/bank2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/bank3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/bank4.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/bank5.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/d1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/d2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/d3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/d4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/d5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/dingdan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/fen1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/fen2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/ftbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/gou.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/head.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/image1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/image2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/image3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/image4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/image5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/jf1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/jf2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/jian-new.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/jrwm.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/minus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/minusDisabled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/pagericon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/prev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/pro1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/prolist1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/prolist2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/spinner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/tishiss.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/tou.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/touxiang.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/user01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/user1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/user2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/user3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/user4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/value.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/valuePassive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/xian.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/xian0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/yanzhengma.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/yzm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/yzm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/zslbb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/images/zuojian.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/js/jquery.excoloSlider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/js/jquery.spinner.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/index/js/style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/ueditor/third-party/highcharts/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/ueditor/third-party/highcharts/highcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/ueditor/third-party/highcharts/highcharts.src.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/ueditor/third-party/highcharts/highcharts.src.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/ueditor/third-party/highcharts/modules/canvas-tools.src.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/ueditor/third-party/highcharts/modules/canvas-tools.src.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/ueditor/third-party/jquery-1.10.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/ueditor/third-party/jquery-1.10.2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/ueditor/third-party/jquery-1.10.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/ueditor/third-party/jquery-1.10.2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/ueditor/third-party/webuploader/webuploader.custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/ueditor/third-party/webuploader/webuploader.custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/ueditor/third-party/webuploader/webuploader.html5only.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/ueditor/third-party/webuploader/webuploader.html5only.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/ueditor/third-party/webuploader/webuploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/ueditor/third-party/webuploader/webuploader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/jew/admin/brand/brandlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jew/admin/brand/brandlist.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/jew/admin/cate/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jew/admin/cate/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jew/admin/img/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jew/admin/img/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,55 +19,39 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layout/layout.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1344">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-              <folding>
-                <element signature="e#1283#1289#0#HTML" expanded="true" />
-                <element signature="e#1289#1295#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="192">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/cate/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="10" column="80" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
+            <state relative-caret-position="192">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/comm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="96" selection-start-line="96" selection-end-line="96" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/brand/brandlist.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="98" column="98" lean-forward="true" selection-start-line="98" selection-start-column="98" selection-end-line="98" selection-end-column="98" />
+            <state relative-caret-position="384">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding>
-                <element signature="e#210#236#0#HTML" expanded="true" />
-                <element signature="e#557#583#0#HTML" expanded="true" />
-                <element signature="e#80#86#0" expanded="true" />
-                <element signature="e#86#92#0" expanded="true" />
-                <element signature="e#92#98#0" expanded="true" />
-                <element signature="e#98#104#0" expanded="true" />
-                <element signature="e#104#110#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/goods/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="53" column="56" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="56" />
-              <folding>
-                <element signature="e#215#241#0#HTML" expanded="true" />
-                <element signature="e#272#298#0#HTML" expanded="true" />
-                <element signature="e#1759#1785#0#HTML" expanded="true" />
-                <element signature="e#2001#2027#0#HTML" expanded="true" />
+                <element signature="e#50#78#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -208,12 +96,9 @@
         <option value="$PROJECT_DIR$/resources/views/jew/admin/cate/add.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/BrandController.php" />
         <option value="$PROJECT_DIR$/resources/views/jew/admin/friend/add.blade.php" />
-        <option value="$PROJECT_DIR$/functions/comm.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/config/filesystems.php" />
-        <option value="$PROJECT_DIR$/resources/views/jew/admin/img/create.blade.php" />
         <option value="$PROJECT_DIR$/public/snow.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php" />
         <option value="$PROJECT_DIR$/public/cve.js" />
         <option value="$PROJECT_DIR$/public/css/cve.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/GoodsController.php" />
@@ -223,6 +108,12 @@
         <option value="$PROJECT_DIR$/resources/views/layout/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/jew/admin/cate/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/jew/admin/brand/brandlist.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/jew/admin/img/create.blade.php" />
+        <option value="&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/resources/views/layout/layout.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/IndexController.php" />
+        <option value="$PROJECT_DIR$/functions/comm.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php" />
       </list>
     </option>
   </component>
@@ -313,7 +204,7 @@
       <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="6" />
     <option name="y" value="71" />
     <option name="width" value="1660" />
@@ -346,73 +237,40 @@
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="jew" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="jew" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="jew" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="brand" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="jew" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="cate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="jew" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="goods" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="rbac" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -422,7 +280,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -431,6 +294,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\phpstudy_pro\WWW\app\public\js" />
       <recent name="D:\phpstudy_pro\WWW\app\public\bootstrap\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -470,12 +334,12 @@
       <workItem from="1576236947461" duration="118000" />
       <workItem from="1576237189812" duration="2924000" />
       <workItem from="1576283412477" duration="24011000" />
-      <workItem from="1576414610861" duration="8477000" />
+      <workItem from="1576414610861" duration="13809000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60730000" />
+    <option name="totallyTimeSpent" value="66062000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -498,7 +362,7 @@
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.4362606" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.398017" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3286119" />
@@ -506,6 +370,7 @@
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="right" id="Remote Host" weight="0.17962466" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -578,28 +443,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/admin/AdminContorller.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AdminLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="18" column="44" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/RightModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/RoleModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -743,24 +586,6 @@
     <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/img/index.blabe.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/img/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-          <folding>
-            <element signature="e#199#221#0#HTML" expanded="true" />
-            <element signature="e#316#342#0#HTML" expanded="true" />
-            <element signature="e#696#702#0#HTML" expanded="true" />
-            <element signature="e#702#708#0#HTML" expanded="true" />
-            <element signature="e#708#714#0#HTML" expanded="true" />
-            <element signature="e#714#720#0#HTML" expanded="true" />
-            <element signature="e#720#726#0#HTML" expanded="true" />
-            <element signature="e#882#908#0#HTML" expanded="true" />
-            <element signature="e#1309#1335#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/snow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -768,27 +593,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#50#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/filesystems.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
           <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/comm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
         </state>
       </provider>
     </entry>
@@ -810,16 +618,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/bootstrap/css/bootstrap-theme.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="73" column="52" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/.htaccess">
       <provider selected="true" editor-type-id="text-editor" />
@@ -856,17 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1344">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#1283#1289#0#HTML" expanded="true" />
-            <element signature="e#1289#1295#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/canvas.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="951">
@@ -894,16 +681,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/cate/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="10" column="80" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/brand/brandlist.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="1488">
           <caret line="98" column="98" lean-forward="true" selection-start-line="98" selection-start-column="98" selection-end-line="98" selection-end-column="98" />
           <folding>
             <element signature="e#210#236#0#HTML" expanded="true" />
@@ -913,6 +693,80 @@
             <element signature="e#92#98#0" expanded="true" />
             <element signature="e#98#104#0" expanded="true" />
             <element signature="e#104#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/cate/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="10" column="80" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1344">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="e#1283#1289#0#HTML" expanded="true" />
+            <element signature="e#1289#1295#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tab.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1257" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="27" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/phpF9C0.tmp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/jew/admin/img/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/comm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding>
+            <element signature="e#50#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

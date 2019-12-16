@@ -71,7 +71,7 @@ function curl_get($url)
 function create_img($file,$pathname)
 {
     if (empty($file)){
-        return redirect()->back();
+        return false;
     }
     $time = date('Ymd',time());
     // 获取文件相关信息
@@ -92,7 +92,7 @@ function create_img($file,$pathname)
 /*
  * 多文件上传
  */
-function  img_all()
+function  uploadAll()
 {
 
 }

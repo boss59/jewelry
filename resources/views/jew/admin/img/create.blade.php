@@ -6,9 +6,8 @@
 
 @section('content')
     <marquee><h2><font color='blue'>多文件 添加</font></h2></marquee>
-    <form class="layui-form layui-form-pane" style="margin: 50px ;" id="form" enctype="multipart/form-data">
+    <form method="post" action="/img/create" class="layui-form layui-form-pane" style="margin: 50px ;" id="form" enctype="multipart/form-data">
         @csrf
-
 
         <div class="layui-form-item" style="padding-left:300px">
             <label class="layui-form-label">商品名称</label>
@@ -25,13 +24,10 @@
 
         <div class="form-group" style="padding-left:300px">
             <div class="file-field">
-                <div class="btn btn-primary btn-sm">
-                    <span>多文件上传</span>
-                    <input name="filesToUpload[]" id="input_multifileSelect" type="file" multiple>
-                </div>
+                <a href="javascript:;" onclick="addImg(this)">[+]</a>
+                图片描述 <input type="text" name="img_desc[]" size="20"><br />
+                上传文件 <input type="file" name="img_url[]"><br />
             </div>
-            <br><br><br>
-            <div id="div_uploadedImgs"></div>
         </div>
 
 
@@ -41,7 +37,7 @@
 
         <div class="layui-form-item" style="padding-left:300px">
             <div class="layui-input-block">
-                <input type="button" value="立即提交" class="btn btn-success" name="btn">
+                <input type="submit" value="立即提交" class="btn btn-success" name="btn">
                 <input type="reset" value="重置表单" class="btn btn-info">
             </div>
         </div>
