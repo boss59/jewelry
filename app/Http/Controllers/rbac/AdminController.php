@@ -20,7 +20,7 @@ class AdminController extends Controller
     // 管理员 添加
     public function admin_add(Request $request)
     {
-        $info=$request->session()->get('userinfo');
+        $info=$request->session()->get('user_info');
         if ($request->isMethod('post')) {
             $data = $request->except('_token');
             if (empty($data['uname'] && $data['pwd'] && $data['tel'] && $data['email'])) {
