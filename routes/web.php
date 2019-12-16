@@ -77,3 +77,11 @@ Route::group(['middleware'=>['AdminLogin']],function(){
 
 
 
+
+    //=============================  商城 前台 =======================
+    Route::any('/index/regist','jew\index\LoginController@regist');// 前台注册
+    Route::any('/index/login','jew\index\LoginController@login');// 前台登陆
+
+
+
+
