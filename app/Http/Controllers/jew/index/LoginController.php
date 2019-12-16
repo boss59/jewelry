@@ -18,7 +18,7 @@ class LoginController extends Controller
             if (strlen($data['tel'])<11) {
                 echo json_encode(['code'=>0,"msg"=>"请输入正确的手机号"]);die;
             }
-            $info=UserModel::where("uname",$data['uname'])->first();
+            $info=InfoModel::where("uname",$data['uname'])->first();
             if (!empty($info)){
                 echo json_encode(['code'=>0,"msg"=>"用户已存在"]);die;
             }
