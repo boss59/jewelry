@@ -22,7 +22,7 @@ class IndexController extends Controller
         $top_name=CateModel::where('parent_id',0)->first()->toArray();
         $floor = $this->getFloot($top_name['cate_id']);
 
-//        返回数据
+        //返回数据
         $data = ['friend'=>$friend,'sell'=>$sell,'top'=>$top_name,'goods'=>$floor['goods']];
         return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
@@ -58,15 +58,16 @@ class IndexController extends Controller
             ['cate_id','>',$cate_id]
         ];
         // 获取 顶级分类
-        $top_name = CateModel::where($where)->first();
+        $top_name = CateModel::where($where)->first()->toArray();
         // dd($top_name['cate_id']);
         if (empty($top_name)) {
-            echo 2;exit;
+            echo json_encode(['code'=>0,"msg"=>'到底了！']);die;
         }else{
             //调用 方法
             $floor = $this->getFloot($top_name['cate_id']);
             // dd($floor);
-            return view('index.more',['num'=>$num,'goods'=>$floor['goods'],'top'=>$top_name]);
+            $data = ['num'=>$num,'goods'=>$floor['goods'],'top'=>$top_name];
+            return json_encode($data,JSON_UNESCAPED_UNICODE);
         }
     }
 }
