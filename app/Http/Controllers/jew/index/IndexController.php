@@ -19,7 +19,7 @@ class IndexController extends Controller
         $sell=GoodsModel::where('is_up',1)->where('is_sell',1)->get()->toArray();
 
         //分类 下的商品
-        $top_name=CateModel::where('prend_id',0)->get()->toArray();
+        $top_name=CateModel::where('parent_id',0)->first()->toArray();
         $floor = $this->getFloot($top_name['cate_id']);
 
         dd($floor);
