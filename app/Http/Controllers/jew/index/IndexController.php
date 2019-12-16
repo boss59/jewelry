@@ -32,14 +32,14 @@ class IndexController extends Controller
     {
         //根据 大分类获取 商品
         // 先 获取 当前 大分类 下的 子分类
-        $cate_data = CateModel::get();
+        $cate_data = CateModel::get()->toArray();
         $cate_data = createTree($cate_data,$cate_id);
         $cateids = array_column($cate_data,'cate_id');
         // dump($cateids);die;
         array_unshift($cateids,$cate_id);
         // dump($a);die;
         //获取 商品
-        $goods = GoodsModel::whereIn('cate_id',$cateids)->get();
+        $goods = GoodsModel::whereIn('cate_id',$cateids)->get()->toArray();
         // dd($goods);
         // 组合数组
         return ['goods'=>$goods];
