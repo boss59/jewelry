@@ -15,7 +15,8 @@ class IndexController extends Controller
     {
         $friend=FriendModel::get()->toArray();
 
-        dd($friend);
+        $goods=GoodsModel::where('is_up',1)->where('is_sell',1)->get()->toArray();
+        dd($goods);
         $cid=$request->input('cate_id');
     }
 }
