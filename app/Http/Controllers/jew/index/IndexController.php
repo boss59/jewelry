@@ -25,10 +25,11 @@ class IndexController extends Controller
         //返回数据
         $data = ['friend'=>$friend,'sell'=>$sell,'top'=>$top_name,'goods'=>$floor['goods']];
 
+        //轮播图
         $showimg=$data['friend'];
         $str="";
         foreach ($showimg as $val){
-            $str.="<div class='swiper-wrapper'><div class='swiper-slide'><a href='{$val["f_url"]}'><img src='{$val["f_logo"]}' /></a></div></div><div class='swiper-pagination'></div>";
+            $str.="<div class='swiper-wrapper'><div class='swiper-slide'><a href='{$val["f_url"]}'><img src='http://www.vonetxs.com{$val["f_logo"]}' /></a></div></div><div class='swiper-pagination'></div>";
         }
         $data['friend']=$str;
         return json_encode($data['friend'],JSON_UNESCAPED_UNICODE);
