@@ -29,7 +29,7 @@ class IndexController extends Controller
         $showimg=$data['friend'];
         $str="";
         foreach ($showimg as $val){
-            $str.="<a href='{$val["f_url"]}'><img src='http://www.vonetxs.com{$val["f_logo"]}' /></a>";
+            $str.=" <div class='swiper-slide'><a href='{$val["f_url"]}'><img src='http://www.vonetxs.com{$val["f_logo"]}' /></a></div>";
         }
         $data['friend']=$str;
         return json_encode($data['friend'],JSON_UNESCAPED_UNICODE);
