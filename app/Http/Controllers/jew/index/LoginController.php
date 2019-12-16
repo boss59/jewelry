@@ -49,7 +49,7 @@ class LoginController extends Controller
         if ($request->isMethod('post')) {
             $data = $request->except('_token');
             // 用户验证
-            $info = InfoModel::where('uname',$data['uname'])->first();
+            $info = InfoModel::where('tel',$data['tel'])->first();
             if (empty($info)) {
                 echo json_encode(['code'=>0,"msg"=>"账号不存在"]);die;
             }else{
