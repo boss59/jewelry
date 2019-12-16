@@ -85,6 +85,7 @@ Route::group(['middleware'=>['AdminLogin']],function(){
 
     //首页
     Route::any('/index/index','jew\index\IndexController@index');// 前台首页
+    Route::any('/index/ajaxgetFloor','jew\index\IndexController@ajaxgetFloor');// 楼呈
 
 
 

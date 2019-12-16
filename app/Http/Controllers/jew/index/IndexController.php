@@ -22,9 +22,9 @@ class IndexController extends Controller
         $top_name=CateModel::where('parent_id',0)->first()->toArray();
         $floor = $this->getFloot($top_name['cate_id']);
 
-        dd($floor);
-
+//        返回数据
         $data = ['friend'=>$friend,'sell'=>$sell,'top'=>$top_name,'goods'=>$floor['goods']];
+        return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
 
     // 方法
@@ -58,7 +58,7 @@ class IndexController extends Controller
             ['cate_id','>',$cate_id]
         ];
         // 获取 顶级分类
-        $top_name = CsCate::where($where)->first();
+        $top_name = CateModel::where($where)->first();
         // dd($top_name['cate_id']);
         if (empty($top_name)) {
             echo 2;exit;
