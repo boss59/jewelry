@@ -182,7 +182,7 @@ class AdminController extends Controller
     {
         $role = RoleModel::get();
         $right = RightModel::get();
-        $info=$request->session()->get('userinfo');
+        $info=$request->session()->get('user_info');
         if ($request->isMethod('post')) {
             $data = $request->except('_token');
 //            dd($data);
@@ -196,7 +196,7 @@ class AdminController extends Controller
     // 角色权限 展示
     public function role_right_index(Request $request)
     {
-        $info=$request->session()->get('userinfo');
+        $info=$request->session()->get('user_info');
         $index = UserModel::join('admin_role','shop_admin.user_id','=','admin_role.user_id')
             ->join('role','role.role_id','=','admin_role.role_id')
             ->join('role_right','role.role_id','=','role_right.role_id')
