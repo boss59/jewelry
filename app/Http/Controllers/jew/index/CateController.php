@@ -15,12 +15,7 @@ class CateController extends Controller
         // 商品分类
         $catData = CateModel::get()->toArray();
         $list = createTreeBySon($catData);
-
-        $cate = CateModel::where('parent_id',0)->get()->toArray();
-        foreach($cate as $k=>$v){
-            $cate[$k]['son'] = CateModel::where('parent_id',$v['cate_id'])->get()->toArray();
-        }
-        $data = ['list'=>$list,'cate'=>$cate];
+        $data = ['list'=>$list];
 
         return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
