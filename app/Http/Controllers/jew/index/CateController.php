@@ -14,7 +14,7 @@ class CateController extends Controller
         // dd($nav);
         // 商品分类
         $catData = CateModel::get()->toArray();
-        $list = createTreeBySon($catData);
+        $list = createTree($catData);
 
         $data = ['list'=>$list];
 
