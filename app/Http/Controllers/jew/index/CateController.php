@@ -11,10 +11,10 @@ class CateController extends Controller
     public function cate()
     {
         // 菜单
-        $nav = CateModel::where('parent_id',0)->get();
+        $nav = CateModel::where('parent_id',0)->get()->toArray();
         // dd($nav);
         // 商品分类
-        $catData = CateModel::get();
+        $catData = CateModel::get()->toArray();
         $list = createTreeBySon($catData);
         dd($list);
         $data = ['nav'=>$nav,'list'=>$list];

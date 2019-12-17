@@ -129,7 +129,7 @@ function createTreeBySon($data,$parent_id=0)
         //3找 parent_id = 0 的id
         if ($value['parent_id'] == $parent_id) {
             $new_arr[$key] = $value;
-            $new_arr[$key]['son'] = createTreeBySon($data,$value['cid']);
+            $new_arr[$key]['son'] = createTreeBySon($data,$value['cate_id']);
         }
     }
     return $new_arr;

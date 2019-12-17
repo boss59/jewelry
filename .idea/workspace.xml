@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/index/CateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/index/CateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/comm.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/comm.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,10 +39,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
+            <state relative-caret-position="124">
               <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
@@ -50,14 +51,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/CateController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="7" column="20" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="20" />
+            <state relative-caret-position="252">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
               <folding>
                 <element signature="e#50#78#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/comm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="131" column="51" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -109,7 +119,6 @@
         <option value="$PROJECT_DIR$/resources/views/layout/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/jew/admin/img/create.blade.php" />
         <option value="&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/resources/views/layout/layout.blade.php" />
-        <option value="$PROJECT_DIR$/functions/comm.php" />
         <option value="$PROJECT_DIR$/app/Models/InfoModel.php" />
         <option value="&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/app/Http/Controllers/jew/index/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" />
@@ -128,8 +137,9 @@
         <option value="$PROJECT_DIR$/resources/views/jew/admin/img/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/rbac/AdminController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/CateController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/functions/comm.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/CateController.php" />
       </list>
     </option>
   </component>
@@ -286,6 +296,11 @@
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -350,12 +365,12 @@
       <workItem from="1576237189812" duration="2924000" />
       <workItem from="1576283412477" duration="24011000" />
       <workItem from="1576414610861" duration="35989000" />
-      <workItem from="1576497686850" duration="5273000" />
+      <workItem from="1576497686850" duration="5431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93515000" />
+    <option name="totallyTimeSpent" value="93673000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -370,7 +385,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18967828" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18967828" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -378,7 +393,7 @@
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.398017" />
+      <window_info anchor="bottom" id="Terminal" order="4" visible="true" weight="0.398017" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3286119" />
@@ -595,13 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/comm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/InfoModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -773,22 +781,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/CateController.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="20" />
+        <state relative-caret-position="124">
+          <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
           <folding>
-            <element signature="e#50#78#0#PHP" expanded="true" />
+            <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/functions/comm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
+        <state relative-caret-position="288">
+          <caret line="131" column="51" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/CateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
           <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
+            <element signature="e#50#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
