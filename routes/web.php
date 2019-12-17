@@ -90,8 +90,7 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/ajaxgetFloor','jew\index\IndexController@ajaxgetFloor');// 楼呈
 
     //分类
-    Route::any('/index/cate','jew\index\IndexController@index');// 前台首页
-    Route::any('/index/ajaxgetFloor','jew\index\IndexController@ajaxgetFloor');// 楼呈
+    Route::any('/index/cate','jew\index\CateController@index');// 前台首页
 
 
 
