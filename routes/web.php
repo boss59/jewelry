@@ -92,5 +92,11 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     //分类
     Route::any('/index/cate','jew\index\CateController@cate');// 前台首页
 
+    //商品类表
+    Route::any('/index/goods_list','jew\index\GoodscarController@goods_list');//列表
+    Route::any('/index/goodsnum','jew\index\GoodscarController@goodsnum');//根据库存查
+    Route::any('/index/goodsprice','jew\index\GoodscarController@goodsprice');//根据价格查询
+    Route::any('/index/valuelist','jew\index\GoodscarController@valuelist'); //模糊查询
+
 
 

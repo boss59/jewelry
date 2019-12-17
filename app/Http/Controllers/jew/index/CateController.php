@@ -10,14 +10,13 @@ class CateController extends Controller
     // 分类
     public function cate()
     {
-        // 菜单
-        $nav = CateModel::where('parent_id',0)->get()->toArray();
+
         // dd($nav);
         // 商品分类
         $catData = CateModel::get()->toArray();
         $list = createTreeBySon($catData);
 
-        $data = ['nav'=>$nav,'list'=>$list];
+        $data = ['list'=>$list];
 
         return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
