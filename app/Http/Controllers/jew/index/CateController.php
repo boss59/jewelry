@@ -16,7 +16,9 @@ class CateController extends Controller
         // 商品分类
         $catData = CateModel::get()->toArray();
         $list = createTreeBySon($catData);
-        dd($list);
+
         $data = ['nav'=>$nav,'list'=>$list];
+
+        return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
 }
