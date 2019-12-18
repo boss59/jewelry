@@ -19,9 +19,9 @@ class ProlistController extends Controller
     public function goodsnum(Request $request){
         $data = $request->input();
         if ($data['asc'] = 'asc'){
-            $info  = GoodsModel::orderBy($data['goods_num'],'desc')->get()->toArray();
-        }else{
             $info  = GoodsModel::orderBy($data['goods_num'],'asc')->get()->toArray();
+        }else{
+            $info  = GoodsModel::orderBy($data['goods_num'],'desc')->get()->toArray();
         }
         $data = json_encode($info,JSON_UNESCAPED_UNICODE);
         return $data;
