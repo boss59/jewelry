@@ -4,7 +4,8 @@ namespace App\Http\Controllers\jew\Admin;
 use DB; 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\TypeModel;
+use App\Models\ValueModel;
 class CateController extends Controller
 {
     // 分类添加
@@ -93,5 +94,52 @@ class CateController extends Controller
             }
         }
         return $new_arr;
+    }
+
+
+
+    //========================  sku =======================
+    //分类
+    public function type(Request $request)
+    {
+        $cate_id=$request->input('cate_id');
+        if ($request->isMethod('POST')) {
+            $data = $request->except('_token');
+            $res=TypeModel::create($data);
+            if ($res){
+                echo json_encode(['code'=>1,'msg'=>"添加成功"]);die;
+            }else{
+                echo json_encode(['code'=>0,'msg'=>"添加失败"]);die;
+            }
+        }
+        return view('jew.admin.sku.type');
+    }
+    //类型值
+    public function value(Request $request)
+    {
+        $data=TypeModel::get();
+        if ($request->isMethod('POST')) {
+            $data = $request->except('_token');
+            $res=ValueModel::create($data);
+            if ($res){
+                echo json_encode(['code'=>1,'msg'=>"添加成功"]);die;
+            }else{
+                echo json_encode(['code'=>0,'msg'=>"添加失败"]);die;
+            }
+        }
+        return view('jew.admin.sku.value',['data'=>$data]);
+    }
+    // 展示
+    public function type_index(Request $request)
+    {
+        $data=TypeModel::paginate(3);
+        return view('jew.admin.sku.type_index',['list'=>$data]);
+    }
+    // 类型值展示
+    public function value_index(Request $request)
+    {
+        $type_id=$request->input('type_id');
+        $data=ValueModel::where('type_id',$type_id)->paginate(4);
+        return view('jew.admin.sku.value_index',['list'=>$data]);
     }
 }

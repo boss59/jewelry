@@ -177,6 +177,9 @@
                             <dd><a href="/goods/show">
                                     <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
                                     商品 展示</a></dd>
+                            <dd><a href="{{ url('/type/index') }}">
+                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
+                                    属性 展示</a></dd>
                         </dl>
                     </li>
 

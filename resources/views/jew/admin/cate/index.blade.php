@@ -28,7 +28,8 @@
           <button class="layui-btn layui-btn-sm del">
             <i class="layui-icon">&#xe640;</i>
           </button>
-        </div>
+        </div> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-danger"><a href="/cate/type?cate_id={{ $v->cate_id }}">类型添加</a></button>&nbsp;&nbsp;&nbsp;
       </td>
     </tr>
     @endforeach

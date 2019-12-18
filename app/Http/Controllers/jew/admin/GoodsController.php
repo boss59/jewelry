@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Models\GoodsModel;
 use App\Models\BrandModel;
 use App\Models\CateModel;
-
+use App\Models\TypeModel;
+use App\Models\ValueModel;
+use App\Models\AttrModel;
 class GoodsController extends Controller
 {
     // 添加
@@ -21,7 +23,13 @@ class GoodsController extends Controller
        	//获取品牌数据 
         $brand = BrandModel::get()->toArray();
         // dd($brand);
-        return view('jew.admin.goods.save',['cate'=>$cate,'brand'=>$brand,"info"=>$info]);
+
+
+        // =============    SKU   ===================================
+        $type = TypeModel::get()->toArray();
+        $goods=GoodsModel::get()->toArray();
+        $value=ValueModel::get()->toArray();
+        return view('jew.admin.goods.save',['cate'=>$cate,'brand'=>$brand,"info"=>$info,'type'=>$type,'goods'=>$goods,'value'=>$value]);
 
     }
 
@@ -30,46 +38,55 @@ class GoodsController extends Controller
     {
     	//获取所有数据
        	$data = $request->except('_token');
-       	// dd($data);
-       	//判断唯一性
-        $res = GoodsModel::where(['goods_name'=>$data['goods_name']])->first();
-        if($res){
-        	echo json_encode(['code'=>2,"msg"=>"商品名称已存在"]);die;
-        }
-        //判断是否为空
-        if(empty($data['goods_name'])){
-        	echo json_encode(['code'=>2,"msg"=>"商品名称不能为空"]);die;
-        }
-        if(empty($data['goods_article'])){
-        	echo json_encode(['code'=>2,"msg"=>"商品号不能为空"]);die;
-        }
-        if(empty($data['cate_id'])){
-        	echo json_encode(['code'=>2,"msg"=>"分类必选"]);die;
-        }
-        if(empty($data['brand_id'])){
-        	echo json_encode(['code'=>2,"msg"=>"品牌必选"]);die;
-        }
-        if(empty($data['goods_price'])){
-        	echo json_encode(['code'=>2,"msg"=>"商品价格不能为空"]);die;
-        }
-        if(empty($data['goods_num'])){
-        	echo json_encode(['code'=>2,"msg"=>"商品库存不能为空"]);die;
-        }
-        if(empty($data['goods_desc'])){
-        	echo json_encode(['code'=>2,"msg"=>"商品说明不能为空"]);die;
-        }
-        if(empty($data['goods_img'])){
-        	echo json_encode(['code'=>2,"msg"=>"商品图片不能为空"]);die;
-        }
-        //处理图片
-        $data['goods_img'] = create_img($data['goods_img'],'/goods/');
-        //入库
-        $req = GoodsModel::create($data);
-        if($req){
-        	echo json_encode(['code'=>1,"msg"=>"添加成功"]);
+       	if (!empty($data['goods_id'])){
+            $req=AttrModel::create([
+                'type_id'=>$data['type_id'],
+                'goods_id'=>$data['goods_id'],
+                'value_id'=>$data['value_id']
+            ]);
         }else{
-        	echo json_encode(['code'=>2,"msg"=>"添加失败"]);
+            //判断唯一性
+            $res = GoodsModel::where(['goods_name'=>$data['goods_name']])->first();
+            if($res){
+                echo json_encode(['code'=>2,"msg"=>"商品名称已存在"]);die;
+            }
+            //判断是否为空
+            if(empty($data['goods_name'])){
+                echo json_encode(['code'=>2,"msg"=>"商品名称不能为空"]);die;
+            }
+            if(empty($data['goods_article'])){
+                echo json_encode(['code'=>2,"msg"=>"商品号不能为空"]);die;
+            }
+            if(empty($data['cate_id'])){
+                echo json_encode(['code'=>2,"msg"=>"分类必选"]);die;
+            }
+            if(empty($data['brand_id'])){
+                echo json_encode(['code'=>2,"msg"=>"品牌必选"]);die;
+            }
+            if(empty($data['goods_price'])){
+                echo json_encode(['code'=>2,"msg"=>"商品价格不能为空"]);die;
+            }
+            if(empty($data['goods_num'])){
+                echo json_encode(['code'=>2,"msg"=>"商品库存不能为空"]);die;
+            }
+            if(empty($data['goods_desc'])){
+                echo json_encode(['code'=>2,"msg"=>"商品说明不能为空"]);die;
+            }
+            if(empty($data['goods_img'])){
+                echo json_encode(['code'=>2,"msg"=>"商品图片不能为空"]);die;
+            }
+            //处理图片
+            $data['goods_img'] = create_img($data['goods_img'],'/goods/');
+            //入库
+            $req = GoodsModel::create($data);
         }
+
+        if($req){
+            echo json_encode(['code'=>1,"msg"=>"添加成功"]);
+        }else{
+            echo json_encode(['code'=>2,"msg"=>"添加失败"]);
+        }
+
     }
 
     // 商品 展示
@@ -151,4 +168,15 @@ class GoodsController extends Controller
         $res=GoodsModel::destroy($all);
         echo 1;
     }
+
+    //商品值
+    public function value_value(Request $request)
+    {
+        $type_id=$request->input('type_id');
+        $data=ValueModel::where('type_id',$type_id)->get()->toArray();
+        return json_encode($data,1);
+    }
+
+
+
 }

@@ -75,6 +75,14 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/img/index','jew\admin\ImgController@index');// 多文件列表
     Route::any('/img/del','jew\admin\ImgController@del');// 多文件删除
 
+    //sku
+    Route::any('/cate/type','jew\admin\CateController@type');// 类型添加
+    Route::any('/type/value','jew\admin\CateController@value');// 类型添加
+    Route::any('/type/index','jew\admin\CateController@type_index');// 展示
+    Route::any('/type/value_index','jew\admin\CateController@value_index');// 展示
+    Route::any('/value/value','jew\admin\GoodsController@value_value');// 展示
+
+
 });
 
 
