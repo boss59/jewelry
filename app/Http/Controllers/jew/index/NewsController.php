@@ -11,7 +11,6 @@ class NewsController extends Controller
     public function news(Request $request)
     {
         $new_id=$request->input('new_id');
-        dd($new_id);
         if (empty($new_id)){
             $new=NewsModel::get()->toArray();
         }else{
