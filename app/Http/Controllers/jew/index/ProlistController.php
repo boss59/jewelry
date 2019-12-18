@@ -26,7 +26,7 @@ class ProlistController extends Controller
     //根据价格查询
     public function goodsprice(Request $request){
         $data = $request->input();
-        $info  = GoodsModel::orderBy($data['goods_price'])->get()->toArray();
+        $info  = GoodsModel::orderBy($data['goods_price'],'desc')->get()->toArray();
         $data = json_encode($info,JSON_UNESCAPED_UNICODE);
         return $data;
     }
