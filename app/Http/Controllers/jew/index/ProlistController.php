@@ -18,7 +18,7 @@ class ProlistController extends Controller
     //根据库存查
     public function goodsnum(Request $request){
         $data = $request->input();
-        if ($data['asc'] = 'asc'){
+        if ($data['asc'] = 'desc'){
             $info  = GoodsModel::orderBy($data['goods_num'],'desc')->get()->toArray();
         }else{
             $info  = GoodsModel::orderBy($data['goods_num'],'asc')->get()->toArray();
