@@ -13,11 +13,7 @@ class ImgController extends Controller
     {
         $info=$request->session()->get('user_info');
         // 查询上架商品
-        $goods=GoodsModel::where(['is_up'=>1])->get()->toArray();
-
-        if ($request->isMethod('POST')) {
-
-        }
+        $goods=GoodsModel::get()->toArray();
         return view('jew.admin.img.create',['goods'=>$goods,'info'=>$info]);
     }
     //多文件添加
