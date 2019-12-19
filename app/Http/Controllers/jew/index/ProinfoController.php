@@ -8,7 +8,7 @@ use App\Models\GoodsModel;
 use App\Models\ImgModel;
 use App\Models\AttrModel;
 use App\Models\ValueModel;
-
+use App\Models\CaryModel;
 class ProinfoController extends Controller
 {
     // 商品详情
@@ -51,14 +51,56 @@ class ProinfoController extends Controller
     public function addcar(Request $request)
     {
         $data = $request->input();
-        if (empty($data['uname'])){
-            return  json_decode(['code'=>0,'msg'=>'未登录']);
+        if (empty($data['user_id'])){
+            return $result=['font'=>'请先登录','code'=>3];
         }else{
-
+            return $result=$this->addCaryDB($data);
         }
-
+        echo json_encode($result);
     }
+    //存数据库
+    public function addCaryDB($data)
+    {
+        $where = [
+            'user_id'=>$data['user_id'],
+            'goods_id'=>$data['goods_id'],
+        ];
+        $info = CaryModel::where($where)->first();
+        dd($info);
+        if (!empty($info)) {
+            // 验证库存
+            $result=$this->checkBuynumber($data['goods_id'],$data['buy_number'],$info['buy_number']);
+            if (is_array($result)) {
+                return $result;
+            }
 
+
+            // 更新时间 更新购买数量
+            $info['buy_number'] += $data['buy_number'];
+            $info['add_time'] = time();
+            $res=CaryModel::where($where)->update(['buy_number'=>$info['buy_number'],'add_time'=>$info['add_time']]);
+            if ($res) {
+                return ['font'=>'加入购物车成功','code'=>1];
+            }else{
+                return ['font'=>'加入购物车失败','code'=>2];
+            }
+        }else{
+            // 验证 库存
+            $result=$this->checkBuynumber($data['goods_id'],$data['buy_number']);
+            if (is_array($result)) {
+                return $result;
+            }
+            $data['add_time'] = time();
+            // 新增
+            // dd($data);
+            $res=CaryModel::create($data);
+            if ($res) {
+                return ['font'=>'加入购物车成功','code'=>1];
+            }else{
+                return ['font'=>'加入购物车失败','code'=>2];
+            }
+        }
+    }
 
 
     // 判断库存
