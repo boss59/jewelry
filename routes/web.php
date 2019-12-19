@@ -109,6 +109,10 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/goodsprice','jew\index\ProlistController@goodsprice');//根据价格查询
     Route::any('/index/valuelist','jew\index\ProlistController@valuelist'); //模糊查询
 
+    //商品详情
+    Route::any('/index/proinfo','jew\index\ProinfoController@proinfo');//
+//    Route::any('/index/','jew\index\ProinfoController@'); //模糊查询
+
     // 用户 收货地址
     Route::any('/index/address','jew\index\AddressController@address');//地址
 

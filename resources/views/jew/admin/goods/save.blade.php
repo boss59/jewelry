@@ -143,8 +143,8 @@
 
         <div class="layui-form-item" style="padding-left:300px; ">
             <label class="layui-form-label">属性名</label>
-            <div class="layui-input-inline">
-                <select name="value_id"  lay-search id="list">
+            <div class="layui-input-block" lay-filter="group">
+                <select name="value_id"  lay-search id="list"  lay-verify="select">
 
 
 
@@ -196,6 +196,7 @@
                            console.log(v);
                            $('#list').append("<option  value="+v.value_id+">"+v.value_id+"     "+v.value_name+"</option>");
                        });
+                       form.render("select");
                     }
                 })
 
