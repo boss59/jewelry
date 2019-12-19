@@ -45,7 +45,7 @@ class CollectController extends Controller
         }
     }
     //收藏 展示============================================
-    public function index_coller(Request $request)
+    public function list_collect(Request $request)
     {
         $user_id = $request->input('user_id');
         if (!empty($user_id)) {
@@ -59,8 +59,7 @@ class CollectController extends Controller
     //查库
     public function index_collect($user_id)
     {
-        $data=CollectModel::where('shop_collect.user_id',$user_id)
-                    ->toArray();
+        $data=CollectModel::where('user_id',$user_id)->toArray();
         return $data;
     }
 }
