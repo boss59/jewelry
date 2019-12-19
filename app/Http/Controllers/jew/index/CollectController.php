@@ -33,7 +33,7 @@ class CollectController extends Controller
             'is_del'=>1,
         ];
         $info = CollectModel::where($where)->first();
-        // dd($info);
+        dd($info);
         if (!empty($info)) {
             return ['font'=>'已收藏','code'=>1];die;
         }else{
