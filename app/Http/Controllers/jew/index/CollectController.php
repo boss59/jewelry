@@ -57,7 +57,7 @@ class CollectController extends Controller
         echo json_encode($result);
     }
     //查库
-    public function index_collect($user_id)
+    public function index($user_id)
     {
         $data=CollectModel::where('user_id',$user_id)->toArray();
         return $data;
