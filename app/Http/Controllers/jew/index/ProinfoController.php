@@ -66,6 +66,7 @@ class ProinfoController extends Controller
             'goods_id'=>$data['goods_id'],
         ];
         $info = CaryModel::where($where)->first();
+        dd($info);
         if (!empty($info)) {
             // 验证库存
             $result=$this->checkBuynumber($data['goods_id'],$data['buy_number'],$info['buy_number']);
