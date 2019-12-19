@@ -112,10 +112,17 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     //商品详情
     Route::any('/index/proinfo','jew\index\ProinfoController@proinfo');//
 
+    // 用户收藏夹
+    Route::any('/index/user_collect','jew\index\ProinfoController@collect');//
+    // 加入购物车
+
+
 
     // 用户 收货地址
     Route::any('/index/address','jew\index\AddressController@address');//地址
-    Route::any('/index/address_index','jew\index\AddressController@index');
+    Route::any('/index/address_index','jew\index\AddressController@index');//用户地址展示
+
+
 
 
 

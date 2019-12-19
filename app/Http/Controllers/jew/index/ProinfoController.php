@@ -20,7 +20,7 @@ class ProinfoController extends Controller
                 $goods[$k]['imgs_arr'] = ImgModel::where('goods_id',$goods_id)->get(['img_url'])->toArray();
                 $goods[$k]['attr'] = $this->attr($v['goods_id']);
         }
-
+        dd($goods);
         $data = ['goods'=>$goods];
         return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
