@@ -47,7 +47,6 @@ class CollectController extends Controller
     //收藏 展示============================================
     public function list_collect(Request $request)
     {
-        echo 1;exit;
         $user_id = $request->input('user_id');
         if (!empty($user_id)) {
             // 数据库
