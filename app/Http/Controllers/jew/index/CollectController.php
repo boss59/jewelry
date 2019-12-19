@@ -59,8 +59,12 @@ class CollectController extends Controller
     //查库
     public function index($user_id)
     {
-        echo $user_id;exit;
-        $data=CollectModel::where('user_id',$user_id)->toArray();
-        return $data;
+        $data=CollectModel::join('shop_goods','shop_collect.goods_id','=','shop_goods.goods_id')->where('user_id',$user_id)->toArray();
+        if (empty($data)){
+            return $result=['font'=>'没数据','code'=>0];
+        }else{
+            return $data;
+        }
+
     }
 }
