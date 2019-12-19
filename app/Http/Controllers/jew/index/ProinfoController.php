@@ -17,10 +17,9 @@ class ProinfoController extends Controller
         $goods=GoodsModel::where(['shop_goods.goods_id'=>$goods_id])->get()
             ->toArray();
         foreach($goods as $k=>$v){
-                $goods[$k]['imgs_arr'] = ImgModel::where('goods_id',$goods_id)->get(['img_url'])->toArray();
+                $goods[$k]['imgs_arr'] = ImgModel::where('goods_id',$goods_id)->get(['img_url','img_desc'])->toArray();
                 $goods[$k]['attr'] = $this->attr($v['goods_id']);
         }
-        dd($goods);
         $data = ['goods'=>$goods];
         return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
