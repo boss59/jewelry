@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CaryModel extends Model
 {
     protected $table = 'shop_cary';// 表
-    protected $primaryKey = 'cary_id';// 主键
+    protected $primaryKey = 'car_id';// 主键
     // 定义常量时间
     // const CREATED_AT = 'add_time';
     // const UPDATED_AT = 'update_time';
