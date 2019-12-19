@@ -115,6 +115,7 @@ Route::group(['middleware'=>['AdminLogin']],function(){
 
     // 用户收藏夹
     Route::any('/index/user_collect','jew\index\CollectController@collect');// 用户收藏夹
+    Route::any('/index/index_collect','jew\index\CollectController@index_collect');// 用户收藏夹
 
     // 加入购物车
     Route::any('/index/add_car','jew\index\ProinfoController@addcar');// 用户收藏夹

@@ -44,4 +44,24 @@ class CollectController extends Controller
             }
         }
     }
+    //收藏 展示============================================
+    public function index_coller(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        if (!empty($user_id)) {
+            // 数据库
+            return $result=$this->index($user_id);
+        }else{
+            return $result=['font'=>'请先登录','code'=>0];
+        }
+        echo json_encode($result);
+    }
+    //查库
+    public function index($user_id)
+    {
+        $data=CollectModel::join('shop_goods','shop_collect.goods_id','=','shop_goods.goods_id')
+                    ->where('shop_collect.user_id',$user_id)
+                    ->toArray();
+        return $data;
+    }
 }

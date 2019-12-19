@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/index/CollectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/index/CollectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="116" column="65" selection-start-line="116" selection-start-column="65" selection-end-line="116" selection-end-column="65" />
+            <state relative-caret-position="341">
+              <caret line="117" column="80" selection-start-line="117" selection-start-column="80" selection-end-line="117" selection-end-column="80" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
@@ -53,20 +54,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/CollectController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+            <state relative-caret-position="423">
+              <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
               <folding>
                 <element signature="e#50#78#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/CollectModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -131,9 +123,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Models/CaryModel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Models/CollectModel.php" />
         <option value="&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/app/Http/Controllers/jew/index/CollectController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/CollectController.php" />
       </list>
     </option>
@@ -350,12 +342,12 @@
       <workItem from="1576414610861" duration="35989000" />
       <workItem from="1576497686850" duration="48087000" />
       <workItem from="1576712411784" duration="1935000" />
-      <workItem from="1576717051968" duration="30679000" />
+      <workItem from="1576717051968" duration="31886000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168943000" />
+    <option name="totallyTimeSpent" value="170150000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -370,7 +362,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20844504" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20844504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -390,7 +382,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.22989276" />
-      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.20509383" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.20509383" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20241287" />
@@ -852,8 +844,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="116" column="65" selection-start-line="116" selection-start-column="65" selection-end-line="116" selection-end-column="65" />
+        <state relative-caret-position="341">
+          <caret line="117" column="80" selection-start-line="117" selection-start-column="80" selection-end-line="117" selection-end-column="80" />
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
@@ -862,15 +854,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/CollectModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="192">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/CollectController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        <state relative-caret-position="423">
+          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
           <folding>
             <element signature="e#50#78#0#PHP" expanded="true" />
           </folding>
