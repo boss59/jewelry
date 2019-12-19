@@ -36,6 +36,7 @@ class CollectController extends Controller
         if (!empty($info)) {
             return ['font'=>'已收藏','code'=>1];die;
         }else{
+            $where =['create_time'=>time()];
             $res = CollectModel::create($where);
             if ($res) {
                 return ['font'=>'','code'=>2];die;
@@ -59,7 +60,15 @@ class CollectController extends Controller
     //查库
     public function index($user_id)
     {
-        $data=CollectModel::where('user_id',$user_id)->get()->toArray();
+        $where = [
+            ['user_id','=',$user_id],
+            ['is_up','=',1],
+            ['is_del','=',1]
+        ];
+        $data= CollectModel::join('shop_goods','shop_collect.goods_id','=','shop_goods.goods_id')
+            ->where($where)
+            ->orderBy('created_time',"desc")
+            ->get()->toArray();
         dd($data);
         if (empty($data)){
             return $result=['font'=>'没数据','code'=>0];
