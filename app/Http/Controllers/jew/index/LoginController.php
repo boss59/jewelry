@@ -37,7 +37,7 @@ class LoginController extends Controller
             $res = InfoModel::create($data);
             if ($res){
 //                $request->session()->put('info',$data,86400);
-                echo json_encode(['code'=>1,"msg"=>"注册成功"]);die;
+                echo json_encode(['code'=>1,"msg"=>"注册成功",'user'=>$data]);die;
             }else{
                 echo json_encode(['code'=>1,"msg"=>"注册失败"]);die;
             }
@@ -55,8 +55,8 @@ class LoginController extends Controller
             }else{
                 //判断密码是否正确
                 if ($info['upwd']==md5($data['upwd'])) {//用库里加密密码 == 接收的加密密码
-                    $request->session()->put('user_info',$info,86400);
-                    echo json_encode(['code'=>1,"msg"=>'登陆成功']);die;
+
+                    echo json_encode(['code'=>1,"msg"=>'登陆成功','user'=>$info]);die;
                 }else{
                     echo json_encode(['code'=>0,"msg"=>"密码不正确"]);die;
                 }
