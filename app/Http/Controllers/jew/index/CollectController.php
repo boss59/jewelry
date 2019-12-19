@@ -31,7 +31,6 @@ class CollectController extends Controller
             'goods_id'=>$goods_id,
             'user_id'=>$user_id,
             'is_del'=>1,
-            'create_time'=>time()
         ];
         $info = CollectModel::where($where)->first();
         if (!empty($info)) {
