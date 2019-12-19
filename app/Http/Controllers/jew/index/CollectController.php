@@ -67,7 +67,7 @@ class CollectController extends Controller
         ];
         $data= CollectModel::join('shop_goods','shop_collect.goods_id','=','shop_goods.goods_id')
             ->where($where)
-            ->orderBy('created_time',"desc")
+            ->orderBy('create_time',"desc")
             ->get()->toArray();
         dd($data);
         if (empty($data)){
