@@ -14,7 +14,7 @@ class ProinfoController extends Controller
     public  function  proinfo(Request $request)
     {
         $goods_id=$request->input('goods_id');
-        $goods=GoodsModel::Rightjoin('shop_img','shop_goods.goods_id','=','shop_img.goods_id')->where(['shop_goods.goods_id'=>$goods_id])->get(['shop_goods.goods_id','shop_goods.goods_name','shop_goods.goods_price','shop_goods.goods_num','shop_goods.goods_img','shop_goods.goods_desc','shop_img.img_url','shop_img.img_desc','shop_goods.goods_article'])
+        $goods=GoodsModel::join('shop_img','shop_goods.goods_id','=','shop_img.goods_id')->where(['shop_goods.goods_id'=>$goods_id])->get(['shop_goods.goods_id','shop_goods.goods_name','shop_goods.goods_price','shop_goods.goods_num','shop_goods.goods_img','shop_goods.goods_desc','shop_img.img_url','shop_img.img_desc','shop_goods.goods_article'])
             ->toArray();
         foreach($goods as $k=>$v){
                 $goods[$k]['imgs_arr'] = ImgModel::where('goods_id',$goods_id)->get(['img_url'])->toArray();
