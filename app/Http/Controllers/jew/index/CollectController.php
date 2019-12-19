@@ -13,8 +13,8 @@ class CollectController extends Controller
         $goods_id = $request->input('goods_id');
         $user_id = $request->input('user_id');
 
-        var_dump($goods_id);
-        var_dump($user_id);exit;
+//        var_dump($goods_id);
+//        var_dump($user_id);exit;
         if (!empty($user_id)) {
             // 数据库
             return $result=$this->addcoller($goods_id,$user_id);
