@@ -111,10 +111,11 @@ Route::group(['middleware'=>['AdminLogin']],function(){
 
     //商品详情
     Route::any('/index/proinfo','jew\index\ProinfoController@proinfo');//
-//    Route::any('/index/','jew\index\ProinfoController@'); //模糊查询
+
 
     // 用户 收货地址
     Route::any('/index/address','jew\index\AddressController@address');//地址
+    Route::any('/index/address_index','jew\index\AddressController@index');
 
 
 

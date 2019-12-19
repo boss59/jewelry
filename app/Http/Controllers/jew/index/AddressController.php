@@ -44,4 +44,12 @@ class AddressController extends Controller
 
             var_dump($res);die;
     }
+
+    //地址展示
+    public function index(Request $request)
+    {
+        $data=AddressModel::get()->toArray();
+        $data=json_encode($data);
+        return $data;
+    }
 }
