@@ -61,6 +61,7 @@ class ProinfoController extends Controller
     //存数据库
     public function addCaryDB($data)
     {
+        echo $data;exit;
         $where = [
             'user_id'=>$data['user_id'],
             'goods_id'=>$data['goods_id'],
