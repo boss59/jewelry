@@ -31,9 +31,9 @@ class CollectController extends Controller
             'goods_id'=>$goods_id,
             'user_id'=>$user_id,
             'is_del'=>1,
+            'create_time'=>time()
         ];
         $info = CollectModel::where($where)->first();
-        dd($info);
         if (!empty($info)) {
             return ['font'=>'已收藏','code'=>1];die;
         }else{
