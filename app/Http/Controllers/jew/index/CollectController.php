@@ -69,7 +69,6 @@ class CollectController extends Controller
             ->where($where)
             ->orderBy('create_time',"desc")
             ->get()->toArray();
-        dd($data);
         if (empty($data)){
             return $result=['font'=>'没数据','code'=>0];
         }else{
