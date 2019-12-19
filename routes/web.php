@@ -114,7 +114,7 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/type_value','jew\index\ProinfoController@type_value');//商品详情
 
     // 用户收藏夹
-    Route::any('/index/user_collect','jew\index\ProinfoController@collect');// 用户收藏夹
+    Route::any('/index/user_collect','jew\index\CollectController@collect');// 用户收藏夹
 
     // 加入购物车
     Route::any('/index/add_car','jew\index\ProinfoController@addcar');// 用户收藏夹
