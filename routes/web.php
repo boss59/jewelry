@@ -110,12 +110,14 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/valuelist','jew\index\ProlistController@valuelist'); //模糊查询
 
     //商品详情
-    Route::any('/index/proinfo','jew\index\ProinfoController@proinfo');//
+    Route::any('/index/proinfo','jew\index\ProinfoController@proinfo');//商品详情
+    Route::any('/index/type_value','jew\index\ProinfoController@type_value');//商品详情
 
     // 用户收藏夹
-    Route::any('/index/user_collect','jew\index\ProinfoController@collect');//
-    // 加入购物车
+    Route::any('/index/user_collect','jew\index\ProinfoController@collect');// 用户收藏夹
 
+    // 加入购物车
+    Route::any('/index/add_car','jew\index\ProinfoController@addcar');// 用户收藏夹
 
 
     // 用户 收货地址

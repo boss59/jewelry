@@ -8,6 +8,7 @@ use App\Models\GoodsModel;
 use App\Models\ImgModel;
 use App\Models\AttrModel;
 use App\Models\ValueModel;
+
 class ProinfoController extends Controller
 {
     // 商品详情
@@ -32,5 +33,44 @@ class ProinfoController extends Controller
             $type[$k]['son']=ValueModel::where('type_id',$v['type_id'])->get(['value_id','value_name'])->toArray();
         }
         return $type;
+    }
+
+    // sku 属性值
+    public function type_value(Request $request)
+    {
+        $type_id = $request->input('type_id');
+        $type = ValueModel::where('type_id',$type_id)->get()->toArray();
+        $data = ['type'=>$type];
+        return json_encode($data,JSON_UNESCAPED_UNICODE);
+    }
+
+
+
+    // =========================    加入购物车     ====================
+    //加入购物车
+    public function addcar(Request $request)
+    {
+        $data = $request->input();
+        if (empty($data['uname'])){
+            return  json_decode(['code'=>0,'msg'=>'未登录']);
+        }else{
+
+        }
+
+    }
+
+
+
+    // 判断库存
+    public function checkBuynumber($goods_id,$buy_number,$aleray_number=0)
+    {
+        // echo $aleaay_number;die;
+        // 根据 商品 id 查询 商品表 得到 库存
+        $goods_number=GoodsModel::where('goods_id',$goods_id)->value('goods_num');
+        if (($buy_number + $aleray_number) > $goods_number) {
+            return ['font'=>'库存不足,最多只能买'.($goods_number-$aleray_number).'件','code'=>2,'goods_number'=>$goods_number];
+        }else{
+            return true;
+        }
     }
 }
