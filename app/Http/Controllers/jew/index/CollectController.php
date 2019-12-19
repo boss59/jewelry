@@ -57,10 +57,8 @@ class CollectController extends Controller
         echo json_encode($result);
     }
     //查库
-    public function index($user_id)
+    public function index_collect($user_id)
     {
-        echo 1;exit;
-        var_dump($user_id);exit;
         $data=CollectModel::join('shop_goods','shop_collect.goods_id','=','shop_goods.goods_id')
                     ->where('shop_collect.user_id',$user_id)
                     ->toArray();
