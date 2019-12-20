@@ -185,7 +185,7 @@ class ProinfoController extends Controller
         if ($user_id) {
             $total=$this->getsubtotalDB($goods_id,$user_id);
         }else{
-//            $total=['font'=>'请先登录','code'=>0];
+            $total=['font'=>'请先登录','code'=>0];
         }
         echo json_encode($total,JSON_UNESCAPED_UNICODE);
     }

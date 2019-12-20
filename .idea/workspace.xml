@@ -41,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="124" column="34" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="34" />
+            <state relative-caret-position="283">
+              <caret line="125" column="33" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="33" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="187" column="48" lean-forward="true" selection-start-line="187" selection-start-column="14" selection-end-line="187" selection-end-column="48" />
+            <state relative-caret-position="-456">
+              <caret line="188" column="9" lean-forward="true" selection-start-line="188" selection-start-column="9" selection-end-line="188" selection-end-column="9" />
               <folding>
                 <element signature="e#50#78#0#PHP" expanded="true" />
               </folding>
@@ -334,12 +334,12 @@
       <workItem from="1576414610861" duration="35989000" />
       <workItem from="1576497686850" duration="48087000" />
       <workItem from="1576712411784" duration="1935000" />
-      <workItem from="1576717051968" duration="62836000" />
+      <workItem from="1576717051968" duration="64354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201100000" />
+    <option name="totallyTimeSpent" value="202618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -852,8 +852,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="124" column="34" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="34" />
+        <state relative-caret-position="283">
+          <caret line="125" column="33" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="33" />
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
@@ -862,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="187" column="48" lean-forward="true" selection-start-line="187" selection-start-column="14" selection-end-line="187" selection-end-column="48" />
+        <state relative-caret-position="-456">
+          <caret line="188" column="9" lean-forward="true" selection-start-line="188" selection-start-column="9" selection-end-line="188" selection-end-column="9" />
           <folding>
             <element signature="e#50#78#0#PHP" expanded="true" />
           </folding>
