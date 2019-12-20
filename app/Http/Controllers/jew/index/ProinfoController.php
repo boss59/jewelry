@@ -147,7 +147,96 @@ class ProinfoController extends Controller
         }
     }
 
-    // =================    列表操作 删除     ==========
+// =================    列表操作 删除     =====================================
+    //    /修改数量 /
+    public function changeNumber(Request $request)
+    {
+        $buy_number = $request->input('buy_number');
+        $goods_id = $request->input('goods_id');
+        $user_id = $request->input('user_id');
+        if ($user_id) {
+            $res=$this->changeNumberDB($goods_id,$buy_number,$user_id);
+        }else{
+            $res=['font'=>'请先登录','code'=>0];
+        }
+        echo json_encode($res,JSON_UNESCAPED_UNICODE);
+    }
+    // 库修改数量
+    public function changeNumberDB($goods_id,$buy_number,$user_id)
+    {
+        // 条件
+        $where = [
+            ['user_id','=',$user_id],
+            ['goods_id','=',$goods_id],
+            ['is_del','=',1],
+        ];
+        $res = CaryModel::where($where)->update(['buy_number'=>$buy_number]);
+        if($res){
+            return ['font'=>'修改成功',"code"=>1];
+        }else{
+            return ['font'=>'已是最大 或 是一件',"code"=>2];
+        }
+    }
+// -------------------小计--------------------------------------------
+    public function getsubtotal(Request $request)
+    {
+        $goods_id = $request->input('goods_id');
+        $user_id = $request->input('user_id');
+        if ($user_id) {
+            $total=$this->getsubtotalDB($goods_id,$user_id);
+        }else{
+            $total=['font'=>'请先登录','code'=>0];
+        }
+        echo json_encode($total,JSON_UNESCAPED_UNICODE);
+    }
+    // 库 小计
+    public function getsubtotalDB($goods_id,$user_id)
+    {
+        // 后去 此用户 对 当前商品的购买数量
+        $where = [
+            ['user_id','=',$user_id],
+            ['goods_id','=',$goods_id],
+            ['is_del','=',1],
+        ];
+        $buy_number = CaryModel::where($where)->value('buy_number');
+        $goodswhere = [
+            ['goods_id','=',$goods_id]
+        ];
+        $goods_price = GoodsModel::where($goodswhere)->value('goods_price');
+        return $buy_number*$goods_price;
+    }
+//==================== 总价   =============
+    // 总价
+    public function Pricetotal(Request $request)
+    {
+        $goods_id = $request->input('goods_id');
+        $user_id = $request->input('user_id');
+        if ($user_id) {
+            $total=$this->totalDB($goods_id,$user_id);
+        }else{
+            $total=['font'=>'请先登录','code'=>0];
+        }
+        echo json_encode($total,JSON_UNESCAPED_UNICODE);
+    }
+    // 数据库
+    public function totalDB($goods_id,$user_id)
+    {
+        $gid = explode(',',$goods_id);
+        $info = CaryModel::where('user_id',$user_id)
+            ->whereIn('cs_goods.goods_id',$gid)
+            ->join('cs_goods','cs_cary.goods_id','=','cs_goods.goods_id')
+            ->get();
+        // dd($info);
+        $count=number_format(0,2,'.','');
+        foreach ($info as $k => $v) {
+            $count+=$v['goods_price']*$v['buy_number'];
+        }
+        echo $count;
+        // dump($goods_price);
+    }
+
+
+//=================== 单删===================================
     public function cary_del(Request $request)
     {
         $goods_id=$request->input('goods_id');
@@ -168,7 +257,8 @@ class ProinfoController extends Controller
     public function alldel(Request $request)
     {
         $goods_id=$request->input('goods_id');
-        $where = ['user_id'=>session('userinfo')['user_id']];
+        $user_id=$request->input('user_id');
+        $where = ['user_id'=>$user_id];
         $status  = CaryModel::whereIn('goods_id',$goods_id)->where($where)->delete();
         // dd($status);
         if ($status) {
@@ -176,23 +266,5 @@ class ProinfoController extends Controller
         }else{
             echo json_encode(['font'=>'删除失败','code'=>2]);
         }
-    }
-    // 总价
-    public function total(Request $request)
-    {
-        $goods_id = $request->input('goods_id');
-        $gid = explode(',',$goods_id);
-        $user_id = session('userinfo')['user_id'];// 用户id
-        $info = CsCary::where('user_id',$user_id)
-            ->whereIn('cs_goods.goods_id',$gid)
-            ->join('cs_goods','cs_cary.goods_id','=','cs_goods.goods_id')
-            ->get();
-        // dd($info);
-        $count=number_format(0,2,'.','');
-        foreach ($info as $k => $v) {
-            $count+=$v['goods_price']*$v['buy_number'];
-        }
-        echo $count;
-        // dump($goods_price);
     }
 }
