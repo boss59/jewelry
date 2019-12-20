@@ -46,6 +46,7 @@ class LoginController extends Controller
     // 前台登陆
     public function login(Request $request)
     {
+        $refer = $request->input('refer');
         if ($request->isMethod('post')) {
             $data = $request->except('_token');
             // 用户验证
@@ -55,8 +56,13 @@ class LoginController extends Controller
             }else{
                 //判断密码是否正确
                 if ($info['upwd']==md5($data['upwd'])) {//用库里加密密码 == 接收的加密密码
-
-                    echo json_encode(['code'=>1,"msg"=>'登陆成功','user'=>$info]);die;
+                    if (!empty($refer)) {
+                        echo json_encode(['code'=>2,"urls"=>$refer]);die;
+                    }else if(!empty($data['confirm'])){
+                        echo json_encode(['code'=>2,"urls"=>$data['confirm'],'user'=>$info]);die;
+                    }else{
+                        echo json_encode(['code'=>1,"msg"=>'登陆成功','user'=>$info]);die;
+                    }
                 }else{
                     echo json_encode(['code'=>0,"msg"=>"密码不正确"]);die;
                 }

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Models/CaryModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CaryModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1301">
+            <state relative-caret-position="1589">
               <caret line="131" column="139" selection-start-line="131" selection-start-column="139" selection-end-line="131" selection-end-column="139" />
               <folding>
                 <element signature="e#50#78#0#PHP" expanded="true" />
@@ -63,10 +64,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="59" column="57" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="57" />
+              <folding>
+                <element signature="e#50#78#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/CaryModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state relative-caret-position="456">
+              <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -127,7 +140,6 @@
         <option value="$PROJECT_DIR$/resources/views/jew/admin/goods/save.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/admin/ImgController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/AddressController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Models/CollectModel.php" />
         <option value="&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/app/Http/Controllers/jew/index/CollectController.php" />
         <option value="&lt;e0f6d1cb-26a2-446f-9302-f4fa5ed8743c&gt;/app/Http/Controllers/jew/index/ProinfoController.php" />
@@ -135,6 +147,7 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php" />
         <option value="$PROJECT_DIR$/app/Models/CaryModel.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php" />
       </list>
     </option>
   </component>
@@ -350,12 +363,12 @@
       <workItem from="1576414610861" duration="35989000" />
       <workItem from="1576497686850" duration="48087000" />
       <workItem from="1576712411784" duration="1935000" />
-      <workItem from="1576717051968" duration="43393000" />
+      <workItem from="1576717051968" duration="45634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181657000" />
+    <option name="totallyTimeSpent" value="183898000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -785,16 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="39" column="71" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
-          <folding>
-            <element signature="e#50#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ValueModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -860,9 +863,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/CaryModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1301">
+        <state relative-caret-position="1589">
           <caret line="131" column="139" selection-start-line="131" selection-start-column="139" selection-end-line="131" selection-end-column="139" />
           <folding>
             <element signature="e#50#78#0#PHP" expanded="true" />
@@ -870,10 +880,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/CaryModel.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="375">
+          <caret line="59" column="57" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="57" />
+          <folding>
+            <element signature="e#50#78#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
