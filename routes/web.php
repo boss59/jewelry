@@ -118,7 +118,9 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/list_collect','jew\index\CollectController@list_collect');// 用户收藏夹
 
     // 加入购物车
-    Route::any('/index/add_car','jew\index\ProinfoController@addcar');// 用户收藏夹
+    Route::any('/index/add_car','jew\index\ProinfoController@addcar');// 添加
+    Route::any('/index/cary_index','jew\index\ProinfoController@cary_index');// 展示
+    Route::any('/index/cary_del','jew\index\ProinfoController@cary_del');// 删除
 
 
     // 用户 收货地址

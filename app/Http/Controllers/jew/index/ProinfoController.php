@@ -115,4 +115,50 @@ class ProinfoController extends Controller
             return true;
         }
     }
+
+
+
+
+
+    //============ 购物车展示==============
+    public function cary_index(Request $request){
+        $u_id = $request->input('user_id');
+        if(empty($u_id)){
+            $code=[
+                'code'=>0,
+                'rsg'=>'请先登录'
+            ];
+            return $code;
+        }else{
+            $data = CaryModel::join('shop_goods','shop_goods.goods_id','=','shop_cary.goods_id')->where('user_id',$u_id)->get()->toArray();
+            $res = json_encode($data,JSON_UNESCAPED_UNICODE);
+            return $res;
+        }
+
+
+    }
+
+    //购物车删除
+    public function cary_del(Request $request){
+        $goods_id = $request->input('goods_id');
+        $user_id = $request->input('user_id');
+        $data = CaryModel::where(['goods_id'=>$goods_id,'user_id'=>$user_id])->delete();
+        if(empty($data)){
+            $code=[
+                'code'=>2,
+                'res'=>"删除失败"
+            ];
+            return $code;
+        }else{
+            $code=[
+                'code'=>1,
+                'res'=>"删除成功"
+            ];
+            return $code;
+        }
+    }
+
+    public function goodsbatch(Request $request){
+        $user_id = $request->input('user_id');
+    }
 }
