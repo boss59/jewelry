@@ -223,8 +223,8 @@ class ProinfoController extends Controller
     {
         $gid = explode(',',$goods_id);
         $info = CaryModel::where('user_id',$user_id)
-            ->whereIn('cs_goods.goods_id',$gid)
-            ->join('cs_goods','cs_cary.goods_id','=','cs_goods.goods_id')
+            ->whereIn('shop_goods.goods_id',$gid)
+            ->join('shop_goods','shop_cray.goods_id','=','shop_goods.goods_id')
             ->get();
         // dd($info);
         $count=number_format(0,2,'.','');
