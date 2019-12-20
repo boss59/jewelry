@@ -36,8 +36,13 @@ class CollectController extends Controller
         if (!empty($info)) {
             return ['font'=>'已收藏','code'=>1];die;
         }else{
-            $where =['create_time'=>time()];
-            $res = CollectModel::create($where);
+            $data = [
+                'goods_id'=>$goods_id,
+                'user_id'=>$user_id,
+                'is_del'=>1,
+                'create_time'=>time()
+            ];
+            $res = CollectModel::create($data);
             if ($res) {
                 return ['font'=>'','code'=>2];die;
             }else{
