@@ -126,11 +126,12 @@ class ProinfoController extends Controller
         if(empty($u_id)){
             $code=[
                 'code'=>0,
-                'rsg'=>'请先登录'
+                'font'=>'请先登录'
             ];
             return $code;
         }else{
             $data = CaryModel::join('shop_goods','shop_goods.goods_id','=','shop_cary.goods_id')->where('user_id',$u_id)->get()->toArray();
+            dd($data);
             $res = json_encode($data,JSON_UNESCAPED_UNICODE);
             return $res;
         }
@@ -146,7 +147,7 @@ class ProinfoController extends Controller
         if(empty($data)){
             $code=[
                 'code'=>2,
-                'res'=>"删除失败"
+                'font'=>"删除失败"
             ];
             return $code;
         }else{
@@ -156,9 +157,5 @@ class ProinfoController extends Controller
             ];
             return $code;
         }
-    }
-
-    public function goodsbatch(Request $request){
-        $user_id = $request->input('user_id');
     }
 }
