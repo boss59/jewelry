@@ -134,9 +134,7 @@ class ProinfoController extends Controller
         $where = [
             ["shop_cary.user_id",'=',$user_id],
         ];
-        $caryModel = new CaryModel;
-        $Caryinfo = $caryModel
-            ->where($where)
+        $Caryinfo = CaryModel::where($where)
             ->join('shop_goods','shop_cary.goods_id','=','shop_goods.goods_id')
             ->join('type','shop_cary.type_id','=','type.type_id')
             ->join('type_value','shop_cary.type_id','=','type_value.value_id')
