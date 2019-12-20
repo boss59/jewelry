@@ -222,12 +222,12 @@ class ProinfoController extends Controller
     public function totalDB($goods_id,$user_id)
     {
         $gid = explode(',',$goods_id);
-        echo json_encode($gid,JSON_UNESCAPED_UNICODE);exit;
+//        echo json_encode($gid,JSON_UNESCAPED_UNICODE);exit;
         $info = CaryModel::where('user_id',$user_id)
-            ->whereIn('shop_goods.goods_id',$gid)
+            ->whereIn('shop_cray.goods_id',$gid)
             ->join('shop_goods','shop_cray.goods_id','=','shop_goods.goods_id')
             ->get()->toArray();
-        // dd($info);
+         dd($info);
         $count=number_format(0,2,'.','');
         foreach ($info as $k => $v) {
             $count+=$v['goods_price']*$v['buy_number'];
