@@ -182,6 +182,8 @@ class ProinfoController extends Controller
     {
         $goods_id = $request->input('goods_id');
         $user_id = $request->input('user_id');
+
+        var_dump($user_id);exit;
         if ($user_id) {
             $total=$this->getsubtotalDB($goods_id,$user_id);
         }else{
