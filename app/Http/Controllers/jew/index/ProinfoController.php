@@ -116,40 +116,83 @@ class ProinfoController extends Controller
     }
 
     //============ 购物车展示================================
-    public function cary_index(Request $request){
-        $u_id = $request->input('user_id');
-        if(empty($u_id)){
-            $code=[
-                'code'=>0,
-                'font'=>'请先登录'
-            ];
-            return $code;
+    // 购物车
+    public function cary_index(Request $request)
+    {
+        $user_id=$request->input('user_id');
+        if (empty($user_id)){
+            return $result=['font'=>'请先登录','code'=>3];
         }else{
-            $data = CaryModel::join('shop_goods','shop_goods.goods_id','=','shop_cary.goods_id')->where('user_id',$u_id)->get()->toArray();
-            $res = json_encode($data,JSON_UNESCAPED_UNICODE);
-            return $res;
+            return $result=$this->listCaryDB($user_id);
         }
-
+        echo json_encode($result);
 
     }
-
-    //购物车删除
-    public function cary_del(Request $request){
-        $goods_id = $request->input('goods_id');
-        $user_id = $request->input('user_id');
-        $data = CaryModel::where(['goods_id'=>$goods_id,'user_id'=>$user_id])->delete();
-        if(empty($data)){
-            $code=[
-                'code'=>2,
-                'font'=>"删除失败"
-            ];
-            return $code;
+    // 数据库 展示
+    public function listCaryDB($user_id)
+    {
+        $where = [
+            ["shop_cary.user_id",'=',$user_id],
+        ];
+        $caryModel = new CaryModel;
+        $Caryinfo = $caryModel
+            ->where($where)
+            ->join('shop_goods','shop_cary.goods_id','=','shop_goods.goods_id')
+            ->join('type','shop_cary.type_id','=','type.type_id')
+            ->join('type_value','shop_cary.type_id','=','type_value.value_id')
+            ->orderBy('shop_cary.add_time',"desc")
+            ->get()->toArray();
+        if (!empty($Caryinfo)) {
+            return $Caryinfo;
         }else{
-            $code=[
-                'code'=>1,
-                'res'=>"删除成功"
-            ];
-            return $code;
+            return false;
         }
+    }
+
+    // =================    列表操作 删除     ==========
+    public function cary_del(Request $request)
+    {
+        $goods_id=$request->input('goods_id');
+        $where = [
+            'user_id'=>session('userinfo')['user_id'],
+            'goods_id'=>$goods_id,
+        ];
+        $cart  = CaryModel::where($where)->delete();
+        // dd($cart);
+        if ($cart) {
+            echo json_encode(['font'=>'删除成功','code'=>1]);
+        }else{
+            echo json_encode(['font'=>'删除失败','code'=>2]);
+        }
+    }
+    public function alldel(Request $request)
+    {
+        $goods_id=$request->input('goods_id');
+        $where = ['user_id'=>session('userinfo')['user_id']];
+        $status  = CaryModel::whereIn('goods_id',$goods_id)->where($where)->delete();
+        // dd($status);
+        if ($status) {
+            echo json_encode(['font'=>'删除成功','code'=>1]);
+        }else{
+            echo json_encode(['font'=>'删除失败','code'=>2]);
+        }
+    }
+    // 总价
+    public function total(Request $request)
+    {
+        $goods_id = $request->input('goods_id');
+        $gid = explode(',',$goods_id);
+        $user_id = session('userinfo')['user_id'];// 用户id
+        $info = CsCary::where('user_id',$user_id)
+            ->whereIn('cs_goods.goods_id',$gid)
+            ->join('cs_goods','cs_cary.goods_id','=','cs_goods.goods_id')
+            ->get();
+        // dd($info);
+        $count=number_format(0,2,'.','');
+        foreach ($info as $k => $v) {
+            $count+=$v['goods_price']*$v['buy_number'];
+        }
+        echo $count;
+        // dump($goods_price);
     }
 }
