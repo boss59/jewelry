@@ -145,7 +145,7 @@ class ProinfoController extends Controller
         if (!empty($Caryinfo)) {
             return $Caryinfo;
         }else{
-            return false;
+            return $result=['font'=>'无数据','code'=>0];
         }
     }
 
