@@ -66,7 +66,6 @@ class ProinfoController extends Controller
             'goods_id'=>$data['goods_id'],
         ];
         $info = CaryModel::where($where)->first();
-        dd($info);
         if (!empty($info)) {
             // 验证库存
             $result=$this->checkBuynumber($data['goods_id'],$data['buy_number'],$info['buy_number']);
@@ -131,7 +130,6 @@ class ProinfoController extends Controller
             return $code;
         }else{
             $data = CaryModel::join('shop_goods','shop_goods.goods_id','=','shop_cary.goods_id')->where('user_id',$u_id)->get()->toArray();
-            dd($data);
             $res = json_encode($data,JSON_UNESCAPED_UNICODE);
             return $res;
         }
