@@ -230,7 +230,7 @@ class ProinfoController extends Controller
 //        dd($info);
         $count=number_format(0,2,'.','');
         foreach ($info as $k => $v) {
-            $count+=$v['goods_price']*$v['buy_number'];
+            $count+=(float)$v['goods_price']*(float)$v['buy_number'];
         }
         echo $count;
         // dump($goods_price);
