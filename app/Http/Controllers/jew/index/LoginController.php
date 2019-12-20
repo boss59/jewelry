@@ -57,9 +57,7 @@ class LoginController extends Controller
                 //判断密码是否正确
                 if ($info['upwd']==md5($data['upwd'])) {//用库里加密密码 == 接收的加密密码
                     if (!empty($refer)) {
-                        echo json_encode(['code'=>2,"urls"=>$refer]);die;
-                    }else if(!empty($data['confirm'])){
-                        echo json_encode(['code'=>2,"urls"=>$data['confirm'],'user'=>$info]);die;
+                        echo json_encode(['code'=>2,"urls"=>$refer,'user'=>$info]);die;
                     }else{
                         echo json_encode(['code'=>1,"msg"=>'登陆成功','user'=>$info]);die;
                     }
