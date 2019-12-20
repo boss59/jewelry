@@ -115,11 +115,7 @@ class ProinfoController extends Controller
         }
     }
 
-
-
-
-
-    //============ 购物车展示==============
+    //============ 购物车展示================================
     public function cary_index(Request $request){
         $u_id = $request->input('user_id');
         if(empty($u_id)){

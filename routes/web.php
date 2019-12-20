@@ -127,6 +127,9 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/address','jew\index\AddressController@address');//地址
     Route::any('/index/address_index','jew\index\AddressController@index');//用户地址展示
 
+    //优惠卷
+    Route::any('/coupons/index','jew\index\CouponsController@index');
+
 
 
 
