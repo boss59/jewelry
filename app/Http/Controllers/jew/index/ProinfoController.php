@@ -153,8 +153,9 @@ class ProinfoController extends Controller
     public function cary_del(Request $request)
     {
         $goods_id=$request->input('goods_id');
+        $user_id=$request->input('user_id');
         $where = [
-            'user_id'=>session('userinfo')['user_id'],
+            'user_id'=>$user_id,
             'goods_id'=>$goods_id,
         ];
         $cart  = CaryModel::where($where)->delete();
@@ -165,6 +166,7 @@ class ProinfoController extends Controller
             echo json_encode(['font'=>'删除失败','code'=>2]);
         }
     }
+    //批删
     public function alldel(Request $request)
     {
         $goods_id=$request->input('goods_id');
