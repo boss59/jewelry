@@ -221,17 +221,17 @@ class ProinfoController extends Controller
     // 数据库
     public function totalDB($goods_id,$user_id)
     {
-        $gid = explode(',',$goods_id);
         $info = CaryModel::where('user_id',$user_id)
-            ->whereIn('shop_cary.goods_id',$gid)
-            ->join('shop_goods','shop_cary.goods_id','=','shop_shop.goods_id')
+            ->whereIn('shop_goods.goods_id',$goods_id)
+            ->join('shop_goods','shop_goods.goods_id','=','shop_goods.goods_id')
             ->get()->toArray();
-        dd($info);
+        // dd($info);
         $count=number_format(0,2,'.','');
         foreach ($info as $k => $v) {
-            $count+=(float)$v['goods_price']*(int)$v['buy_number'];
+            $count+=$v['goods_price']*$v['buy_number'];
         }
-        echo $count;
+        return $count;
+
     }
 //=================== 单删===================================
     public function cary_del(Request $request)
