@@ -127,6 +127,11 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/pricetotal','jew\index\ProinfoController@pricetotal');// 总价
 
 
+    //下单
+    Route::any('/index/orders','jew\index\OrdersController@orders');// 确认结算
+    Route::any('/index/order_info','jew\index\OrderInfoController@order_info');// 展示
+
+    //支付
 
     // 用户 收货地址
     Route::any('/index/address','jew\index\AddressController@address');//地址
@@ -134,6 +139,8 @@ Route::group(['middleware'=>['AdminLogin']],function(){
 
     //优惠卷
     Route::any('/coupons/index','jew\index\CouponsController@index');
+
+
 
 
 

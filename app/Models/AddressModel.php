@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AddressModel extends Model
 {
-    protected $table = 'shop_user_address';// 表
+    protected $table = 'user_address';// 表
     protected $primaryKey = 'address_id';// 主键
     public $timestamps = false;
 }
