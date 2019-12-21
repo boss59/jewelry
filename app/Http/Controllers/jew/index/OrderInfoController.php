@@ -20,7 +20,7 @@ class OrderInfoController extends Controller
         // dd($Addressinfo);
         if (!count($Addressinfo)) {
             // 添加 地址界面
-            echo json_encode(['code'=>0,'font'=>'还未填写收货地址！']);
+            echo json_encode(['code'=>1,'font'=>'还未填写收货地址！']);
         }
 
 
