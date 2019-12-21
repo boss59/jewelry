@@ -9,15 +9,28 @@ class AddressController extends Controller
 {
     //地址添加
     public function address(Request $request){
-        $data = $request->input();
-        if(empty($data['user_id'])){
+        $user_id = $request->input('user_id');
+        $address_name = $request->input('address_name');
+        $address = $request->input('address');
+        $tel = $request->input('tel');
+        $consignee = $request->input('consignee');
+        $is_deff = $request->input('is_deff');
+        $ress = $request->input('ress');
+        if(empty($user_id)){
             $code=['code'=>400,'res'=>"请先登录"];
             return json_encode($code,JSON_UNESCAPED_UNICODE);
         }else{
-            $data = ['time'=>time()];
-            $res = AddressModel::insert($data);
+            $res = AddressModel::insert([
+                'user_id'=>$user_id,
+                'address_name'=>$address_name,
+                'address'=>$address,
+                'tel'=>$tel,
+                'consignee'=>$consignee,
+                'is_deff'=>$is_deff,
+                'add_time'=>time()
+            ]);
             if($res) {
-                if(!empty($data['ress'])){
+                if(!empty($ress)){
                     return json_encode(['code'=>1,'ress'=>$data['ress']]);
                 }else{
                     $code = ['code' => 200,'res' => "添加成功"];
