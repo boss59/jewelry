@@ -14,7 +14,7 @@ class AddressController extends Controller
             $code=['code'=>400,'res'=>"请先登录"];
             return json_encode($code,JSON_UNESCAPED_UNICODE);
         }else{
-            $data = ['add_time'=>time()];
+            $data = ['time'=>time()];
             $res = AddressModel::insert($data);
             if($res) {
                 if(!empty($data['ress'])){
