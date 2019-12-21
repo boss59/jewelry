@@ -20,6 +20,7 @@ class AddressController extends Controller
             $code=['code'=>400,'res'=>"请先登录"];
             return json_encode($code,JSON_UNESCAPED_UNICODE);
         }else{
+            $address = AddressModel::where('user_id',$user_id)->update(['is_deff'=>0]);
             $res = AddressModel::insert([
                 'user_id'=>$user_id,
                 'address_name'=>$address_name,
