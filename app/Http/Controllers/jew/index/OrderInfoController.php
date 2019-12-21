@@ -29,7 +29,6 @@ class OrderInfoController extends Controller
         // 根据 商品id 获取 商品信息
         $goods_id = $request->input('goods_id');
         $gid = implode(',',$goods_id);
-        dd($gid);
         if(empty($goods_id)){
             return json_encode(['code'=>2,'font'=>'无商品！']);
         }else{
@@ -37,8 +36,7 @@ class OrderInfoController extends Controller
             $goods = CaryModel::where('user_id',$user_id)
                 ->whereIn('shop_goods.goods_id',$gid)
                 ->join('shop_goods','shop_cary.goods_id','=','shop_goods.goods_id')
-                ->join('type','shop_cary.type_id','=','type.type_id')
-                ->join('type_value','shop_cary.type_id','=','type_value.value_id')
+
                 ->orderBy('shop_cary.add_time',"desc")
                 ->get()->toArray();
             dd($goods);
