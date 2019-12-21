@@ -28,13 +28,17 @@ class OrderInfoController extends Controller
 
         // 根据 商品id 获取 商品信息
         $goods_id = $request->input('goods_id');
+        $gid = explode(',',$goods_id);
         if(empty($goods_id)){
             return json_encode(['code'=>2,'font'=>'无商品！']);
         }else{
             //查询 商品
             $goods = CaryModel::where('user_id',$user_id)
-                ->whereIn('shop_goods.goods_id',$goods_id)
+                ->whereIn('shop_goods.goods_id',[$gid])
                 ->join('shop_goods','shop_cary.goods_id','=','shop_goods.goods_id')
+                ->join('type','shop_cary.type_id','=','type.type_id')
+                ->join('type_value','shop_cary.type_id','=','type_value.value_id')
+                ->orderBy('shop_cary.add_time',"desc")
                 ->get()->toArray();
 
             // 收货地址
@@ -42,13 +46,13 @@ class OrderInfoController extends Controller
 
             // 总价钱
             $info = CaryModel::where('user_id',$user_id)
-                ->whereIn('goods_id',$goods_id)
+                ->whereIn('goods_id',$gid)
                 ->get(['add_price','buy_number'])->toArray();
             $total = number_format(0,2,'.','');
             foreach ($info as $k => $v) {
                 $total+=$v['add_price']*$v['buy_number'];
             }
-            $data = ['goods'=>$goods,'address'=>[$address],'total'=>$total];
+            $data = ['goods'=>$goods,'address'=>$address,'total'=>$total];
             return json_encode($data,JSON_UNESCAPED_UNICODE);
         }
     }
