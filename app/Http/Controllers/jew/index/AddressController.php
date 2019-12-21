@@ -31,7 +31,7 @@ class AddressController extends Controller
             ]);
             if($res) {
                 if(!empty($ress)){
-                    return json_encode(['code'=>1,'ress'=>$data['ress']]);
+                    return json_encode(['code'=>1,'ress'=>$ress]);
                 }else{
                     $code = ['code' => 200,'res' => "添加成功"];
                     return json_encode($code, JSON_UNESCAPED_UNICODE);
