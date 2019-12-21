@@ -216,7 +216,7 @@ class ProinfoController extends Controller
         }else{
             $total=['font'=>'请先登录','code'=>0];
         }
-        echo json_encode($total,JSON_UNESCAPED_UNICODE);
+        return json_encode($total,JSON_UNESCAPED_UNICODE);
     }
     // 数据库
     public function totalDB($goods_id,$user_id)
@@ -230,7 +230,6 @@ class ProinfoController extends Controller
             $count+=$v['add_price']*$v['buy_number'];
         }
         return $count;
-
     }
 //=================== 单删===================================
     public function cary_del(Request $request)
