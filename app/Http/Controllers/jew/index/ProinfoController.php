@@ -221,8 +221,9 @@ class ProinfoController extends Controller
     // 数据库
     public function totalDB($goods_id,$user_id)
     {
+        $gid = explode(',',$goods_id);
         $info = CaryModel::where('user_id',$user_id)
-            ->whereIn('shop_goods.goods_id',$goods_id)
+            ->whereIn('shop_goods.goods_id',$gid)
             ->join('shop_goods','shop_goods.goods_id','=','shop_goods.goods_id')
             ->get()->toArray();
          dd($info);
