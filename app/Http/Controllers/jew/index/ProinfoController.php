@@ -225,7 +225,7 @@ class ProinfoController extends Controller
         $info = CaryModel::where('user_id',$user_id)
             ->whereIn('shop_goods.goods_id',$gid)
             ->join('shop_goods','shop_goods.goods_id','=','shop_goods.goods_id')
-            ->get()->toArray();
+            ->get(['shop_goods.goods_price','shop_cary.buy_number'])->toArray();
          dd($info);
         $count=number_format(0,2,'.','');
         foreach ($info as $k => $v) {
