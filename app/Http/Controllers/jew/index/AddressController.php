@@ -10,11 +10,9 @@ class AddressController extends Controller
     //地址添加
     public function address(Request $request){
         $data = $request->input();
-
-        if(empty($data)){
-            $code=['code'=>400,'res'=>"创建失败"];
-            $code = json_encode($code,JSON_UNESCAPED_UNICODE);
-            return $code;
+        if(empty($data['user_id'])){
+            $code=['code'=>400,'res'=>"请先登录"];
+            return json_encode($code,JSON_UNESCAPED_UNICODE);
         }else{
             $data = ['add_time'=>time()];
             $res = AddressModel::insert($data);
