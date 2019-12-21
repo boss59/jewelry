@@ -40,7 +40,7 @@ class OrderInfoController extends Controller
                 ->join('type_value','shop_cary.type_id','=','type_value.value_id')
                 ->orderBy('shop_cary.add_time',"desc")
                 ->get()->toArray();
-
+            dd($goods);
             // 收货地址
             $address=AddressModel::where(['user_id'=>$user_id,'is_deff'=>1])->get()->toArray();
 
