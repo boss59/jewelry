@@ -227,7 +227,7 @@ class ProinfoController extends Controller
             ->get(['add_price','buy_number'])->toArray();
         $count=number_format(0,2,'.','');
         foreach ($info as $k => $v) {
-            $count+=$v['add_price']*$v['buy_number'];
+            $count+=(float)$v['add_price']*intval($v['buy_number']);
         }
         return $count;
     }

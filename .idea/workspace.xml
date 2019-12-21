@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="218" column="14" selection-start-line="218" selection-start-column="14" selection-end-line="218" selection-end-column="14" />
+            <state relative-caret-position="144">
+              <caret line="229" column="68" lean-forward="true" selection-start-line="229" selection-start-column="68" selection-end-line="229" selection-end-column="68" />
               <folding>
                 <element signature="e#50#78#0#PHP" expanded="true" />
               </folding>
@@ -340,12 +340,12 @@
       <workItem from="1576497686850" duration="48087000" />
       <workItem from="1576712411784" duration="1935000" />
       <workItem from="1576717051968" duration="68595000" />
-      <workItem from="1576888873995" duration="5472000" />
+      <workItem from="1576888873995" duration="6124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212331000" />
+    <option name="totallyTimeSpent" value="212983000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -868,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="218" column="14" selection-start-line="218" selection-start-column="14" selection-end-line="218" selection-end-column="14" />
+        <state relative-caret-position="144">
+          <caret line="229" column="68" lean-forward="true" selection-start-line="229" selection-start-column="68" selection-end-line="229" selection-end-column="68" />
           <folding>
             <element signature="e#50#78#0#PHP" expanded="true" />
           </folding>
