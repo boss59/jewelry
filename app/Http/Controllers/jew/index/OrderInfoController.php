@@ -48,7 +48,7 @@ class OrderInfoController extends Controller
             foreach ($info as $k => $v) {
                 $total+=$v['add_price']*$v['buy_number'];
             }
-            $data = ['goods'=>$goods,'address'=>$address,'total'=>$total];
+            $data = ['goods'=>$goods,'address'=>[$address],'total'=>$total];
             return json_encode($data,JSON_UNESCAPED_UNICODE);
         }
     }
