@@ -222,9 +222,9 @@ class ProinfoController extends Controller
     public function totalDB($goods_id,$user_id)
     {
         $gid = explode(',',$goods_id);
-        $gid=array_unique($gid);
+        $id=array_unique($gid);
         $info = CaryModel::where('user_id',$user_id)
-            ->whereIn('shop_goods.goods_id',$gid)
+            ->whereIn('shop_goods.goods_id',$id)
             ->join('shop_goods','shop_goods.goods_id','=','shop_goods.goods_id')
             ->get(['shop_goods.goods_price','shop_cary.buy_number'])->toArray();
         dd($info);
