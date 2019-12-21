@@ -121,6 +121,7 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/add_car','jew\index\ProinfoController@addcar');// 添加
     Route::any('/index/cary_index','jew\index\ProinfoController@cary_index');// 展示
     Route::any('/index/cary_del','jew\index\ProinfoController@cary_del');// 删除
+    Route::any('/index/alldel','jew\index\ProinfoController@alldel');// 批删
     Route::any('/index/changeNumber','jew\index\ProinfoController@changeNumber');// 修改数量
     Route::any('/index/getsubtotal','jew\index\ProinfoController@getsubtotal');// 小计
     Route::any('/index/pricetotal','jew\index\ProinfoController@pricetotal');// 总价
