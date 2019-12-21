@@ -34,7 +34,7 @@ class OrderInfoController extends Controller
         }else{
             //查询 商品
             $goods = CaryModel::where('user_id',$user_id)
-                ->whereIn('shop_goods.goods_id',[$gid])
+                ->whereIn('shop_goods.goods_id',$gid)
                 ->join('shop_goods','shop_cary.goods_id','=','shop_goods.goods_id')
                 ->join('type','shop_cary.type_id','=','type.type_id')
                 ->join('type_value','shop_cary.type_id','=','type_value.value_id')
