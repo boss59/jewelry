@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OrderInfoModel extends Model
+class OrderGoodsModel extends Model
 {
-    protected $table = 'order_info';// 表
-    protected $primaryKey = 'order_id';// 主键
+    protected $table = 'order_goods';// 表
+    protected $primaryKey = 'order_goods_id';// 主键
     // 定义常量时间
 //    const CREATED_AT = 'create_time';
     // const UPDATED_AT = 'update_time';

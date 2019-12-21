@@ -130,8 +130,13 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     //下单
     Route::any('/index/orders','jew\index\OrdersController@orders');// 确认结算
     Route::any('/index/order_info','jew\index\OrderInfoController@order_info');// 展示
+    Route::any('/index/confirmOrder','jew\index\OrderInfoController@confirmOrder');// 确认订单
 
     //支付
+    Route::any('/index/notifypay','jew\index\OrdersController@notifypay');// 异步
+    Route::any('/index/returnpay','jew\index\OrderInfoController@returnpay');// 同步
+
+
 
     // 用户 收货地址
     Route::any('/index/address','jew\index\AddressController@address');//地址

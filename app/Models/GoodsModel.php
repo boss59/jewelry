@@ -18,4 +18,10 @@ class GoodsModel extends Model
 	// // 可批量赋值的属性。 要加字段  可以通过
 	// 取消自动维护
 	 public $timestamps = false;
+
+    // 获取单价
+    public static function getPrice($goods_id)
+    {
+        return self::where('goods_id',$goods_id)->value('goods_price');
+    }
 }
