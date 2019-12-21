@@ -207,7 +207,7 @@ class ProinfoController extends Controller
     }
 //==================== 总价   =============
     // 总价
-    public function Pricetotal(Request $request)
+    public function pricetotal(Request $request)
     {
         $goods_id = $request->input('goods_id');
         $user_id = $request->input('user_id');
@@ -225,7 +225,7 @@ class ProinfoController extends Controller
             ->whereIn('shop_goods.goods_id',$goods_id)
             ->join('shop_goods','shop_goods.goods_id','=','shop_goods.goods_id')
             ->get()->toArray();
-        // dd($info);
+         dd($info);
         $count=number_format(0,2,'.','');
         foreach ($info as $k => $v) {
             $count+=$v['goods_price']*$v['buy_number'];

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2784">
-              <caret line="125" column="33" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="33" />
+            <state relative-caret-position="283">
+              <caret line="125" column="65" selection-start-line="125" selection-start-column="65" selection-end-line="125" selection-end-column="65" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
@@ -53,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="226" column="30" selection-start-line="226" selection-start-column="30" selection-end-line="226" selection-end-column="30" />
+            <state relative-caret-position="220">
+              <caret line="209" column="21" selection-start-line="209" selection-start-column="21" selection-end-line="209" selection-end-column="21" />
               <folding>
                 <element signature="e#50#78#0#PHP" expanded="true" />
               </folding>
@@ -340,12 +341,12 @@
       <workItem from="1576497686850" duration="48087000" />
       <workItem from="1576712411784" duration="1935000" />
       <workItem from="1576717051968" duration="68595000" />
-      <workItem from="1576888873995" duration="2626000" />
+      <workItem from="1576888873995" duration="3068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209485000" />
+    <option name="totallyTimeSpent" value="209927000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -858,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2784">
-          <caret line="125" column="33" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="33" />
+        <state relative-caret-position="283">
+          <caret line="125" column="65" selection-start-line="125" selection-start-column="65" selection-end-line="125" selection-end-column="65" />
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
@@ -868,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/ProinfoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="226" column="30" selection-start-line="226" selection-start-column="30" selection-end-line="226" selection-end-column="30" />
+        <state relative-caret-position="220">
+          <caret line="209" column="21" selection-start-line="209" selection-start-column="21" selection-end-line="209" selection-end-column="21" />
           <folding>
             <element signature="e#50#78#0#PHP" expanded="true" />
           </folding>

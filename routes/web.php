@@ -123,7 +123,7 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/cary_del','jew\index\ProinfoController@cary_del');// 删除
     Route::any('/index/changeNumber','jew\index\ProinfoController@changeNumber');// 修改数量
     Route::any('/index/getsubtotal','jew\index\ProinfoController@getsubtotal');// 小计
-    Route::any('/index/Pricetotal','jew\index\ProinfoController@Pricetotal');// 总价
+    Route::any('/index/pricetotal','jew\index\ProinfoController@pricetotal');// 总价
 
 
 
