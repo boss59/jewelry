@@ -225,7 +225,6 @@ class ProinfoController extends Controller
         $info = CaryModel::where('user_id',$user_id)
             ->whereIn('goods_id',$gid)
             ->get(['add_price','buy_number'])->toArray();
-        dd($info);
         $count=number_format(0,2,'.','');
         foreach ($info as $k => $v) {
             $count+=$v['add_price']*$v['buy_number'];
