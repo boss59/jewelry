@@ -28,7 +28,7 @@ class OrderInfoController extends Controller
 
         // 根据 商品id 获取 商品信息
         $goods_id = $request->input('goods_id');
-        $gid = implode(',',$goods_id);
+        $gid = explode(',',$goods_id);
         if(empty($goods_id)){
             return json_encode(['code'=>2,'font'=>'无商品！']);
         }else{
