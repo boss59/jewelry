@@ -42,7 +42,7 @@ class OrderInfoController extends Controller
 
             // 总价钱
             $info = CaryModel::where('user_id',$user_id)
-                ->whereIn('goods_id',$gid)
+                ->whereIn('goods_id',$goods_id)
                 ->get(['add_price','buy_number'])->toArray();
             $total = number_format(0,2,'.','');
             foreach ($info as $k => $v) {
