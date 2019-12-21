@@ -13,15 +13,17 @@ class OrderInfoController extends Controller
     {
         $user_id = $request->input('user_id');
         if(empty($user_id)){
-            echo json_encode(['code'=>0,'font'=>'还未登陆']);
+            return json_encode(['code'=>0,'font'=>'还未登陆']);
+        }else{
+            // 判断 是否 有 收货地址
+            $Addressinfo = AddressModel::where(['user_id'=>$user_id])->get();
+            // dd($Addressinfo);
+            if (!count($Addressinfo)) {
+                // 添加 地址界面
+                return json_encode(['code'=>1,'font'=>'还未填写收货地址！']);
+            }
         }
-        // 判断 是否 有 收货地址
-        $Addressinfo = AddressModel::where(['user_id'=>$user_id])->get();
-        // dd($Addressinfo);
-        if (!count($Addressinfo)) {
-            // 添加 地址界面
-            echo json_encode(['code'=>1,'font'=>'还未填写收货地址！']);
-        }
+
 
 
         // 根据 商品id 获取 商品信息
