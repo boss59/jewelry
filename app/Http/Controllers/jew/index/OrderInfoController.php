@@ -85,7 +85,6 @@ class OrderInfoController extends Controller
             $data['mobile'] = $address['tel'];
             $data['city'] = $address['address_name'];
             $data['address'] = $address['address'];
-            dd($data);
             return json_encode($data,JSON_UNESCAPED_UNICODE);
 
 
