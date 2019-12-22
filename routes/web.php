@@ -128,7 +128,6 @@ Route::group(['middleware'=>['AdminLogin']],function(){
 
 
     //下单
-    Route::any('/index/orders','jew\index\OrdersController@orders');// 确认结算
     Route::any('/index/order_info','jew\index\OrderInfoController@order_info');// 展示
     Route::any('/index/confirmOrder','jew\index\OrderInfoController@confirmOrder');// 确认订单
 
@@ -138,7 +137,6 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/returnpay','jew\index\OrderInfoController@returnpay');// 同步
 
 
-
     // 用户 收货地址
     Route::any('/index/address','jew\index\AddressController@address');//地址
     Route::any('/index/address_index','jew\index\AddressController@index');//用户地址展示
@@ -146,7 +144,9 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     //优惠卷
     Route::any('/coupons/index','jew\index\CouponsController@index');
 
-
+    //订单管理
+    Route::any('/index/orders','jew\index\OrdersController@orders');// 全部
+    Route::any('/index/Nopay','jew\index\OrdersController@Nopay');// 待付款
 
 
 
