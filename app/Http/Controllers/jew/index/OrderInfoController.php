@@ -63,8 +63,8 @@ class OrderInfoController extends Controller
     {
         $data = $request->input();
         // 启动事务
-//        DB::beginTransaction();
-//        try {
+        DB::beginTransaction();
+        try {
             // 货单号
             $data['order_sn'] = $this->createordersn();
             // 配送方式
@@ -99,29 +99,31 @@ class OrderInfoController extends Controller
                     "user_id"=>$data['user_id'],
                     'order_id'=>$order_id,
                     'goods_id'=>$v,
+                    'type_id'=>$data['type_id'],
+                    'value_id'=>$data['value_id'],
                     'add_price'=>GoodsModel::getPrice($v),
                     'buy_number'=>CaryModel::getbuyNumber($v,$data['user_id'])
                 ];
                 // var_dump($arr);exit;
                 OrderGoodsModel::create($arr);
             }
-            return json_encode($order_id,JSON_UNESCAPED_UNICODE);
+
             // 清空 购物车
             $data['goods_id']=explode(",",$data['goods_id']);
             CaryModel::whereIn('goods_id',$data['goods_id'])->where('user_id',$data['user_id'])->delete();
-//            $message = 0;
-//            // 提交事务
-//            Db::commit();
-//        } catch (\Exception $e) {
-//            $message =1;
-//            // 回滚事务
-//            Db::rollback();
-//        }
-//        if (!$message) {
-//            return json_encode(['code'=>1,'font'=>'','order_id'=>$order_id]);
-//        }else{
-//            return json_encode(['code'=>1,'font'=>'下单失败']);
-//        }
+            $message = 0;
+            // 提交事务
+            Db::commit();
+        } catch (\Exception $e) {
+            $message =1;
+            // 回滚事务
+            Db::rollback();
+        }
+        if (!$message) {
+            return json_encode(['code'=>1,'font'=>'下单成功','order_id'=>$order_id]);
+        }else{
+            return json_encode(['code'=>0,'font'=>'下单失败']);
+        }
     }
     //  提交 订单
     public function alipay(Request $request)
