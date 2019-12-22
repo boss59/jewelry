@@ -99,8 +99,6 @@ class OrderInfoController extends Controller
                     "user_id"=>$data['user_id'],
                     'order_id'=>$order_id,
                     'goods_id'=>$v,
-                    'type_id'=>$data['type_id'],
-                    'value_id'=>$data['value_id'],
                     'add_price'=>GoodsModel::getPrice($v),
                     'buy_number'=>CaryModel::getbuyNumber($v,$data['user_id'])
                 ];
