@@ -83,7 +83,7 @@ class OrderInfoController extends Controller
             $address = AddressModel::where('address_id',$data['address_id'])->first()->toArray();
             $data['consignee'] = $address['consignee'];
             $data['mobile'] = $address['tel'];
-            $data['city'] = $address['address_name'];
+            $data['address_name'] = $address['address_name'];
             $data['address'] = $address['address'];
 
 
