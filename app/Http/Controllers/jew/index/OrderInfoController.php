@@ -82,10 +82,8 @@ class OrderInfoController extends Controller
             // 通过 affress_id 获取 收货人 信息
             $address = AddressModel::where('address_id',$data['address_id'])->first()->toArray();
             $data['consignee'] = $address['consignee'];
-            $data['mobile'] = $address['mobile'];
-            $data['province'] = $address['province'];
-            $data['city'] = $address['city'];
-            $data['district'] = $address['district'];
+            $data['mobile'] = $address['tel'];
+            $data['city'] = $address['address_name'];
             $data['address'] = $address['address'];
             // dd($data);
             $order_id = OrderInfoModel::insertGetId($data);

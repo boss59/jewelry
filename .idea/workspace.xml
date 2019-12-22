@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4da6fba-d655-4753-b52e-b52501e8cba3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/alipay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jewelry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jewelry.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/index/OrderInfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/index/OrderInfoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/jew/index/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/jew/index/OrdersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CaryModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CaryModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/GoodsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GoodsModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/OrderInfoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OrderInfoModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/OrdersModel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,22 +51,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/OrdersController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="68" column="59" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
-              <folding>
-                <element signature="e#50#78#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/OrderInfoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="9" selection-start-line="9" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="316">
+              <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+              <folding>
+                <element signature="e#50#78#0#PHP" expanded="true" />
+                <element signature="e#376#2180#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,9 +124,9 @@
         <option value="$PROJECT_DIR$/app/Models/OrderGoodsModel.php" />
         <option value="$PROJECT_DIR$/app/Models/GoodsModel.php" />
         <option value="$PROJECT_DIR$/app/Models/CaryModel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/OrderInfoController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/OrdersController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/jew/index/OrderInfoController.php" />
       </list>
     </option>
   </component>
@@ -299,6 +279,11 @@
               <item name="jew" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -366,12 +351,12 @@
       <workItem from="1576712411784" duration="1935000" />
       <workItem from="1576717051968" duration="68595000" />
       <workItem from="1576888873995" duration="9043000" />
-      <workItem from="1576903728075" duration="20665000" />
+      <workItem from="1576903728075" duration="23725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236567000" />
+    <option name="totallyTimeSpent" value="239627000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -882,6 +867,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/OrdersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="68" column="59" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
+          <folding>
+            <element signature="e#50#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -894,17 +889,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/OrderInfoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="9" selection-start-line="9" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/OrdersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="68" column="59" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
+        <state relative-caret-position="316">
+          <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
           <folding>
             <element signature="e#50#78#0#PHP" expanded="true" />
+            <element signature="e#376#2180#0#PHP" />
           </folding>
         </state>
       </provider>
