@@ -78,7 +78,7 @@ class OrderInfoController extends Controller
             $data['pay_time'] = time();
             $data['shipping_time'] = time();
             // 支付的钱
-            $data['order_amount'] = $data['goods_amount'];
+//            $data['order_amount'] = $data['goods_amount'];
             // 通过 affress_id 获取 收货人 信息
             $address = AddressModel::where('address_id',$data['address_id'])->first()->toArray();
             $data['consignee'] = $address['consignee'];
