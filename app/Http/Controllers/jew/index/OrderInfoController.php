@@ -63,8 +63,8 @@ class OrderInfoController extends Controller
     {
         $data = $request->input();
         // 启动事务
-//        DB::beginTransaction();
-//        try {
+        DB::beginTransaction();
+        try {
             // 货单号
             $data['order_sn'] = $this->createordersn();
             // 配送方式
@@ -109,19 +109,19 @@ class OrderInfoController extends Controller
             // 清空 购物车
             CaryModel::whereIn('goods_id',$goods_id)->where('user_id',$data['user_id'])->delete();
             return json_encode($order_id,JSON_UNESCAPED_UNICODE);
-//            $message = 0;
-//            // 提交事务
-//            Db::commit();
-//        } catch (\Exception $e) {
-//            $message =1;
-//            // 回滚事务
-//            Db::rollback();
-//        }
-//        if (!$message) {
-//            return json_encode(['code'=>1,'font'=>'下单成功','order_id'=>$order_id]);
-//        }else{
-//            return json_encode(['code'=>0,'font'=>'下单失败']);
-//        }
+            $message = 0;
+            // 提交事务
+            Db::commit();
+        } catch (\Exception $e) {
+            $message =1;
+            // 回滚事务
+            Db::rollback();
+        }
+        if (!$message) {
+            return json_encode(['code'=>1,'font'=>'下单成功','order_id'=>$order_id]);
+        }else{
+            return json_encode(['code'=>0,'font'=>'下单失败']);
+        }
     }
     //  提交 订单
     public function alipay(Request $request)
