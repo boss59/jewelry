@@ -77,22 +77,20 @@ class OrderInfoController extends Controller
             $data['confirm_time'] = time();
             $data['pay_time'] = time();
             $data['shipping_time'] = time();
+
             // 支付的钱
-//            $data['order_amount'] = $data['goods_amount'];
+            //$data['order_amount'] = $data['goods_amount'];
+
             // 通过 affress_id 获取 收货人 信息
             $address = AddressModel::where('address_id',$data['address_id'])->first()->toArray();
             $data['consignee'] = $address['consignee'];
             $data['mobile'] = $address['tel'];
             $data['address_name'] = $address['address_name'];
             $data['address'] = $address['address'];
-
-
-
-
+            // 存入订单表
             $order_id = OrderInfoModel::insertGetId($data);
-
-            return json_encode($order_id,JSON_UNESCAPED_UNICODE);
             // dd($order_id);die;
+
             // 订单 商品信息表
             $goods_id = explode(',',$data['goods_id']);
             // dump($goods_id);die;
@@ -107,6 +105,7 @@ class OrderInfoController extends Controller
                 // var_dump($arr);exit;
                 OrderGoodsModel::create($arr);
             }
+            return json_encode($order_id,JSON_UNESCAPED_UNICODE);
             // 清空 购物车
             $data['goods_id']=explode(",",$data['goods_id']);
             CaryModel::whereIn('goods_id',$data['goods_id'])->where('user_id',$data['user_id'])->delete();
