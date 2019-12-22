@@ -85,11 +85,13 @@ class OrderInfoController extends Controller
             $data['mobile'] = $address['tel'];
             $data['city'] = $address['address_name'];
             $data['address'] = $address['address'];
-            return json_encode($data,JSON_UNESCAPED_UNICODE);
+
 
 
 
             $order_id = OrderInfoModel::insertGetId($data);
+
+            return json_encode($order_id,JSON_UNESCAPED_UNICODE);
             // dd($order_id);die;
             // 订单 商品信息表
             $goods_id = explode(',',$data['goods_id']);
