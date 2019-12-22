@@ -107,7 +107,7 @@ class OrderInfoController extends Controller
             }
 
             // 清空 购物车
-            CaryModel::whereIn('goods_id',$data['goods_id'])->where('user_id',$data['user_id'])->delete();
+            CaryModel::whereIn('goods_id',$goods_id)->where('user_id',$data['user_id'])->delete();
             return json_encode($order_id,JSON_UNESCAPED_UNICODE);
 //            $message = 0;
 //            // 提交事务
