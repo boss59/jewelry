@@ -19,7 +19,7 @@ class OrdersController extends Controller
         $where = [
             'user_id'=>$user_id,
         ];
-        $data = $this->all_orders($where);
+        $data = $this->all_orders($where,$user_id);
         return $data;
     }
 
@@ -33,14 +33,14 @@ class OrdersController extends Controller
             'user_id'=>$user_id,
             'pay_status'=>0
         ];
-        $data = $this->all_orders($where);
+        $data = $this->all_orders($where,$user_id);
         return $data;
     }
 
     //方法
-    public function all_orders($where)
+    public function all_orders($where,$user_id)
     {
-        $count = '';
+        $count = "";
         $order_info=OrderInfoModel::where($where)->get()->toArray();
         $data=[];
         foreach ($order_info as $key => $value) {
@@ -53,10 +53,10 @@ class OrdersController extends Controller
             foreach($info as $k=>$v){
                 $goods_id[]=$v['goods_id'];
             }
-            $count = OrderGoodsModel::whereIn("goods_id",$goods_id)->count();
-            $data[$key]['shop_info']=OrderGoodsModel::join('order_goods','cs_goods.goods_id','=','order_goods.goods_id')
+            $count = OrderGoodsModel::whereIn("goods_id",$goods_id)->where('user_id',$user_id)->count();
+            $data[$key]['shop_info']=OrderGoodsModel::join('shop_goods','order_goods.goods_id','=','shop_goods.goods_id')
                 ->whereIn("order_goods.goods_id",$goods_id)
-                ->get(['cs_goods.goods_name',"cs_goods.goods_img","cs_goods.goods_price","cs_goods.goods_id","order_goods.buy_number"])
+                ->get(['shop_goods.goods_name',"shop_goods.goods_img","shop_goods.goods_price","shop_goods.goods_id","order_goods.buy_number"])
                 ->toArray();
         }
         $data = ['orders'=>$data,'count'=>$count];
