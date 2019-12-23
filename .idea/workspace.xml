@@ -66,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/HistoryController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="77">
-              <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+              <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
               <folding>
                 <element signature="e#50#78#0#PHP" expanded="true" />
               </folding>
@@ -386,12 +386,12 @@
       <workItem from="1576717051968" duration="68595000" />
       <workItem from="1576888873995" duration="9043000" />
       <workItem from="1576903728075" duration="48859000" />
-      <workItem from="1577087388760" duration="10346000" />
+      <workItem from="1577087388760" duration="10415000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275107000" />
+    <option name="totallyTimeSpent" value="275176000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -910,7 +910,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/jew/index/HistoryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+          <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
           <folding>
             <element signature="e#50#78#0#PHP" expanded="true" />
           </folding>
