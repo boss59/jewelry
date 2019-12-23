@@ -136,7 +136,7 @@
     	</tr>
     	@endforeach
     	<tr align="center">
-    		<td colspan="14">{{ $goods->links() }}</td>
+    		<td colspan="14">{{ $goods->appends($query)->links() }}</td>
     	</tr>
     </table>
 <script>
