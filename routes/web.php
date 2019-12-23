@@ -149,6 +149,12 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/orders','jew\index\OrdersController@orders');// 全部
     Route::any('/index/Nopay','jew\index\OrdersController@Nopay');// 待付款
 
+    //浏览历史记录
+    Route::any('/index/getHistory','jew\index\HistoryController@getHistory');// 全部
+    Route::any('/index/Historylist','jew\index\HistoryController@Historylist');// 待付款
+
+
+
 
 
 
