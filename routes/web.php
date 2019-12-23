@@ -149,6 +149,9 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/Nopay','jew\index\OrdersController@Nopay');// 待付款
 
 
+    //测试减库存
+    Route::any('/index/num','jew\index\OrderInfoController@num');// 异步
+
 
 
 

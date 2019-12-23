@@ -169,6 +169,7 @@ class OrderInfoController extends Controller
         if($res->trade_status == "TRADE_SUCCESS"){
             // 修改表中的订单状态
             OrderInfoModel::where('order_sn',$data->out_trade_no)->update(['pay_status'=>2]);
+            $this->num($data->out_trade_no);
             $res = ['code'=>1,'font'=>"本次交易victory(胜利)"];
             return json_encode($res,JSON_UNESCAPED_UNICODE);
         }
@@ -222,5 +223,23 @@ class OrderInfoController extends Controller
 //            $arr=$area->where('id',$district)->first()->toArray();
 //            $all[$k]['district']=$arr['name'];
 //        }
+    }
+
+
+
+    public function num($order_sn)
+    {
+        $orders=OrderInfoModel::where('order_sn',$order_sn)->first(['order_id'])->toArray();
+        $order_goods = OrderGoodsModel::where(['order_id'=>$orders['order_id']])->get(['goods_id','buy_number'])->toArray();
+
+        foreach($order_goods as $k=>$v){
+            $where = [
+                'goods_id'=>$v['goods_id']
+            ];
+            $goods=GoodsModel::where($where)->first(['goods_num'])->toArray();
+            //减库存
+            $goods['goods_num'] -= $v['buy_number'];
+            GoodsModel::where($where)->update(['goods_num'=>$goods['goods_num']]);
+        }
     }
 }
