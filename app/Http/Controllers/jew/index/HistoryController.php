@@ -37,10 +37,9 @@ class HistoryController extends Controller
         if(empty($user_id)){
             return json_encode(['code'=>0,'font'=>'未登录']);
         }else{
-            $data= HistoryModel::join('shop_goods','shop_history.goods_id','=','shop_goods.goods_id')
+            $data= HistoryModel::Leftjoin('shop_goods','shop_history.goods_id','=','shop_goods.goods_id')
                 ->where('user_id',$user_id)
-                ->distinct('shop.goods_id')
-                ->orderBy('create_time','desc')->get()->toArray();
+                ->orderBy('create_time','desc')->distinct('goods_id')->get()->toArray();
             return json_encode($data,JSON_UNESCAPED_UNICODE);
         }
 
