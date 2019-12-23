@@ -164,17 +164,16 @@ class OrderInfoController extends Controller
 
         // dd($data);
         // 调用查询接口，查询订单的状态
-
         $res = $this->query($data->out_trade_no);
 
         if($res->trade_status == "TRADE_SUCCESS"){
             // 修改表中的订单状态
             OrderInfoModel::where('order_sn',$data->out_trade_no)->update(['pay_status'=>2]);
-            echo "本次交易victory(胜利)";
-            return redirect('/weui/orders');
+            $res = ['code'=>1,'font'=>"本次交易victory(胜利)"];
+            return json_encode($res,JSON_UNESCAPED_UNICODE);
         }
-        echo "本次交易失败，支付失败状态为:".$res->trade_status;
-        return redirect('/weui/orders');
+        $data = ['code'=>0,'font'=>"本次交易失败，支付失败状态为:".$res->trade_status];
+        return json_encode($data,JSON_UNESCAPED_UNICODE);
 
     }
     // 异步通知
