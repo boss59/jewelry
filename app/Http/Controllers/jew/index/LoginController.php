@@ -30,13 +30,11 @@ class LoginController extends Controller
             if(!preg_match($check,$data['email'])){
                 echo json_encode(['code'=>0,"msg"=>"email不和法"]);die;
             }
-//            endMail($data['email']);
+            endMail($data['email']);
             $data['upwd']=md5($data['upwd']);
             $data['add_time']=time();
-//            dd($data);
             $res = InfoModel::create($data);
             if ($res){
-//                $request->session()->put('info',$data,86400);
                 echo json_encode(['code'=>1,"msg"=>"注册成功",'user'=>$data]);die;
             }else{
                 echo json_encode(['code'=>1,"msg"=>"注册失败"]);die;
