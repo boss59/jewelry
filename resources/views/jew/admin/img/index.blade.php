@@ -47,8 +47,7 @@
                 dataType:'json',
                 success:function(res){
                     if (res.code==1) {
-                        alert(res.msg);
-                        _this.parents('tr').remove();
+                        window.location.reload();
                     }else{
                         alert(res.msg);
                     }
