@@ -21,8 +21,8 @@
         <h2>登 录</h2>
         <form action="{{ url("admin/login") }}" method="post">
             @csrf
-                <input type="text" Name="uname" placeholder="用户名" required="required"> @php echo $errors->first('phone')@endphp
-            <input type="password" Name="pwd" placeholder="密码" required="required"> @php echo $errors->first('phone')@endphp
+                <input type="text" Name="uname" class="uname" placeholder="用户名" required="required"> @php echo $errors->first('phone')@endphp
+            <input type="password" Name="pwd" class="pwd" placeholder="密码" required="required"> @php echo $errors->first('phone')@endphp
             <ul class="tick w3layouts agileits">
                 <li>
                     <input type="checkbox" id="brand1" name="remember" value="1">
@@ -30,7 +30,7 @@
                 </li>
             </ul>
             <div class="send-button w3layouts agileits">
-                    <input type="submit" value="登 录" id="btn">
+                    <input type="button" value="登 录" id="btns">
             </div>
         </form>
             <a href="#">忘记密码?</a>
@@ -109,28 +109,28 @@
         });
     });
     // 登陆
-    // $(document).ready(function(){
-    //     $("#btn").click(function(){
-    //         var data = {};
-    //         data.uname = $('.uname').val();
-    //         data.pwd = $('.pwd').val();
-    //         // alert(data);return;
-    //         $.ajax({
-    //             url:"/admin/login",
-    //             data:data,
-    //             type:"POST",
-    //             dataType:'json',
-    //             //processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
-    //             //contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性
-    //             success:function(res){
-    //                 if (res == 1) {
-    //                     alert("登陆成功");
-    //                     location.href="/admin/index";
-    //                 }else{
-    //                     alert("信息有误");
-    //                 }
-    //             }
-    //         })
-    //     });
-    // });
+    $(document).ready(function(){
+        $("#btns").click(function(){
+            var data = {};
+            data.uname = $('.uname').val();
+            data.pwd = $('.pwd').val();
+            // console.log(data);return;
+            $.ajax({
+                url:"/admin/login",
+                data:data,
+                type:"POST",
+                dataType:'json',
+                //processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
+                //contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性
+                success:function(res){
+                    if (res.res==1) {
+                        alert(res.font);
+                        location.href="/admin/index";
+                    }else{
+                        alert(res.font);
+                    }
+                }
+            })
+        });
+    });
 </script>

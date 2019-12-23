@@ -21,7 +21,7 @@
         </div>
     </form>
 
-    <table class="table table-striped table-bordered table-hover" style="padding-left:300px">
+    <table class="layui-table" style="padding-left:300px">
         <tr>
             <td>品牌id</td>
             <td>品牌名称</td>

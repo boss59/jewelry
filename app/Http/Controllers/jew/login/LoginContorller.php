@@ -48,17 +48,31 @@ class LoginContorller extends Controller
             $data = $request->except('_token');
             // 用户验证
             $info = UserModel::where('uname',$data['uname'])->first();
-            if (empty($info)) {
-                return "<script>alert('账号不正确');parent.location.href='/admin/login';</script>";die;
-            }else{
-                //判断密码是否正确
-                if ($info['pwd']==md5($data['pwd'])) {//用库里加密密码 == 接收的加密密码
-                    $request->session()->put('user_info',$info,86400);
-                    return "<script>alert('登陆成功');parent.location.href='/admin/index';</script>";die;
-                }else{
-                    return "<script>alert('密码不正确');parent.location.href='/admin/login';</script>";die;
-                }
+            if (time()-$info['error_time']<60) {
+                $time=60-(time()-$info['error_time']);
+                return json_encode(['font'=>'账号已锁定到'.date("Y-m-d H:i:s",$info['error_time']),'res'=>0]);
             }
+            if ($info) {
+                if ($info['pwd']==md5($data['pwd'])) {
+                    UserModel::where(['user_id'=>$info['user_id']])->update(['error_num'=>0,'error_time'=>0]);
+                    $request->session()->put('user_info', $info);
+                    return json_encode(['font'=>'登陆成功','res'=>1]);
+                }else{
+                    $error_num=$info['error_num'];
+                    if ($error_num>=2) {
+                        UserModel::where(['user_id'=>$info['user_id']])->update(['error_num'=>0,'error_time'=>time()]);
+                        return json_encode(['font'=>'密码错误,3次将锁定账号','res'=>0]);
+                    }else{
+                        $error=$error_num+1;
+                        $num=3-$error;
+                        UserModel::where(['user_id'=>$info['user_id']])->update(['error_num'=>$error]);
+                        return json_encode(['font'=>'密码错误,还有'.$num.'次机会','res'=>0]);
+                    }
+                }
+            }else{
+                return json_encode(['font'=>'账号未注册','res'=>0]);
+            }
+
         }
         return view('jew.admin.login.login');
     }
