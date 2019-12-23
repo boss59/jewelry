@@ -39,7 +39,7 @@ class HistoryController extends Controller
         }else{
             $data= HistoryModel::where('user_id',$user_id)
                 ->join('shop_goods','shop_history.goods_id','=','shop_goods.goods_id')
-                ->orderBy('cate_time','desc')->get()->toArray();
+                ->orderBy('create_time','desc')->get()->toArray();
             return json_encode($data,JSON_UNESCAPED_UNICODE);
         }
 
