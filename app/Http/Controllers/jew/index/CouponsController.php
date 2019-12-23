@@ -8,6 +8,7 @@ use App\Models\CouponsModel;
 
 class CouponsController extends Controller
 {
+    //优惠券
     public function index(Request $request)
     {
         $data=CouponsModel::get()->toArray();
