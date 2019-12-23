@@ -82,7 +82,8 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/type/value_index','jew\admin\CateController@value_index');// 展示
     Route::any('/value/value','jew\admin\GoodsController@value_value');// 展示
 
-
+    // 前台 管理
+    Route::any('/order/order','jew\admin\OrderController@order');//订单表展示
 });
 
 
@@ -148,9 +149,6 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/orders','jew\index\OrdersController@orders');// 全部
     Route::any('/index/Nopay','jew\index\OrdersController@Nopay');// 待付款
 
-
-    //测试减库存
-    Route::any('/index/num','jew\index\OrderInfoController@num');// 异步
 
 
 

@@ -198,19 +198,21 @@
                                     多文件 列表</a></dd>
                         </dl>
                     </li>
-                    <li class="layui-nav-item layui-nav-itemed">
-                        <a class="label label-success" href="javascript:;">
-                            <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp;&nbsp;
-                            产品 管理</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="/admin/product_add">
-                                    <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    产品 添加</a></dd>
-                            <dd><a href="/admin/product_index">
-                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    产品 列表</a></dd>
-                        </dl>
-                    </li>
+
+                    {{--<li class="layui-nav-item layui-nav-itemed">--}}
+                        {{--<a class="label label-success" href="javascript:;">--}}
+                            {{--<span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp;&nbsp;--}}
+                            {{--新闻 管理</a>--}}
+                        {{--<dl class="layui-nav-child">--}}
+                            {{--<dd><a href="/admin/product_add">--}}
+                                    {{--<span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span>&nbsp;&nbsp;--}}
+                                    {{--新闻 添加</a></dd>--}}
+                            {{--<dd><a href="/admin/product_index">--}}
+                                    {{--<span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;--}}
+                                    {{--新闻 列表</a></dd>--}}
+                        {{--</dl>--}}
+                    {{--</li>--}}
+
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="label label-primary" href="javascript:;">
                             <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;&nbsp;
@@ -228,14 +230,14 @@
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="label label-primary" href="javascript:;">
                             <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;&nbsp;
-                            新闻voice 管理</a>
+                            前台 管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="/admin/voice_add">
+                            <dd><a href="/order/order">
                                     <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    新闻voice 添加</a></dd>
-                            <dd><a href="/admin/voice_index">
+                                    订单 展示</a></dd>
+                            <dd><a href="/admin/index">
                                     <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp;
-                                    新闻voice 列表</a></dd>
+                                     展示 </a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item"><a href="javascript:;">
