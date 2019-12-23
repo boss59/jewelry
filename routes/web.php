@@ -132,8 +132,8 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/confirmOrder','jew\index\OrderInfoController@confirmOrder');// 确认订单
 
     //支付
-    Route::any('/index/alipay','jew\index\OrdersController@alipay');// 支付
-    Route::any('/index/notifypay','jew\index\OrdersController@notifypay');// 异步
+    Route::any('/index/alipay','jew\index\OrderInfoController@alipay');// 支付
+    Route::any('/index/notifypay','jew\index\OrderInfoController@notifypay');// 异步
     Route::any('/index/returnpay','jew\index\OrderInfoController@returnpay');// 同步
 
 
