@@ -12,6 +12,7 @@ use App\Models\OrderInfoModel;
 use App\Models\AddressModel;
 use App\Models\CaryModel;
 use App\Models\GoodsModel;
+use App\Models\CouModel;
 class OrderInfoController extends Controller
 {
     //下订单
@@ -29,6 +30,9 @@ class OrderInfoController extends Controller
                 return json_encode(['code'=>1,'font'=>'还未填写收货地址！']);
             }
         }
+        // 查询 用户下有无优惠券
+        $cou=CouModel::where('user_id',$user_id)->get()->toArray();
+
         // 根据 商品id 获取 商品信息
         $goods_id = $request->input('goods_id');
         $gid = explode(',',$goods_id);
@@ -54,7 +58,7 @@ class OrderInfoController extends Controller
             foreach ($info as $k => $v) {
                 $total+=$v['add_price']*$v['buy_number'];
             }
-            $data = ['goods'=>$goods,'address'=>$address,'total'=>$total];
+            $data = ['goods'=>$goods,'address'=>$address,'total'=>$total,'cou'=>$cou];
             return json_encode($data,JSON_UNESCAPED_UNICODE);
         }
     }
