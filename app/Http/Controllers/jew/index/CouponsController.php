@@ -33,6 +33,7 @@ class CouponsController extends Controller
                 $cot = CouModel::where($where)->first();
                 if (!$cot) {
                     $cou = CouModel::create($where);
+                    return json_encode($cou);
                     if ($cou) {
                         CouponsModel::where($where)->dec('num')->update();
                         return json_encode(['ret'=>'1','msg'=>'领取成功']);
