@@ -24,15 +24,16 @@ class CouponsController extends Controller
             "user_id"=>$data['user_id'],
             "con_id"=>$data['con_id'],
         ];
+        return json_encode($data);
         if (empty($data['user_id'])){
             return json_encode(['code'=>1,'font'=>'未登录']);
         }else{
             // 启动事务
             DB::beginTransaction();
             try {
-                $data = CouModel::where($where)->find();
-                return json_encode($data);
-                if (!$data) {
+                $cot = CouModel::where($where)->find();
+
+                if (!$cot) {
                     $cou = CouModel::create($where);
                     if ($cou) {
                         CouponsModel::where($where)->dec('num')->update();
