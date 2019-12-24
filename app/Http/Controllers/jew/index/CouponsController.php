@@ -31,7 +31,6 @@ class CouponsController extends Controller
             DB::beginTransaction();
             try {
                 $cot = CouModel::where($where)->first();
-                return json_encode($cot);
                 if (!$cot) {
                     $cou = CouModel::create($where);
                     if ($cou) {
