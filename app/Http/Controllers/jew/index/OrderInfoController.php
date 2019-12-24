@@ -13,6 +13,7 @@ use App\Models\AddressModel;
 use App\Models\CaryModel;
 use App\Models\GoodsModel;
 use App\Models\CouModel;
+use App\Models\CouponsModel;
 class OrderInfoController extends Controller
 {
     //下订单
@@ -31,8 +32,12 @@ class OrderInfoController extends Controller
             }
         }
         // 查询 用户下有无优惠券
-        $cou=CouModel::join('shop_coupons','shop_cou.con_id','=','shop_coupons.con_id')->where('user_id',$user_id)->get()->toArray();
-
+        $cous=CouModel::where('user_id',$user_id)->get()->toArray();
+        $con_id = [];
+        foreach($cous as $k=>$v){
+            $con_id[] = $v['con_id'];
+        }
+        $cou=CouponsModel::whereIn('con_id',$con_id)->get()->toArray();
         // 根据 商品id 获取 商品信息
         $goods_id = $request->input('goods_id');
         $gid = explode(',',$goods_id);
