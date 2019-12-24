@@ -34,7 +34,7 @@ class CouponsController extends Controller
                 if (!$cot) {
                     $cou = CouModel::create($where);
                     if ($cou) {
-                        CouponsModel::where(['con_id'=>$data['con_id']])->decrement('num')->update();
+                        CouponsModel::where(['con_id'=>$data['con_id']])->decrement('num',1);
                         return json_encode(['ret'=>'1','msg'=>'领取成功']);
                     }
                 }else{
