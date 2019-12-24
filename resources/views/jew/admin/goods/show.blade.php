@@ -254,7 +254,7 @@
 					url: "/admin/del_all",//请求地址
 					type: 'get',//请求的类型
 					dataType: 'json',//返回的类型
-					data: {gid: arr},//要传输的数据
+					data: {goods_id: arr},//要传输的数据
 					success: function (res) { //成功之后回调的方法
 						window.location.reload();
 					}

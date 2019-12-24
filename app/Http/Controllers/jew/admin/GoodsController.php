@@ -165,7 +165,7 @@ class GoodsController extends Controller
     public function del_all(Request $request)
     {
         $all = $request->input();
-        $res=GoodsModel::destroy($all);
+        $res=GoodsModel::whereIn('goods_id',$all['goods_id'])->delete();
         echo 1;
     }
 
