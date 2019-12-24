@@ -17,6 +17,6 @@ class CouponsModel extends Model
     // protected $fillable = [];
     // // 可批量赋值的属性。 要加字段  可以通过
     // 取消自动维护
-    // public $timestamps = false;
+     public $timestamps = false;
 }
 
