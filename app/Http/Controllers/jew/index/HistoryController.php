@@ -5,6 +5,7 @@ namespace App\Http\Controllers\jew\index;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\HistoryModel;
+use App\Models\GoodsModel;
 class HistoryController extends Controller
 {
     public function getHistory(Request $request)
@@ -37,10 +38,13 @@ class HistoryController extends Controller
         if(empty($user_id)){
             return json_encode(['code'=>0,'font'=>'未登录']);
         }else{
-            $data= HistoryModel::join('shop_goods','shop_history.goods_id','=','shop_goods.goods_id')
-                ->where('user_id',$user_id)
-                ->orderBy('create_time','desc')->get()->toArray();
-            return json_encode($data,JSON_UNESCAPED_UNICODE);
+            $data = HistoryModel::where('user_id',$user_id)->get()->toArray();
+            $goods_id = [];
+            foreach($data as $k=>$v){
+                $goods_id[] = $v['goods_id'];
+            }
+            $goods=GoodsModel::whereIn('goods_id',array_unique($goods_id))->get()->toArray();
+            return json_encode($goods,JSON_UNESCAPED_UNICODE);
         }
 
     }
