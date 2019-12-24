@@ -31,7 +31,7 @@ class OrderInfoController extends Controller
             }
         }
         // 查询 用户下有无优惠券
-        $cou=CouModel::where('user_id',$user_id)->get()->toArray();
+        $cou=CouModel::join('shop_coupons','shop_cou.con_id','=','shop_coupons.con_id')->where('user_id',$user_id)->get()->toArray();
 
         // 根据 商品id 获取 商品信息
         $goods_id = $request->input('goods_id');
