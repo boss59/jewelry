@@ -18,7 +18,6 @@ class MineController extends Controller
         $where = ['user_id'=>$user_id];
         // 收藏
             $collect=CollectModel::where($where)->count();
-            dd($collect);
         // 浏览历史
             $data = HistoryModel::where($where)->get()->toArray();
             $goods_id = [];
