@@ -39,7 +39,7 @@ class MineController extends Controller
         //计算 购物车 数量
             $car ="";
             $car = CaryModel::where($where)->count();
-        $res = ['collect'=>$collect,'history'=>$history,'order'=>$order,'pay'=>$pay,'Nopay'=>$Nopay,'car'=>car];
+        $res = ['collect'=>$collect,'history'=>$history,'order'=>$order,'pay'=>$pay,'Nopay'=>$Nopay,'car'=>$car];
         return json_encode($res,JSON_UNESCAPED_UNICODE);
     }
 
