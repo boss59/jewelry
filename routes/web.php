@@ -143,7 +143,8 @@ Route::group(['middleware'=>['AdminLogin']],function(){
     Route::any('/index/address_index','jew\index\AddressController@index');//用户地址展示
 
     //优惠卷
-    Route::any('/coupons/index','jew\index\CouponsController@index');
+    Route::any('/coupons/index','jew\index\CouponsController@index');//展示
+    Route::any('/coupons/ling','jew\index\CouponsController@ling');//领取
 
     //订单管理
     Route::any('/index/orders','jew\index\OrdersController@orders');// 全部
