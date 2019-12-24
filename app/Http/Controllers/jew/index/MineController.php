@@ -8,6 +8,7 @@ use App\Models\CollectModel;
 use App\Models\HistoryModel;
 use App\Models\GoodsModel;
 use App\Models\OrderInfoModel;
+use App\Models\CaryModel;
 class MineController extends Controller
 {
     // 统计
@@ -35,7 +36,10 @@ class MineController extends Controller
         // 未付款
             $Nopay ="";
             $Nopay = OrderInfoModel::where($where)->where('pay_status',0)->count();
-        $res = ['collect'=>$collect,'history'=>$history,'order'=>$order,'pay'=>$pay,'Nopay'=>$Nopay];
+        //计算 购物车 数量
+            $car ="";
+            $car = CaryModel::where($where)->count();
+        $res = ['collect'=>$collect,'history'=>$history,'order'=>$order,'pay'=>$pay,'Nopay'=>$Nopay,'car'=>car];
         return json_encode($res,JSON_UNESCAPED_UNICODE);
     }
 
