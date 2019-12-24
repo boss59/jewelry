@@ -14,7 +14,7 @@ class CouModel extends Model
     //  int类型 时间
     //protected $dateFormat = 'U'; // U表示时间戳类型/
     // $guarded = [];// 不可批量赋值的属性。 不加字段 可以通过
-    // protected $fillable = [];
+     protected $fillable = [];
     // // 可批量赋值的属性。 要加字段  可以通过
     // 取消自动维护
      public $timestamps = false;
