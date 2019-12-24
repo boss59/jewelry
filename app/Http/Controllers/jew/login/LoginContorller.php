@@ -29,7 +29,7 @@ class LoginContorller extends Controller
             if(!preg_match($check,$data['email'])){
                 echo json_encode(['code'=>0,"msg"=>"email不和法"]);die;
             }
-//            endMail($data['email']);
+            endMail($data['email']);
             $data['pwd']=md5($data['pwd']);
             $data['add_time']=time();
             $res = UserModel::create($data);
