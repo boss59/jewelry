@@ -24,7 +24,7 @@ class CouponsController extends Controller
             "user_id"=>$data['user_id'],
             "con_id"=>$data['con_id'],
         ];
-        return json_encode($data);
+        return json_encode($where);
         if (empty($data['user_id'])){
             return json_encode(['code'=>1,'font'=>'未登录']);
         }else{
