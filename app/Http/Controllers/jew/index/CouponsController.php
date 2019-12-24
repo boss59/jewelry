@@ -30,7 +30,7 @@ class CouponsController extends Controller
             // 启动事务
             DB::beginTransaction();
             try {
-                $cot = CouModel::where($where)->first()->toArray();
+                $cot = CouModel::where($where)->first();
                 return json_encode($cot);
                 if (!$cot) {
                     $cou = CouModel::create($where);
