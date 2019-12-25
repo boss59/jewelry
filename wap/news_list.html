@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>新闻列表</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<link rel="stylesheet" href="lib/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/mui.min.js"></script>
+<script src="js/jq.js"></script>
+<script type="text/javascript" charset="utf-8">
+	mui.init();
+</script>
+</head>
+<body ontouchstart>
+<!--主体-->
+<header class="wy-header">
+  <div class="wy-header-icon-back"><a href="index.html"><span></span></a></div>
+  <div class="wy-header-title">新闻列表</div>
+</header>
+<div class="weui-content">
+  <div class="weui-cells wy-news-list" id="news">
+    <a class="weui-cell weui-cell_access" href="news_info.html">
+      <div class="weui-cell__bd">
+        <p>热烈祝贺伟义商城成功上线</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+     </a>
+     <a class="weui-cell weui-cell_access" href="news_info.html">
+      <div class="weui-cell__bd">
+        <p>热烈祝贺蓝之蓝股份成功上市</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+     </a>
+     <a class="weui-cell weui-cell_access" href="news_info.html">
+      <div class="weui-cell__bd">
+        <p>热烈祝贺伟义商城成功上线</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+     </a>
+     <a class="weui-cell weui-cell_access" href="news_info.html">
+      <div class="weui-cell__bd">
+        <p>热烈祝贺蓝之蓝股份成功上市</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+     </a>
+     <a class="weui-cell weui-cell_access" href="news_info.html">
+      <div class="weui-cell__bd">
+        <p>热烈祝贺蓝之蓝股份成功上市</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+     </a>
+     <a class="weui-cell weui-cell_access" href="news_info.html">
+      <div class="weui-cell__bd">
+        <p>热烈祝贺伟义商城成功上线</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+     </a>
+     <a class="weui-cell weui-cell_access" href="news_info.html">
+      <div class="weui-cell__bd">
+        <p>热烈祝贺蓝之蓝股份成功上市</p>
+      </div>
+      <div class="weui-cell__ft"></div>
+     </a>
+  </div>
+  
+</div>
+
+<!--底部导航-->
+<div class="foot-black"></div>
+<div class="weui-tabbar wy-foot-menu">
+  <a href="index.html" class="weui-tabbar__item weui-bar__item--on">
+    <div class="weui-tabbar__icon foot-menu-home"></div>
+    <p class="weui-tabbar__label">首页</p>
+  </a>
+  <a href="classify.html" class="weui-tabbar__item">
+    <div class="weui-tabbar__icon foot-menu-list"></div>
+    <p class="weui-tabbar__label">分类</p>
+  </a>
+  <a href="shopcart.html" class="weui-tabbar__item">
+    <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+    <div class="weui-tabbar__icon foot-menu-cart"></div>
+    <p class="weui-tabbar__label">购物车</p>
+  </a>
+  <a href="javascript:;" class="weui-tabbar__item" id="mine">
+    <div class="weui-tabbar__icon foot-menu-member"></div>
+    <p class="weui-tabbar__label">我的</p>
+  </a>
+</div>
+<script src="lib/jquery-2.1.4.js"></script> 
+<script src="lib/fastclick.js"></script> 
+<script type="text/javascript" src="js/jquery.Spinner.js"></script>
+<script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+</script>
+
+<script src="js/jquery-weui.js"></script>
+
+<script>
+	$.ajax({
+			url:"http://www.vonetxs.com/index/news",
+			dataType:'json',
+			type:"post",
+			success:function(msg){
+				console.log(msg);
+				$('#news').empty();
+				mui.each(msg.news,function (k,v) {
+					
+					$('#news').append('<a class="weui-cell weui-cell_access" href="news_info.html?new_id='+v.new_id+'"><div class="weui-cell__bd"><p>'+v.title+'</p></div><div class="weui-cell__ft"></div></a>');
+				});
+				
+			}
+		});
+</script>
+</body>
+</html>
+<script>
+	//我的
+	$(document).on('click','#mine',function(){
+		var user_id = localStorage.getItem("user_id");//获取
+		if(user_id==null){
+			$.toast("请先登录", function() {
+				mui.openWindow({
+				  url:"login.html",
+				})
+			});
+		}else{
+			mui.openWindow({
+			  url:"mine.html",
+			})
+		}
+
+	});
+</script>

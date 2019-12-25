@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>购物车</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+<link rel="stylesheet" href="lib/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/mui.min.js"></script>
+<script src="js/jq.js"></script>
+<script type="text/javascript" charset="utf-8">
+	mui.init();
+</script>
+</head>
+<body ontouchstart>
+<!--主体-->
+<header class="wy-header">
+  <div class="wy-header-icon-back"><a href="index.html"><span></span></a></div>
+  <div class="wy-header-title">购物车</div>
+</header>
+<div class="weui-content">
+  <div class="weui-panel weui-panel_access" id="Car">
+	  
+    <!-- <div class="weui-panel__hd"><span>江苏蓝之蓝旗舰店</span><a href="javascript:;" class="wy-dele"></a></div>
+    <div class="weui-panel__bd">
+      <div class="weui-media-box_appmsg pd-10">
+        <div class="weui-media-box__hd check-w weui-cells_checkbox">
+          <label class="weui-check__label" for="cart-pto1">
+            <div class="weui-cell__hd cat-check"><input type="checkbox" class="weui-check" name="cartpro" id="cart-pto1"><i class="weui-icon-checked"></i></div>
+          </label>
+        </div>
+        <div class="weui-media-box__hd"><a href="pro_info.html"><img class="weui-media-box__thumb" src="upload/pro3.jpg" alt=""></a></div>
+        <div class="weui-media-box__bd">
+          <h1 class="weui-media-box__desc"><a href="pro_info.html" class="ord-pro-link">蓝之蓝蓝色瓶装经典Q7浓香型白酒500ml52度高端纯粮食酒2瓶装包邮</a></h1>
+          <p class="weui-media-box__desc">规格：<span>红色</span>，<span>23</span></p>
+          <div class="clear mg-t-10">
+            <div class="wy-pro-pri fl">¥<em class="num font-15">296.00</em></div>
+            <div class="pro-amount fr"><div class="Spinner"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+ 
+</div>
+<!--底部导航-->
+<div class="foot-black"></div>
+<div class="weui-tabbar wy-foot-menu">
+  <div class="npd cart-foot-check-item weui-cells_checkbox allselect">
+    <label class="weui-cell allsec-well weui-check__label" for="all">
+        <div class="weui-cell__hd">
+          <input type="checkbox" class="weui-check all" name="all-sec" id="all">
+          <i class="weui-icon-checked"></i>
+        </div>
+        <div class="weui-cell__bd">
+          <p class="font-14">全选</p>
+        </div>
+    </label>
+  </div>
+  <button class="red-color npd w-90 t-c delxx">清空购物车</button>
+  <div class="weui-tabbar__item  npd">
+    <p class="cart-total-txt">合计：<i>￥</i><em class="num font-16" id="zong1">0.00</em></p>
+  </div>
+  <a href="javascript:void(0)" class="red-color npd w-90 t-c" id="con">
+    <p class="promotion-foot-menu-label">去结算</p>
+  </a>
+</div>
+
+<script src="lib/jquery-2.1.4.js"></script> 
+<script src="lib/fastclick.js"></script> 
+<script type="text/javascript" src="js/jquery.Spinner.js"></script>
+<script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+</script>
+<script src="js/jquery-weui.js"></script>
+<script>
+
+$(function(){
+	var user_id = localStorage.getItem("user_id");
+	// =================   点击加号  ========
+	$(document).on('click','.numadd',function(){
+	      var _this = $(this); // 定义自身
+	      // 给文本 +1
+	      var buy_number = parseInt(_this.prev('input').val());// 获取 表单的值
+	      var goods_number  = _this.parents('div').attr('goods_num');// 获取 库 中的数量
+	      var goods_id  = _this.parents('div').attr('goods_id');// 获取 id
+	      if (buy_number >= goods_number) {
+	          _this.prop('disabled',true);
+			  $.toast("已到最大库存!");
+	          return false;
+	      }else{
+	          buy_number +=1;// +1
+	          _this.prev('input').val(buy_number);//把 1 放进去
+	          _this.prev().prev('input').prop('disabled',false);
+	      }
+	      // 修改 购买数量
+	      changeNumber(goods_id,buy_number,user_id);
+	      // 获取 小计
+	      getsubtotal(goods_id,_this,user_id);
+	      // 给 当前 所在 的 一行的选中
+	      boxchecked(_this);
+	      // 获取 商品总价
+	      getTotal(user_id);
+	});
+	// ===============    点击减号    ========
+	$(document).on('click','.less',function(){
+		// alert(11);
+	    var _this = $(this); // 定义自身
+	    // 给文本 -1
+	    var buy_number = parseInt(_this.next('input').val());// 获取 表单的值
+		// alert(buy_number);
+	    var goods_id  = _this.parents('div').attr('goods_id');// 获取 id
+	    // alert(goods_id);return;
+		if (buy_number <= 1) {
+			_this.prop('disabled',true);
+			return false;
+		}else{
+			buy_number -=1;// +1
+			_this.next('input').val(buy_number);//把 1 放进去
+			_this.next().next('input').prop('disabled',false);
+		}
+	      // 修改 购买数量
+	      changeNumber(goods_id,buy_number,user_id);
+	      // 获取 小计
+	      getsubtotal(goods_id,_this,user_id);
+	      // 给 当前 所在 的 一行的选中
+	      boxchecked(_this);
+	      // 获取 商品总价
+	      getTotal(user_id);
+	});
+	// ====================== 失去 焦点 ==============
+	$(document).on('blur','.car_ipt',function(){
+	    var _this = $(this); // 定义自身
+	    var buy_number = _this.val();// 获取 购买数量
+	    var goods_number  = parseInt(_this.parents('div').attr('goods_num'));// 获取 库 中的数量
+	    var goods_id  = _this.parents('div').attr('goods_id');// 获取 id
+	    var reg = /^\d+$/;// 检验 必须是数字
+	    if (buy_number=="") {
+	        _this.val(1);
+	        $.toast("至少选择一件!");
+	    }else if (!reg.test(buy_number)) {
+	        _this.val(1);
+	    }else if (buy_number >= goods_number) {
+	        _this.val(goods_number);
+			$.toast("已超过最大库存!");
+	        return false;
+	    }else if(buy_number =  parseInt(buy_number)){
+	        _this.val(buy_number);
+	    }else{
+	        buy_number = 0;
+	        _this.val(1);
+	    } 
+	    // 修改 购买数量
+	    changeNumber(goods_id,buy_number,user_id);
+	    // 获取 小计
+	    getsubtotal(goods_id,_this,user_id);
+	    // 给 当前 所在 的 一行的选中
+	    boxchecked(_this);
+	    // 获取 商品总价
+	    getTotal(user_id);
+	});
+	// ================= 复选 框  单选===========
+	$(document).on('click','.box',function(){
+	  // 获取 商品总价
+	  getTotal(user_id);
+	})
+	//================= <!---全选按钮--> ==================
+	$(document).on('click','.all',function(){
+	  $('.box').prop('checked',$(this).prop('checked'));
+	  // 获取 商品总价
+	  getTotal(user_id);
+	});
+	//=========== 单删 ========================
+	$(document).on("click", ".wy-dele", function() {//删除
+		var _this = $(this);
+		var user_id = localStorage.getItem("user_id");
+		$.confirm("您确定要把此商品从购物车删除吗?", "确认删除?", function() {
+		  var goods_id = _this.attr('goods_id');
+		  $.ajax({
+			  url:"http://www.vonetxs.com/index/cary_del",//请求地址
+			  type:'post',//请求的类型
+			  dataType:'json',//返回的类型
+			  data:{goods_id:goods_id,user_id:user_id},//要传输的数据
+			  success:function(res){ //成功之后回调的方法
+				  if (res.code==1) {
+					window.location.reload();
+					$.toast("商品已经删除!");
+				  }else{
+					$.toast("商品未删除!");
+				  }
+			  }
+			})
+		  // 获取 商品总价
+		  getTotal(user_id);
+		}, function() {
+		  //取消操作
+		}); 
+	});
+	//=============       批删     ==================
+	$(document).on('click','.delxx',function(){
+	  var _this = $(this);
+	  $.confirm("您确定要把此商品从购物车删除吗?", "确认删除?", function() {
+	    var odj = $('.box:checked');
+	    var arr = new Array();// 定义数组
+	    // 循环 odj
+	    $.each(odj,function(){
+	      var id = $(this).attr('goods_id');
+	      arr.push(id);// 把id 放到数组中
+	    })
+		// alert(arr);return;
+	    // 发送请求
+	    $.ajax({
+	      url:"http://www.vonetxs.com/index/alldel",//请求地址
+	      type:'get',//请求的类型
+	      dataType:'json',//返回的类型
+	      data:{goods_id:arr,user_id,user_id},//要传输的数据
+	      success:function(res){ //成功之后回调的方法
+	        if (res.code==1) {
+	          window.location.reload();
+	        }else{
+	          alert(res.font);
+	        }
+	      }
+	    })
+	    // 获取 商品总价
+	    getTotal();
+	  }, function() {
+	    //取消操作
+	  }); 
+	})
+	
+// ==========  方法   ======================================
+	// 修改数量
+	function changeNumber(goods_id,buy_number,user_id)
+	{
+		  $.ajax({
+			url:'http://www.vonetxs.com/index/changeNumber',//请求地址
+			type:'POST',//请求的类型
+			dataType:'json',//返回的类型
+			data:{buy_number:buy_number,goods_id:goods_id,user_id:user_id},//要传输的数据
+			async:false,
+			success:function(res){ //成功之后回调的方法
+			  if (res.code == 2) {
+				$.toast(res.font);
+			  }else{
+				$.toast(res.font);
+			  }
+			}
+		  });
+	}
+	
+	// 获取 小计 的方法
+	function getsubtotal(goods_id,_this,user_id)
+	{
+		$.ajax({
+			url:'http://www.vonetxs.com/index/getsubtotal',//请求地址
+			type:'POST',//请求的类型
+			dataType:'json',//返回的类型
+			data:{goods_id:goods_id,user_id:user_id},//要传输的数据
+			success:function(res){ //成功之后回调的方法
+				if(res.code == 0){
+					$.toast(res.font);
+				}else{
+					_this.parents('div[class="clear mg-t-10"]').prev('p[class="weui-media-box__desc ssss"]').find('span[class="subtotal"]').text('￥:'+res);
+				}
+			}
+		});
+	}
+	
+	// 给 当前 所在 的 一行的选中
+	function boxchecked(_this)
+	{
+		_this.parents('div[class="weui-media-box__bd"]').prev().prev('div[class="xxx"]').find('input[class="box"]').prop('checked',true);
+	}
+	
+	// 获取 商品总价
+	function getTotal(user_id)
+	{
+		// 获取 选中的 商品 id
+		var box = $('.box:checked');
+		// alert(box);
+		var goods_id ='';
+		box.each(function(index){
+		  goods_id+=$(this).attr('goods_id')+',';
+		})
+		goods_id=goods_id.substr(0,goods_id.length-1);
+		// 发送 ajax
+		$.ajax({
+			url:'http://www.vonetxs.com/index/pricetotal',//请求地址
+			type:'POST',//请求的类型
+			// dataType:'json',//返回的类型
+			data:{goods_id:goods_id,user_id:user_id},//要传输的数据
+			success:function(res){ //成功之后回调的方法
+				console.log(res);
+				if(res.code == 0){
+					alert(res.font);
+				}else{
+					$('#zong1').text(res);
+				}
+			}
+		  })
+	}
+});
+
+
+// ============ 确认结算 =========
+$(document).on('click','#con',function(){
+	var user_id = localStorage.getItem("user_id");
+	if(user_id == null){
+		$.toast("还未登陆");return;
+	}
+    var box = $('.box:checked');
+    if (box.length == 0) {
+      $.toast("至少选择一件商品");return;
+    }
+    var goods_id = '';
+    box.each(function(index){
+        goods_id+= $(this).attr('goods_id')+',';
+    })
+    goods_id=goods_id.substr(0,goods_id.length-1);
+	//alert(goods_id);return;
+	location.href = "order_info.html?goods_id="+goods_id;
+});
+</script>
+</body>
+</html>
+<script>
+	// 获取数据
+	var user_id = localStorage.getItem("user_id");
+	$.ajax({
+	  url:"http://www.vonetxs.com/index/cary_index",//请求地址
+	  type:'get',//请求的类型
+	  dataType:'json',//返回的类型
+	  data:{user_id:user_id},//要传输的数据
+	  success:function(msg){ //成功之后回调的方法
+		if(msg.code == 3){
+			$.toast("还未登陆!");return;
+		}
+		if(msg.code == 0){
+			$.toast("购物车已空");return;
+		}else{
+			$('#Car').empty();
+			mui.each(msg,function (k,v) {
+				$('#Car').append('<div class="weui-panel__hd" ><span>'+v.goods_name+'</span><a href="javascript:;" class="wy-dele" goods_id='+v.goods_id+'></a></div>\
+										<div class="weui-panel__bd">\
+										  <div class="weui-media-box_appmsg pd-10">\
+											<div style="padding:10px;" class="xxx">\
+											       <input type="checkbox" goods_id='+v.goods_id+' class="box">\
+											</div>\
+											<div class="weui-media-box__hd"><a href="pro_info.html"><img class="weui-media-box__thumb" src=http://www.vonetxs.com'+v.goods_img+' alt=""></a></div>\
+											<div class="weui-media-box__bd">\
+											  <h1 class="weui-media-box__desc"><a href="pro_info.html" class="ord-pro-link">'+v.goods_name+'</a></h1>\
+											  <p class="weui-media-box__desc">所属分系：<span style="color:blue;">'+v.type_name+'</span> 职业 ：<span style="color:red;">'+v.value_name+'</span></p>\
+											  <p class="weui-media-box__desc ssss">小计：<span style="color:blue;" class="subtotal">￥：'+v.add_price+'</span></p>\
+											  <div class="clear mg-t-10" >\
+												<div class="wy-pro-pri fl">¥<em class="num font-15">'+v.add_price+'</em></div>\
+												<div class="pro-amount fr"><div class="Spinner" goods_id='+v.goods_id+' goods_num='+v.goods_num+'><a class="Decrease less" href="javascript:void(0)"><i>-</i></a><input class="Amount car_ipt" value="'+v.buy_number+'" autocomplete="off" maxlength="3"><a class="Increase numadd" href="javascript:void(0)"><i>+</i></a></div></div>\
+											  </div>\
+											</div>\
+										  </div>\
+										</div>\
+									  </div>');
+			});	
+		}	
+	  },
+	  
+	});
+</script>
+<style>
+	.box{
+		width:20px;
+		height:29px;
+	};
+</style>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>优惠券页面</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<script src="js/mui.min.js"></script>
+<link rel="stylesheet" href="lib/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="css/mui.min.css" rel="stylesheet"/>
+</head>
+
+<body ontouchstart>
+<!--主体-->
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">优惠券</h1>
+</header>
+<div class="mui-content">
+  <article class="weui-article">
+    <section class="wy-news-info">
+	<div class="weui-content" id="base">
+	  
+	</div>
+    </section>
+  </article>
+</div>
+<script src="lib/jquery-2.1.4.js"></script> 
+<script src="lib/fastclick.js"></script> 
+<script type="text/javascript" src="js/jquery.Spinner.js"></script>
+<script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+</script><script src="js/jquery-weui.js">
+	
+</script>
+</body>
+</html>
+<script>
+	var user_id = localStorage.getItem("user_id");//获取
+	// 展示 优惠券
+	$.ajax({
+		url:'http://www.vonetxs.com/coupons/index',
+		dataType:'json',
+		type:'post',
+		// $('news').empty();
+		success:function(data){
+			mui.each(data,function(k,v){
+				console.log(v);
+				$('#base').append('<div class="weui-cells wy-news-list">\
+										<a class="weui-cell weui-cell_access" href="javascript:;" id="ling"><div class="weui-cell__bd">\
+										<p>'+v.conditions+'</p><p>代金券￥'+v.price+'</p>\
+									</div>\
+									<div class="weui-cell__ft" id="aaa" con_id="'+v.con_id+'">点击领取</div></a>')
+			});
+		}
+	});		
+$(document).on('click','#aaa',function(){
+	var con_id = $(this).attr('con_id');
+	// 领取
+	$.ajax({
+		url:'http://www.vonetxs.com/coupons/ling',
+		dataType:'json',
+		type:'post',
+		data:{user_id:user_id,con_id:con_id},
+		success:function(res){
+			console.log(res);
+			if(res.ret){
+				$.toast(res.msg);
+			}else{
+				$.toast(res.msg);
+			}
+		}
+	});
+});
+</script>

@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>订单详情</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+<link rel="stylesheet" href="lib/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/mui.min.js"></script>
+<script src="js/jq.js"></script>
+<script type="text/javascript" charset="utf-8">
+	mui.init();
+</script>
+</head>
+<body ontouchstart>
+<!--主体-->
+<header class="wy-header">
+  <div class="wy-header-icon-back"><a href="shopcart.html"><span></span></a></div>
+  <div class="wy-header-title">订单详情</div>
+</header>
+<div class="weui-content">
+  <div class="wy-media-box weui-media-box_text address-select">
+    <div class="weui-media-box_appmsg">
+      <div class="weui-media-box__hd proinfo-txt-l" style="width:20px;"><span class="promotion-label-tit"><img src="images/icon_nav_city.png" /></span></div>
+      <div class="weui-media-box__bd" id='address'>
+        <a href="address_list.html" class="weui-cell_access">
+          <h4 class="address-name"><span>杜杰</span><span>13854652512</span></h4>
+          <div class="address-txt">宿迁市洋河新区电商产业园105号</div>
+        </a>
+      </div>
+      <div class="weui-media-box__hd proinfo-txt-l" style="width:16px;"><div class="weui-cell_access"><span class="weui-cell__ft"></span></div></div>
+    </div>
+  </div>
+  <div class="wy-media-box weui-media-box_text">
+    <div class="weui-media-box__bd" id="goods">
+		
+     <div class="weui-media-box_appmsg ord-pro-list">
+        <div class="weui-media-box__hd"><a href="pro_info.html"><img class="weui-media-box__thumb" src="upload/pro3.jpg" alt=""></a></div>
+        <div class="weui-media-box__bd">
+          <h1 class="weui-media-box__desc"><a href="pro_info.html" class="ord-pro-link">蓝之蓝蓝色瓶装经典Q7浓香型白酒500ml52度高端纯粮食酒2瓶装包邮</a></h1>
+          <p class="weui-media-box__desc">规格：<span>红色</span>，<span>23</span></p>
+          <div class="clear mg-t-10">
+            <div class="wy-pro-pri fl">¥<em class="num font-15">296.00</em></div>
+            <div class="pro-amount fr"><span class="font-13">数量×<em class="name">1</em></span></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="weui-panel">
+    <div class="weui-panel__bd">
+      <div class="weui-media-box weui-media-box_small-appmsg">
+        <div class="weui-cells">
+          <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd weui-cell_primary">
+              <p class="font-14"><span class="mg-r-10">配送方式</span><span class="fr">快递</span></p>
+            </div>
+          </div>
+		  
+          <div class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd weui-cell_primary">
+              <p class="font-14"><span class="mg-r-10">运费</span><span class="fr txt-color-red">￥<em class="num">10.00</em></span></p>
+            </div>
+          </div>
+		  
+          <a class="weui-cell weui-cell_access" href="money.html">
+            <div class="weui-cell__bd weui-cell_primary">
+              <p class="font-14"><span class="mg-r-10">可用蓝豆</span><span class="sitem-tip"><em class="num">1235</em>个</span></p>
+            </div>
+            <span class="weui-cell__ft"></span>
+          </a>
+		  
+          <div class="wy-media-box2 weui-media-box_text">
+            <div class="weui-media-box_appmsg">
+              <div class="weui-media-box__hd proinfo-txt-l"><span class="promotion-label-tit">优惠</span></div>
+              <div class="weui-media-box__bd" id="cou">
+						<!-- <div class="promotion-message clear" id="cou">
+						  <span class="label-text"><input type="checkbox"></span>
+						  <span class="promotion-item-text">满100.00减30.00</span>
+						</div> -->
+						
+                <div class="yhq-btn clear"><a href="coupons.html">去领券</a></div>
+              </div>
+            </div>
+          </div>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+	<div id="con">
+		<input type="hidden" name="pay_id" value="1">
+		<input type="hidden" name="shipping_id" value="1">
+		<input type="hidden" name="pay_status" value="0">
+		<input type="hidden" name="order_status" value="0">
+		<input type="hidden" name="shipping_status" value="0">
+		<input type="hidden" name="zipcode" value="66889">
+		<input type="hidden" name="email" value="2792593650@qq.com">
+		<input type="hidden" name="sign_building" value="竞技场">
+		<input type="hidden" name="best_time" value="早上 9:00">
+		<input type="hidden" name="shipping_fee" value="3312">
+		<input type="hidden" name="zipcode" value="000000">
+		<input type="hidden" name="tel" value="19192433928">
+		<input type="hidden" name="postscript" value="生如蝼蚁，当立鸿鹄之志。命如薄纸，却有不屈之心！">
+	</div>
+	  
+
+  <div class="wy-media-box weui-media-box_text">
+    <div class="mg10-0 t-c">总金额：<span class="wy-pro-pri mg-tb-5">¥<em class="num font-20" id="total">0.00</em></span></div>
+    <div class="mg10-0"><span class="weui-btn weui-btn_primary" id="pay">支付宝付款</span></div>
+  </div>
+</div>
+<script src="lib/jquery-2.1.4.js"></script> 
+<script src="lib/fastclick.js"></script> 
+<script type="text/javascript" src="js/jquery.Spinner.js"></script>
+<script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+</script>
+<script type="text/javascript">
+$(function(){
+	$(".Spinner").Spinner({value:1, len:3, max:999});
+});
+</script>
+<script src="js/jquery-weui.js"></script>
+<!-- 订单详情 -->
+<script>
+$(function(){
+	var user_id = localStorage.getItem("user_id");
+	
+	var url=window.location.href;
+	var goods_id=url.split("=");
+	var ids = goods_id[1];
+	
+	$.ajax({
+		url:"http://www.vonetxs.com/index/order_info",//请求地址
+		type:'post',//请求的类型
+		dataType:'json',//返回的类型
+		data:{goods_id:ids,user_id:user_id},//要传输的数据
+		success:function(res){ //成功之后回调的方法
+			if(res.code == 0){
+				$.toast("请先登录", function() {
+					location.href = "login.html?refer="+url;
+				});
+			}
+			if(res.code == 1){
+				$.toast("请先填写收货地址", function() {
+					location.href = "address_edit.html?address="+url;
+				});
+			}
+			if(res.code == 2){
+				$.toast("无商品!");
+			}
+			$('#con').append('<input type="hidden" name="goods_amount" value='+res.total+'>');
+			// 循环 数据
+			$('#address').empty();
+			$('#goods').empty();
+			$('#cou').empty();
+			$('#total').text(res.total);
+			mui.each(res.address,function (k,v) {
+				$('#address').append('<a href="address_list.html" class="weui-cell_access" id="resss" address_id='+v.address_id+'>\
+										<h4 class="address-name"><span>'+v.consignee+'</span><span>'+v.tel+'</span></h4>\
+										<div class="address-txt">'+v.address_name+'  '+v.address+'</div>\
+									</a>');
+			});
+			// 商品
+			mui.each(res.goods,function (k,v) {
+				$('#goods').append('<div class="weui-media-box_appmsg ord-pro-list">\
+									<div class="weui-media-box__hd"><a href="pro_info.html"><img class="weui-media-box__thumb" src=http://www.vonetxs.com'+v.goods_img+' alt=""></a></div>\
+									<div class="weui-media-box__bd">\
+									  <h1 class="weui-media-box__desc"><a href="pro_info.html" class="ord-pro-link">'+v.goods_name+'</a></h1>\
+									  <p class="weui-media-box__desc">所属分系：<span id="attr">'+v.type_name+'</span>  职业：<span id="val">'+v.value_name+'</span></p>\
+									  <div class="clear mg-t-10">\
+										<div class="wy-pro-pri fl">¥<em class="num font-15">'+v.add_price+'</em></div>\
+										<div class="pro-amount fr"><span class="font-13">数量×<em class="name">'+v.buy_number+'</em></span></div>\
+									  </div>\
+									</div>\
+								  </div>');
+			});
+			// 优惠券
+			mui.each(res.cou,function (k,v) {
+				$('#cou').append('<div class="promotion-message clear">\
+						  <span class="label-text"><input type="checkbox" name="ss" onclick="choose(this)" class="cox" price='+v.price+'></span>\
+						  <span class="promotion-item-text">'+v.conditions+'</span>\
+						</div>');
+			});
+		}
+	});
+	
+	
+	//支付宝支付
+	$(document).on('click','#pay',function(){
+		var url=window.location.href;
+		var goods_id=url.split("=");
+		var ids = goods_id[1];
+		var price = $('.cox:checked').attr('price');
+		// alert(price);return;
+		//获取值 sign_building  详细地址
+		var data = {};
+		data.pay_id = $('input[name="pay_id"]').val();
+		data.shipping_id = $('input[name="shipping_id"]').val();
+		data.pay_status = $('input[name="pay_status"]').val();
+		data.order_status = $('input[name="order_status"]').val();
+		data.shipping_status = $('input[name="shipping_status"]').val();
+		data.email = $('input[name="email"]').val();
+		data.best_time = $('input[name="best_time"]').val();
+		data.shipping_fee = $('input[name="shipping_fee"]').val();
+		data.sign_building = $('input[name="sign_building"]').val();
+		data.zipcode = $('input[name="zipcode"]').val();
+		data.postscript = $('input[name="postscript"]').val();
+		data.tel = $('input[name="tel"]').val();
+		data.goods_amount = $('input[name="goods_amount"]').val();
+		data.order_amount = $('#total').text();
+		data.user_id = localStorage.getItem("user_id");
+		data.address_id = $('#resss').attr('address_id');
+		data.goods_id = ids;
+		if(data.order_amount >= 100 && data.order_amount < 200 && price == 30 ){
+			data.order_amount -= price;
+		}
+		if(data.order_amount >= 200 && data.order_amount < 300 && price == 50 ){
+			data.order_amount -= price;
+		}
+		if(data.order_amount >= 500  && price == 100 ){
+			data.order_amount -= price;
+		}
+		// alert(data.order_amount);return;
+		$.ajax({
+			url:"http://www.vonetxs.com/index/confirmOrder",//请求地址
+			type:'post',//请求的类型
+			dataType:'json',//返回的类型
+			data:data,//要传输的数据
+			success:function(res){ //成功之后回调的方法
+				console.log(res)
+				if(res.code == 1){
+					$.toast("正在跳转支付页面!");
+					window.location.href = "http://www.vonetxs.com/index/alipay?order_id="+res.order_id
+				}else{
+					$.toast("创建订单失败!");
+				}
+			}
+		});
+		
+	});
+});
+
+
+</script>
+</body>
+</html>
+<script>
+// 只能选择一项	
+function choose(obj){
+	// alert(1);return;
+  var ss= document.getElementsByName("ss");
+  for (var i = 0; i < ss.length; i++) {
+   ss[i].checked = false;
+  }
+  obj.checked = true;
+}	
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>交易记录</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+<script src="js/mui.min.js"></script>
+<link rel="stylesheet" href="lib/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body ontouchstart>
+<!--主体-->
+<header class="wy-header" style="position:fixed; top:0; left:0; right:0; z-index:200;">
+  <div class="wy-header-icon-back"><a href="mine.html"><span></span></a></div>
+  <div class="wy-header-title">浏览记录</div>
+</header>
+<div class='weui-content'>
+  <div class="weui-tab">
+    <div class="weui-navbar" style="position:fixed; top:44px; left:0; right:0; height:44px; background:#fff;">
+      <a class="weui-navbar__item proinfo-tab-tit font-14 weui-bar__item--on" href="#tab1">您浏览过得商品</a>
+
+    </div>
+    <div class="weui-tab__bd proinfo-tab-con" style="padding-top:87px;">
+    <div id="list" class='demos-content-padded proListWrap'>
+      <div class="pro-items" id="st">
+        <a href="pro_info.html" class="weui-media-box weui-media-box_appmsg">
+          <div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="upload/pro3.jpg" alt=""></div>
+          <div class="weui-media-box__bd">
+            <h1 class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</h1>
+            <div class="wy-pro-pri">¥<em class="num font-15">296.00</em></div>
+            <ul class="weui-media-box__info prolist-ul">
+              <li class="weui-media-box__info__meta"><em class="num">0</em>条评价</li>
+              <li class="weui-media-box__info__meta"><em class="num">100%</em>好评</li>
+            </ul>
+          </div>
+        </a>
+      </div>
+      
+    
+    </div>
+  
+  
+    </div>
+  </div>
+</div>
+
+<script src="lib/jquery-2.1.4.js"></script> 
+<script src="lib/fastclick.js"></script> 
+<script type="text/javascript" src="js/jquery.Spinner.js"></script>
+<script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+</script>
+<script src="js/jquery-weui.js"></script>
+</body>
+</html>
+<script>
+	var user_id = localStorage.getItem("user_id");
+	var data={
+		user_id:user_id,
+	};
+	$('#st').empty();
+	$.ajax({
+		url:'http://www.vonetxs.com/index/Historylist',
+		dataType:'json',
+		data:data,
+		type:'post',
+		success:function(msg){
+			console.log(msg);
+			mui.each(msg,function(k,v){
+				var img="http://www.vonetxs.com"+v.goods_img;
+				console.log(v);
+				$('#st').append('<a href="pro_info.html?goods_id='+v.goods_id+'" class="weui-media-box weui-media-box_appmsg">\
+          <div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="'+img+'" alt=""></div>\
+          <div class="weui-media-box__bd">\
+            <h1 class="weui-media-box__desc">'+v.goods_name+'</h1>\
+            <div class="wy-pro-pri">¥<em class="num font-15">'+v.goods_price+'</em></div>\
+            <ul class="weui-media-box__info prolist-ul">\
+            </ul>\
+          </div>\
+        </a>')
+			});
+		}
+	})
+</script>

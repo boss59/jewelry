@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>新闻详情</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<link rel="stylesheet" href="lib/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/mui.min.js"></script>
+<script src="js/jq.js"></script>
+<script type="text/javascript" charset="utf-8">
+	mui.init();
+</script>
+</head>
+<body ontouchstart>
+<!--主体-->
+<header class="wy-header">
+  <div class="wy-header-icon-back"><a href="news_list.html"><span></span></a></div>
+  <div class="wy-header-title">新闻详情</div>
+</header>
+<div class="weui-content" id="list">
+  <article class="weui-article">
+    <h1>热烈祝贺蓝之蓝股份上市</h1>
+    <h3 class="wy-news-time">2016-02-06</h3>
+    <section class="wy-news-info">
+      <p>热烈祝贺蓝之蓝股份上市热烈祝贺蓝之蓝股份上市热烈祝贺蓝之蓝股份上市热烈祝贺蓝之蓝股份上市热烈祝贺蓝之蓝股份上市热烈祝贺蓝之蓝股份上市热烈祝贺蓝之蓝股份上市</p>
+      <p>
+        <img src="upload/ban1.jpg" alt="">
+        <img src="upload/ban2.jpg" alt="">
+      </p>
+    </section>
+  </article>
+</div>
+
+
+<!--底部导航-->
+<div class="foot-black"></div>
+<div class="weui-tabbar wy-foot-menu">
+  <a href="index.html" class="weui-tabbar__item weui-bar__item--on">
+    <div class="weui-tabbar__icon foot-menu-home"></div>
+    <p class="weui-tabbar__label">首页</p>
+  </a>
+  <a href="classify.html" class="weui-tabbar__item">
+    <div class="weui-tabbar__icon foot-menu-list"></div>
+    <p class="weui-tabbar__label">分类</p>
+  </a>
+  <a href="shopcart.html" class="weui-tabbar__item">
+    <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+    <div class="weui-tabbar__icon foot-menu-cart"></div>
+    <p class="weui-tabbar__label">购物车</p>
+  </a>
+  <a href="javascript:;" class="weui-tabbar__item" id="mine">
+    <div class="weui-tabbar__icon foot-menu-member"></div>
+    <p class="weui-tabbar__label">我的</p>
+  </a>
+</div>
+<script src="lib/jquery-2.1.4.js"></script> 
+<script src="lib/fastclick.js"></script> 
+<script type="text/javascript" src="js/jquery.Spinner.js"></script>
+<script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+</script>
+
+<script src="js/jquery-weui.js"></script>
+<script>
+	var url=window.location.href;
+	var sort_id=url.split("=");
+	$.ajax({
+			url:"http://www.vonetxs.com/index/news",
+			dataType:'json',
+			type:"post",
+			data:{new_id:sort_id[1]},
+			success:function(msg){
+				console.log(msg);
+				$('#list').empty();
+				mui.each(msg.news,function (k,v) {
+					
+					$('#list').append('<article class="weui-article"><h1>'+v.title+'</h1><h3 class="wy-news-time">'+des(v.add_time)+'</h3><section class="wy-news-info"><p>n'+v.new_desc+'</p><p><img src=http://www.vonetxs.com'+v.new_img+' alt=""></p></section></article>');
+				});
+			}
+		});
+		// 时间转换
+		function des(time)
+		{
+			var date = new Date(time*1000);
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			var day = date.getDate();
+			des = year + '-' + month + '-' + day;
+			
+			return des;
+		}
+		// Date.prototype.Format = function(fmt)
+		// { 
+		// //author:wangweizhen
+		//   var o = {   
+		//     "M+" : this.getMonth()+1,                 //月份   
+		//     "d+" : this.getDate(),                    //日
+		//     "h+" : this.getHours(),                   //小时   
+		//     "m+" : this.getMinutes(),                 //分   
+		//     "s+" : this.getSeconds(),                 //秒   
+		//     "q+" : Math.floor((this.getMonth()+3)/3), //季度   
+		//     "S"  : this.getMilliseconds()             //毫秒   
+		//   };   
+		//   if(/(y+)/.test(fmt))   
+		//     fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));   
+		//   for(var k in o)   
+		//     if(new RegExp("("+ k +")").test(fmt))   
+		//   fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));   
+		//   return fmt;   
+		// };
+</script>
+</body>
+</html>
+<script>
+	//我的
+	$(document).on('click','#mine',function(){
+		var user_id = localStorage.getItem("user_id");//获取
+		if(user_id==null){
+			$.toast("请先登录", function() {
+				mui.openWindow({
+				  url:"login.html",
+				})
+			});
+		}else{
+			mui.openWindow({
+			  url:"mine.html",
+			})
+		}
+
+	});
+</script>

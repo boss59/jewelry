@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>手机注册</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+<script src="js/mui.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="lib/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body ontouchstart>
+<!--主体-->
+<header class="wy-header">
+  <div class="wy-header-icon-back"><span></span></div>
+  <div class="wy-header-title" id="fan">手机注册</div>
+</header>
+<div class="weui-content">
+  <div class="weui-cells weui-cells_form wy-address-edit">
+	 <div class="weui-cell weui-cell_vcode">
+	   <div class="weui-cell__hd"><label class="weui-label wy-lab">用户名</label></div>
+	   <div class="weui-cell__bd"><input class="weui-input" type="tel" placeholder="请输入用户名" id="uname"></div>
+	  </div>
+    <div class="weui-cell weui-cell_vcode">
+      <div class="weui-cell__hd"><label class="weui-label wy-lab">手机号</label></div>
+      <div class="weui-cell__bd"><input class="weui-input" type="tel" placeholder="请输入手机号" id="tel" ></div>
+    </div>
+	<div class="weui-cell weui-cell_vcode">
+	  <div class="weui-cell__hd"><label class="weui-label wy-lab">邮箱</label></div>
+	  <div class="weui-cell__bd"><input class="weui-input" type="email" placeholder="请输入邮箱" id="email"></div>
+	</div>
+    <div class="weui-cell">
+      <div class="weui-cell__hd"><label class="weui-label wy-lab">设置密码</label></div>
+      <div class="weui-cell__bd"><input class="weui-input" type="password" pattern="[0-9]*" placeholder="请输入新密码" id="upwd"></div>
+    </div>
+   
+  </div>
+  <label for="weuiAgree" class="weui-agree">
+    <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox" checked="checked">
+    <span class="weui-agree__text">阅读并同意<a href="javascript:void(0);">《注册协议》</a></span>
+  </label>
+  <div class="weui-btn-area"><a href="javascript:;" class="weui-btn weui-btn_warn" id="btn">注册并登陆</a></div>
+  <div class="weui-cells__tips t-c font-12">登陆账号为您输入的手机号码</div>
+  <div class="weui-cells__tips t-c pd-10"><a href="xieyi.html" class="weui-cell_link font-12">查看注册协议</a></div>
+  
+</div>
+
+<script src="lib/jquery-2.1.4.js"></script> 
+<script src="lib/fastclick.js"></script> 
+<script type="text/javascript" src="js/jquery.Spinner.js"></script>
+<script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+  $(document).on('click','#btn',function(){
+		var uname=$("#uname").val();
+		var tel=$("#tel").val();
+		var email=$("#email").val();
+		var upwd=$("#upwd").val();
+		// alert(upwd);
+		var data={
+			uname:uname,
+			upwd:upwd,
+			tel:tel,
+			email:email
+		}
+		var url="http://www.vonetxs.com/index/regist";
+		$.ajax({
+			url:url,
+			data:data,
+			dataType:"json",
+			type:"post",
+			success:function(data){
+				if(data.code==1){
+					alert(data.msg);
+					mui.openWindow({
+					    url:"login.html",
+					    	
+					    })
+				}else{
+					alert(data.msg);
+				}
+				
+			}
+		});
+	  
+	  })
+</script>
+
+<script src="js/jquery-weui.js"></script>
+</body>
+</html>

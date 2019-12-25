@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>商城分类</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+<link rel="stylesheet" href="lib/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jq.js"></script>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+	mui.init();
+</script>
+</head>
+<body ontouchstart>
+<!--顶部搜索-->
+<!--主体-->
+<div class="wy-content">
+  <div class="category-top">
+    <header class='weui-header'>
+  <div class="weui-search-bar" id="searchBar">
+    <form class="weui-search-bar__form">
+      <div class="weui-search-bar__box">
+        <i class="weui-icon-search"></i>
+        <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索您想要的商品" required>
+        <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+      </div>
+      <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+        <i class="weui-icon-search"></i>
+        <span>搜索您想要的商品</span>
+      </label>
+    </form>
+    <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+  </div>
+</header>
+  </div>
+  <aside>
+    <div class="menu-left scrollbar-none" id="sidebar">
+      <ul id="nav">
+        <li class="active ">全部分类</li>
+        <li>家用电器</li>
+      </ul>
+    </div>
+  </aside>
+  <div id="list">
+  	<section class="menu-right padding-all j-content">
+  	  <h5>酒水食品</h5>
+  	  <ul id="ul">
+  	    <li class="w-3"><a href="pro_list.html"></a> <span>酒水食品</span></li>
+		<li class="w-3"><a href="pro_list.html"><img src="upload/pro3.jpg"></a></li>1
+  	  </ul>
+  	</section>
+ </div>
+</div>
+
+<!--底部导航-->
+<div class="foot-black"></div>
+<div class="weui-tabbar wy-foot-menu">
+  <a href="index.html" class="weui-tabbar__item weui-bar__item--on">
+    <div class="weui-tabbar__icon foot-menu-home"></div>
+    <p class="weui-tabbar__label">首页</p>
+  </a>
+  <a href="classify.html" class="weui-tabbar__item">
+    <div class="weui-tabbar__icon foot-menu-list"></div>
+    <p class="weui-tabbar__label">分类</p>
+  </a>
+  <a href="shopcart.html" class="weui-tabbar__item">
+    <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+    <div class="weui-tabbar__icon foot-menu-cart"></div>
+    <p class="weui-tabbar__label">购物车</p>
+  </a>
+  <a href="javascript:;" class="weui-tabbar__item" id="mine">
+    <div class="weui-tabbar__icon foot-menu-member"></div>
+    <p class="weui-tabbar__label">我的</p>
+  </a>
+</div>
+<script src="lib/jquery-2.1.4.js"></script> 
+<script src="lib/fastclick.js"></script> 
+<script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+</script>
+<script src="js/jquery-weui.js"></script>
+<script type="text/javascript">
+	// $(function($){
+	// 	$('#sidebar ul li').click(function(){
+	// 		$(this).addClass('active').siblings('li').removeClass('active');
+	// 		var index = $(this).index();
+	// 		$('.j-content').eq(index).show().siblings('.j-content').hide();
+	// 	})
+	// })
+</script>
+
+
+<script>
+	$.ajax({
+			url:"http://www.vonetxs.com/index/cate",
+			dataType:'json',
+			type:"post",
+			success:function(msg){
+				console.log(msg);
+				arr(msg);
+			}
+		});
+		//数据
+		function  arr(msg)
+		{
+			//导航
+			$('#nav').empty();
+			$('#nav').append('<li class="active abc" sort_id="">全部分类</li>');
+			mui.each(msg.list,function (k,v) {
+				$('#nav').append('<li class="active abc" sort_id="'+v.cate_id+'">'+v.cate_name+'</li>');
+			});
+			//分类数据
+			$('#list').empty();
+			mui.each(msg.list,function (k,v) {
+				mui.each(v.son,function (kk,vv) {
+					mui.each(vv.son,function (kkk,vvv) {
+						$('#list').append('<section class="menu-right padding-all j-content" parent_id='+v.cate_id+'>\<h5><a href="pro_list.html?cate_id='+vv.cate_id+'">'+vv.cate_name+'</a></h5><ul><li class="w-3"><a href="pro_list.html"><span>'+vvv.cate_name+'</span></a></li><li class="w-3"><a href="pro_list.html"><img src=http://www.vonetxs.com'+vvv.cate_img+'></a></li></ul></section>');
+					});
+				});
+			});
+			
+		}
+		//样式
+        $(function () {
+            $(".active").nextAll().removeClass("active");
+            $(document).on("click",".abc",function () {
+                $(this).siblings().removeClass("active");
+                $(this).addClass("active");
+                sort();
+            })
+            function sort() {
+                var sort_id=$(".active").attr('sort_id');
+                var section=$("section");
+				if(sort_id==""){
+					section.removeClass("aaa");
+				}else{
+					section.each(function (index) {
+					    $(this).removeClass("aaa");
+					    if(sort_id!=$(this).attr("parent_id")){
+					        $(this).addClass("aaa");
+					    }
+					})
+				}
+            }
+        })
+    </script>
+    <style>
+        .aaa{
+            display:none;
+        }
+    </style>
+</body>
+</html>
+<script>
+	//我的
+	$(document).on('click','#mine',function(){
+		var user_id = localStorage.getItem("user_id");//获取
+		if(user_id==null){
+			$.toast("请先登录", function() {
+				mui.openWindow({
+				  url:"login.html",
+				})
+			});
+		}else{
+			mui.openWindow({
+			    url:"mine.html",
+			})
+		}
+
+	});
+</script>
