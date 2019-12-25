@@ -26,7 +26,7 @@ function sym_decrpty($str,$key){
  */
 function endMail($email)
 {
-    $msg = "恭喜你，注册成功";
+    $msg = "恭喜你，注册成功,现在无法进入后台，请联系超级管理员！！";
     \Mail::raw($msg ,function($message)use($email){
         //设置主题
         $message->subject("注册邮件发送");
