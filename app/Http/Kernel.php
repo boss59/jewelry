@@ -48,6 +48,10 @@ class Kernel extends HttpKernel
         'admin' => [
             "AdminLogin",
         ],
+        //rbac
+        'rbac' => [
+            "Check",
+        ],
 
     ];
 
@@ -72,6 +76,8 @@ class Kernel extends HttpKernel
 
         // 注册 中间件
         'AdminLogin' => \App\Http\Middleware\AdminLogin::class,
+        // 注册 中间件
+        'Check' => \App\Http\Middleware\Check::class,
     ];
 
     /**

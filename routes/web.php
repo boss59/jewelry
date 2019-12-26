@@ -162,4 +162,32 @@ Route::group(['middleware'=>['AdminLogin']],function(){
 
 
 
+    //考试
+    Route::any('/rbac/regist','admin\AdminController@regist');
+    Route::any('/rbac/login','admin\AdminController@login');
+
+
+Route::group(['middleware'=>['Check']],function(){
+    //首页
+    Route::any('/rbac/index','admin\AdminController@index');
+
+    // 角色 管理
+    Route::any('/rbac/role_add','admin\AdminController@role_add');// 角色 添加
+    Route::any('/rbac/role_index','admin\AdminController@role_index');// 角色 展示
+    // 权限 管理
+    Route::any('/rbac/right_add','admin\AdminController@right_add');// 权限 添加
+    Route::any('/rbac/right_index','admin\AdminController@right_index');// 权限 展示
+    // admin 角色 管理
+    Route::any('/rbac/admin_role_add','admin\AdminController@admin_role_add');// admin 角色 添加
+    Route::any('/rbac/admin_role_index','admin\AdminController@admin_role_index');// admin 角色 展示
+    // 角色权限 管理
+    Route::any('/rbac/role_right_add','admin\AdminController@role_right_add');// 角色权限 添加
+    Route::any('/rbac/role_right_index','admin\AdminController@role_right_index');// 角色
+});
+
+
+
+
+
+
 
