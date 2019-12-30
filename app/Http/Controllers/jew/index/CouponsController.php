@@ -28,8 +28,8 @@ class CouponsController extends Controller
             return json_encode(['code'=>1,'font'=>'未登录']);
         }else{
             // 启动事务
-//            DB::beginTransaction();
-//            try {
+            DB::beginTransaction();
+            try {
                 $cot = CouModel::where($where)->first();
                 if (!$cot) {
                     $cou = CouModel::create($where);
@@ -44,12 +44,12 @@ class CouponsController extends Controller
                     }
                 }
 //                // 提交事务
-//                DB::commit();
-//            } catch (\Exception $e) {
-//                // 回滚事务
-//                DB::rollback();
-//                // echo $e->getNessage();
-//            }
+                DB::commit();
+            } catch (\Exception $e) {
+                // 回滚事务
+                DB::rollback();
+                // echo $e->getNessage();
+            }
         }
     }
 }
