@@ -24,7 +24,7 @@ class Check
         }else{
             $user = $request->session()->get('info');
             $user_id=$user['user_id'];
-//        var_dump($user_id);die;
+//          var_dump($user_id);die;
             $url = "/" . $request->path();
             $info = RoleModel::join('admin_role','admin_role.role_id','=','role.role_id')->where('user_id',$user_id)
                 ->join('role_right','role_right.role_id','=','role.role_id')

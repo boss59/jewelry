@@ -186,6 +186,14 @@ Route::group(['middleware'=>['Check']],function(){
 });
 
 
+    //  验证码
+    Route::any('/login/regist','Login\LoginController@regist');
+    Route::any('/login/login','Login\LoginController@login');
+    Route::any('/login/yan','Login\LoginController@yan');
+Route::group(['middleware'=>['CheckUser']],function(){
+    Route::any('/login/index','Login\LoginController@index');
+});
+
 
 
 

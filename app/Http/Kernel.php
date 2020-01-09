@@ -52,7 +52,9 @@ class Kernel extends HttpKernel
         'rbac' => [
             "Check",
         ],
-
+        'user' => [
+            "CheckUser",
+        ],
     ];
 
     /**
@@ -76,6 +78,8 @@ class Kernel extends HttpKernel
 
         // 注册 中间件
         'AdminLogin' => \App\Http\Middleware\AdminLogin::class,
+        // 注册 中间件
+        'CheckUser' => \App\Http\Middleware\CheckUser::class,
         // 注册 中间件
         'Check' => \App\Http\Middleware\Check::class,
     ];
