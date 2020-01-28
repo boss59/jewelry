@@ -231,7 +231,7 @@ $(function(){
 	$('#num').empty();
 	$('#list').empty();
 	$.ajax({
-		url:"http://www.vonetxs.com/index/orders",
+		url:"http://jew.vonetxs.com/index/orders",
 		dataType:'json',
 		type:"post",
 		data:{user_id:user_id},
@@ -246,7 +246,7 @@ $(function(){
 	var user_id = localStorage.getItem("user_id");//获取
 	$('#pri').empty();
 	$.ajax({
-		url:"http://www.vonetxs.com/index/Nopay",
+		url:"http://jew.vonetxs.com/index/Nopay",
 		dataType:'json',
 		type:"post",
 		data:{user_id:user_id},
@@ -256,7 +256,7 @@ $(function(){
 				// console.log(v);return;
 				mui.each(v.shop_info,function (n,l){
 					//图片地址
-					var img='http://www.vonetxs.com'+l.goods_img;
+					var img='http://jew.vonetxs.com'+l.goods_img;
 					//判断是否支付
 					if(v.pay_status==0){
 						var wei="未支付";
@@ -298,7 +298,7 @@ $(function(){
 		mui.each(res.orders,function (k,v) {
 			mui.each(v.shop_info,function (n,l){
 				//图片地址
-				var img='http://www.vonetxs.com'+l.goods_img;
+				var img='http://jew.vonetxs.com'+l.goods_img;
 				//判断是否支付
 				if(v.pay_status==0){
 					var wei="未支付";

@@ -66,14 +66,14 @@
 	};
 	$('#st').empty();
 	$.ajax({
-		url:'http://www.vonetxs.com/index/Historylist',
+		url:'http://jew.vonetxs.com/index/Historylist',
 		dataType:'json',
 		data:data,
 		type:'post',
 		success:function(msg){
 			console.log(msg);
 			mui.each(msg,function(k,v){
-				var img="http://www.vonetxs.com"+v.goods_img;
+				var img="http://jew.vonetxs.com"+v.goods_img;
 				console.log(v);
 				$('#st').append('<a href="pro_info.html?goods_id='+v.goods_id+'" class="weui-media-box weui-media-box_appmsg">\
           <div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="'+img+'" alt=""></div>\

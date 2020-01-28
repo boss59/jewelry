@@ -140,7 +140,7 @@ $(function(){
 	var ids = goods_id[1];
 	
 	$.ajax({
-		url:"http://www.vonetxs.com/index/order_info",//请求地址
+		url:"http://jew.vonetxs.com/index/order_info",//请求地址
 		type:'post',//请求的类型
 		dataType:'json',//返回的类型
 		data:{goods_id:ids,user_id:user_id},//要传输的数据
@@ -232,7 +232,7 @@ $(function(){
 		}
 		// alert(data.order_amount);return;
 		$.ajax({
-			url:"http://www.vonetxs.com/index/confirmOrder",//请求地址
+			url:"http://jew.vonetxs.com/index/confirmOrder",//请求地址
 			type:'post',//请求的类型
 			dataType:'json',//返回的类型
 			data:data,//要传输的数据
@@ -240,7 +240,7 @@ $(function(){
 				console.log(res)
 				if(res.code == 1){
 					$.toast("正在跳转支付页面!");
-					window.location.href = "http://www.vonetxs.com/index/alipay?order_id="+res.order_id
+					window.location.href = "http://jew.vonetxs.com/index/alipay?order_id="+res.order_id
 				}else{
 					$.toast("创建订单失败!");
 				}

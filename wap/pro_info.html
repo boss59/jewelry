@@ -331,7 +331,7 @@ $(".swiper-zhutu").swiper({
 				user_id:user_id
 			}
 			$.ajax({
-					url:"http://www.vonetxs.com/index/user_collect",
+					url:"http://jew.vonetxs.com/index/user_collect",
 					data:data,
 					dataType:'json',
 					type:"post",
@@ -418,7 +418,7 @@ aniHovertree();
 	var sort_id=url.split("=");
 	// alert(sort_id);
 	$.ajax({
-		url:'http://www.vonetxs.com/index/proinfo',
+		url:'http://jew.vonetxs.com/index/proinfo',
 		dataType:'json',
 		type:'get',
 		data:{goods_id:sort_id[1]},
@@ -430,7 +430,7 @@ aniHovertree();
 			mui.each(msg.goods,function(k,v){
 				//商品轮播
 				mui.each(v.imgs_arr,function(k,v){
-					var img='http://www.vonetxs.com'+v.img_url;
+					var img='http://jew.vonetxs.com'+v.img_url;
 					$('#do').append('<div class="swiper-slide"><img src="'+img+'" style="height: 300px; width: 400px;"/></div>');
 					$('#list').append(' <img src="'+img+'" /><p>'+v.img_desc+'</p>')
 				})
@@ -450,7 +450,7 @@ aniHovertree();
 						var type_id = $(this).attr('type_id');
 						$('#att').empty();
 						$.ajax({
-							url:'http://www.vonetxs.com/index/type_value',
+							url:'http://jew.vonetxs.com/index/type_value',
 							data:{type_id:type_id},
 							dataType:'json',
 							type:'post',
@@ -490,7 +490,7 @@ aniHovertree();
 	data.value_id = $('.value_id').attr('value_id');
 	data.type_id = $('.type_id').attr('type_id');
 	$.ajax({
-		url:'http://www.vonetxs.com/index/add_car',//请求地址
+		url:'http://jew.vonetxs.com/index/add_car',//请求地址
 		type:'POST',//请求的类型
 		dataType:'json',//返回的类型
 		data:data,//要传输的数据
@@ -527,7 +527,7 @@ aniHovertree();
 		goods_id:goods_id[1]
 	};
 	$.ajax({
-		url:"http://www.vonetxs.com/index/getHistory",
+		url:"http://jew.vonetxs.com/index/getHistory",
 		data:data,
 		dataType:'json',
 		type:'post',

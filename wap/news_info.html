@@ -71,7 +71,7 @@
 	var url=window.location.href;
 	var sort_id=url.split("=");
 	$.ajax({
-			url:"http://www.vonetxs.com/index/news",
+			url:"http://jew.vonetxs.com/index/news",
 			dataType:'json',
 			type:"post",
 			data:{new_id:sort_id[1]},
@@ -80,7 +80,7 @@
 				$('#list').empty();
 				mui.each(msg.news,function (k,v) {
 					
-					$('#list').append('<article class="weui-article"><h1>'+v.title+'</h1><h3 class="wy-news-time">'+des(v.add_time)+'</h3><section class="wy-news-info"><p>n'+v.new_desc+'</p><p><img src=http://www.vonetxs.com'+v.new_img+' alt=""></p></section></article>');
+					$('#list').append('<article class="weui-article"><h1>'+v.title+'</h1><h3 class="wy-news-time">'+des(v.add_time)+'</h3><section class="wy-news-info"><p>n'+v.new_desc+'</p><p><img src=http://jew.vonetxs.com'+v.new_img+' alt=""></p></section></article>');
 				});
 			}
 		});

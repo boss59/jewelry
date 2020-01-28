@@ -58,7 +58,7 @@
 </html>
 <script>
 $.ajax({
-		url:"http://www.vonetxs.com/index/list_collect",
+		url:"http://jew.vonetxs.com/index/list_collect",
 		dataType:'json',
 		type:"post",
 		data:{user_id:localStorage.getItem("user_id")},
@@ -69,7 +69,7 @@ $.ajax({
 			mui.each(msg,function (k,v) {
 				$('#collect').append('<div class="pro-items">\
 										  <div class="weui-media-box weui-media-box_appmsg">\
-											<div class="weui-media-box__hd"><a href="pro_info.html"><img class="weui-media-box__thumb" src=http://www.vonetxs.com'+v.goods_img+' alt="无图片"></a></div>\
+											<div class="weui-media-box__hd"><a href="pro_info.html"><img class="weui-media-box__thumb" src=http://jew.vonetxs.com'+v.goods_img+' alt="无图片"></a></div>\
 											<div class="weui-media-box__bd">\
 											  <h1 class="weui-media-box__desc"><a href="pro_info.html" class="ord-pro-link">'+v.goods_name+'</a></h1>\
 											  <div class="wy-pro-pri">¥<em class="num font-15">'+v.goods_price+'</em></div>\

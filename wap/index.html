@@ -189,7 +189,7 @@
 </html>
 <script>
 	$.ajax({
-			url:"http://www.vonetxs.com/index/index",
+			url:"http://jew.vonetxs.com/index/index",
 			dataType:'json',
 			type:"post",
 			success:function(msg){
@@ -197,14 +197,14 @@
 				//轮播图
 				$('#friend').empty();
 				mui.each(msg.friend,function (k,v) {
-					$('#friend').append('<div class="swiper-slide"><a href='+v.f_url+'><img src=http://www.vonetxs.com'+v.f_logo+' width="100" height="180"/></a></div>');
+					$('#friend').append('<div class="swiper-slide"><a href='+v.f_url+'><img src=http://jew.vonetxs.com'+v.f_logo+' width="100" height="180"/></a></div>');
 				});
 				
 				
 				// 精品商品
 				$('#sell').empty();
 				mui.each(msg.sell,function (k,v) {
-					$('#sell').append('<div class="swiper-slide"><a href="pro_info.html?goods_id='+v.goods_id+'"><img src=http://www.vonetxs.com'+v.goods_img+' width="30" height="100"/><p>'+v.goods_name+'</p></a></div>');
+					$('#sell').append('<div class="swiper-slide"><a href="pro_info.html?goods_id='+v.goods_id+'"><img src=http://jew.vonetxs.com'+v.goods_img+' width="30" height="100"/><p>'+v.goods_name+'</p></a></div>');
 				});
 				
 				//导航
@@ -212,13 +212,13 @@
 				// 一楼数据
 				$('#goods').empty();
 				mui.each(msg.goods,function (k,v) {
-					$('#goods').append('<div class="swiper-slide"><a href="pro_info.html?goods_id='+v.goods_id+'"><img src=http://www.vonetxs.com'+v.goods_img+' width="30" height="100"/><p>'+v.goods_name+'</p></a></div>');
+					$('#goods').append('<div class="swiper-slide"><a href="pro_info.html?goods_id='+v.goods_id+'"><img src=http://jew.vonetxs.com'+v.goods_img+' width="30" height="100"/><p>'+v.goods_name+'</p></a></div>');
 				});
 				
 				//猜你喜欢
 				$('#goods_xi').empty();
 				mui.each(msg.sell,function (k,v) {
-					$('#goods_xi').append('<li><a href="pro_info.html?goods_id='+v.goods_id+'"><div class="proimg"><img src=http://www.vonetxs.com'+v.goods_img+' style="height: 160px; width: 160px;"></div><div class="protxt"><div class="name">'+v.goods_name+'</div><div class="wy-pro-pri">¥<span>'+v.goods_price+'</span></div></div></a></li>');
+					$('#goods_xi').append('<li><a href="pro_info.html?goods_id='+v.goods_id+'"><div class="proimg"><img src=http://jew.vonetxs.com'+v.goods_img+' style="height: 160px; width: 160px;"></div><div class="protxt"><div class="name">'+v.goods_name+'</div><div class="wy-pro-pri">¥<span>'+v.goods_price+'</span></div></div></a></li>');
 				});
 			}
 		});
@@ -232,7 +232,7 @@
 		        // alert(cate_id);
 		        var num = parseInt(_this.parents('div').prev('div').text());
 		        $.ajax({
-		          url:'http://www.vonetxs.com/index/ajaxgetFloor',//请求地址
+		          url:'http://jew.vonetxs.com/index/ajaxgetFloor',//请求地址
 		          type:'post',//请求的类型
 		          // dataType:'json',//返回的类型
 		          data:{cate_id:cate_id,num:num},//要传输的数据

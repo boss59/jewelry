@@ -183,7 +183,7 @@ $(function(){
 		$.confirm("您确定要把此商品从购物车删除吗?", "确认删除?", function() {
 		  var goods_id = _this.attr('goods_id');
 		  $.ajax({
-			  url:"http://www.vonetxs.com/index/cary_del",//请求地址
+			  url:"http://jew.vonetxs.com/index/cary_del",//请求地址
 			  type:'post',//请求的类型
 			  dataType:'json',//返回的类型
 			  data:{goods_id:goods_id,user_id:user_id},//要传输的数据
@@ -216,7 +216,7 @@ $(function(){
 		// alert(arr);return;
 	    // 发送请求
 	    $.ajax({
-	      url:"http://www.vonetxs.com/index/alldel",//请求地址
+	      url:"http://jew.vonetxs.com/index/alldel",//请求地址
 	      type:'get',//请求的类型
 	      dataType:'json',//返回的类型
 	      data:{goods_id:arr,user_id,user_id},//要传输的数据
@@ -240,7 +240,7 @@ $(function(){
 	function changeNumber(goods_id,buy_number,user_id)
 	{
 		  $.ajax({
-			url:'http://www.vonetxs.com/index/changeNumber',//请求地址
+			url:'http://jew.vonetxs.com/index/changeNumber',//请求地址
 			type:'POST',//请求的类型
 			dataType:'json',//返回的类型
 			data:{buy_number:buy_number,goods_id:goods_id,user_id:user_id},//要传输的数据
@@ -259,7 +259,7 @@ $(function(){
 	function getsubtotal(goods_id,_this,user_id)
 	{
 		$.ajax({
-			url:'http://www.vonetxs.com/index/getsubtotal',//请求地址
+			url:'http://jew.vonetxs.com/index/getsubtotal',//请求地址
 			type:'POST',//请求的类型
 			dataType:'json',//返回的类型
 			data:{goods_id:goods_id,user_id:user_id},//要传输的数据
@@ -292,7 +292,7 @@ $(function(){
 		goods_id=goods_id.substr(0,goods_id.length-1);
 		// 发送 ajax
 		$.ajax({
-			url:'http://www.vonetxs.com/index/pricetotal',//请求地址
+			url:'http://jew.vonetxs.com/index/pricetotal',//请求地址
 			type:'POST',//请求的类型
 			// dataType:'json',//返回的类型
 			data:{goods_id:goods_id,user_id:user_id},//要传输的数据
@@ -334,7 +334,7 @@ $(document).on('click','#con',function(){
 	// 获取数据
 	var user_id = localStorage.getItem("user_id");
 	$.ajax({
-	  url:"http://www.vonetxs.com/index/cary_index",//请求地址
+	  url:"http://jew.vonetxs.com/index/cary_index",//请求地址
 	  type:'get',//请求的类型
 	  dataType:'json',//返回的类型
 	  data:{user_id:user_id},//要传输的数据
@@ -353,7 +353,7 @@ $(document).on('click','#con',function(){
 											<div style="padding:10px;" class="xxx">\
 											       <input type="checkbox" goods_id='+v.goods_id+' class="box">\
 											</div>\
-											<div class="weui-media-box__hd"><a href="pro_info.html"><img class="weui-media-box__thumb" src=http://www.vonetxs.com'+v.goods_img+' alt=""></a></div>\
+											<div class="weui-media-box__hd"><a href="pro_info.html"><img class="weui-media-box__thumb" src=http://jew.vonetxs.com'+v.goods_img+' alt=""></a></div>\
 											<div class="weui-media-box__bd">\
 											  <h1 class="weui-media-box__desc"><a href="pro_info.html" class="ord-pro-link">'+v.goods_name+'</a></h1>\
 											  <p class="weui-media-box__desc">所属分系：<span style="color:blue;">'+v.type_name+'</span> 职业 ：<span style="color:red;">'+v.value_name+'</span></p>\

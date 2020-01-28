@@ -99,7 +99,7 @@
 
 <script>
 	$.ajax({
-			url:"http://www.vonetxs.com/index/cate",
+			url:"http://jew.vonetxs.com/index/cate",
 			dataType:'json',
 			type:"post",
 			success:function(msg){
@@ -121,7 +121,7 @@
 			mui.each(msg.list,function (k,v) {
 				mui.each(v.son,function (kk,vv) {
 					mui.each(vv.son,function (kkk,vvv) {
-						$('#list').append('<section class="menu-right padding-all j-content" parent_id='+v.cate_id+'>\<h5><a href="pro_list.html?cate_id='+vv.cate_id+'">'+vv.cate_name+'</a></h5><ul><li class="w-3"><a href="pro_list.html"><span>'+vvv.cate_name+'</span></a></li><li class="w-3"><a href="pro_list.html"><img src=http://www.vonetxs.com'+vvv.cate_img+'></a></li></ul></section>');
+						$('#list').append('<section class="menu-right padding-all j-content" parent_id='+v.cate_id+'>\<h5><a href="pro_list.html?cate_id='+vv.cate_id+'">'+vv.cate_name+'</a></h5><ul><li class="w-3"><a href="pro_list.html"><span>'+vvv.cate_name+'</span></a></li><li class="w-3"><a href="pro_list.html"><img src=http://jew.vonetxs.com'+vvv.cate_img+'></a></li></ul></section>');
 					});
 				});
 			});
